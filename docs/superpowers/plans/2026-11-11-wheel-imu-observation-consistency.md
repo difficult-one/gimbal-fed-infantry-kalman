@@ -25,6 +25,7 @@ STM32F427、FreeRTOS、MPU-6500、DJI CAN 电机、SEGGER RTT、ARM GCC、主机
 ~~~powershell
 python -B -m unittest discover -s tests -p 'test_*.py'
 ./tests/run_chassis_motion_tests.ps1
+New-Item -ItemType Directory -Path build/wheel_imu_obs_check -Force | Out-Null
 make -j4 BUILD_DIR=build/wheel_imu_obs_check
 arm-none-eabi-size ./build/wheel_imu_obs_check/basic_framework_ATYPE.elf
 ~~~
@@ -33,9 +34,9 @@ arm-none-eabi-size ./build/wheel_imu_obs_check/basic_framework_ATYPE.elf
 
 文件 · `tests/host/platform.h`、`tests/chassis_project_config_test.c`、`application/robot_def.h`
 
-- [ ] 用现有主机测试重现 `chassis_project_config_test.c:33` 的轮径断言。当前夹具传入 72.5 mm，实际项目宏和测试的独立物理期望使用 76 mm。Python 基线已通过，历史轮径用例仍断言 frame17 为 72.5 mm。
-- [ ] 将主机项目夹具对齐当前固件配置，保留 19:1、152 mm 外径下 19000 转子 deg/s 应为 1.32645023 m/s 的物理断言。72.5 mm 留在历史回放用例中。
-- [ ] 跑完整 C 测试和 3×3 板型/驱动配置矩阵。计划编制时，原主机测试止于轮径断言，临时夹具只改为 76 mm 后 9 个配置用例均通过，完整套件仍需在正式修复后验收。
+- [x] 用现有主机测试重现 `chassis_project_config_test.c:33` 的轮径断言。当前夹具传入 72.5 mm，实际项目宏和测试的独立物理期望使用 76 mm。Python 基线已通过，历史轮径用例仍断言 frame17 为 72.5 mm。
+- [x] 将主机项目夹具对齐当前固件配置，保留 19:1、152 mm 外径下 19000 转子 deg/s 应为 1.32645023 m/s 的物理断言。72.5 mm 留在历史回放用例中。
+- [x] 跑完整 C 测试和 3×3 板型/驱动配置矩阵。计划编制时，原主机测试止于轮径断言，临时夹具只改为 76 mm 后 9 个配置用例均通过，完整套件仍需在正式修复后验收。
 
 ## 1. P0 · 修正回放配置和速度单位
 
@@ -43,10 +44,10 @@ arm-none-eabi-size ./build/wheel_imu_obs_check/basic_framework_ATYPE.elf
 
 新增接口 · `tools/chassis_capture_config.py` 的 `resolve_capture_config(rows, metadata, raw_sha256)`。两个通用 CLI 支持 `--metadata PATH`。
 
-- [ ] 为新采集定义版本化 JSON，至少包含 `schema_version`、`capture_id`、`fw`、`frame`、`config_id`、原始文件 SHA-256、底盘类型、LF/RF/LB/RB 顺序、每轮配置半径（m）、减速比、编码器符号、运动学矩阵、坐标约定、纯自旋逐轮微调（转子 deg/s）和筛选参考（mrad/s）。负载实测滚动半径单独记录。
-- [ ] 先校验文件、版本、配置和有限正参数，再做工况筛选。保留已登记的 frame1–15 / frame16 的 60 / 72.5 mm 历史口径。frame17、frame18 和未登记版本要求显式配置。混合固件或参数冲突应报错。`--spin-ref-mradps` 只覆盖筛选目标。两个脚本共同使用 `v_i = sign_i × rotor_dps_i × π/180 × radius_m_i / ratio_i`，相位拟合用同一配置的几何、旋转基项和适用的逐轮微调。对算法未支持的轮型显式报错。
-- [ ] 为 `build/frame17_ground_drift_20261110/` 的原始文件逐份核对 SHA-256 和配置来源，按 0.076 m / 6892 mrad/s 重放这批数据。将专用摘要的 `wheel_odometry_n_velocity_mmps` 更名为 `wheel_odometry_n_velocity_mps`，标记输出 schema 版本，沿用原数值。原 JSON 作为历史格式。通用审计如需取本批稳定区间，使用专用摘要或显式参考值。
-- [ ] 测试已知轮速、缺失/冲突配置、非法参数、手动筛选绕过、历史缩放、旧摘要单位和重复输出。用含稳定非零平移的合成日志验证相位拟合，用真实纯自旋日志验证参数选择与专用统计。相同文件与配置应得到同一结果。
+- [x] 为新采集定义版本化 JSON，至少包含 `schema_version`、`capture_id`、`fw`、`frame`、`config_id`、原始文件 SHA-256、底盘类型、LF/RF/LB/RB 顺序、每轮配置半径（m）、减速比、编码器符号、运动学矩阵、坐标约定、纯自旋逐轮微调（转子 deg/s）和筛选参考（mrad/s）。负载实测滚动半径单独记录。
+- [x] 先校验文件、版本、配置和有限正参数，再做工况筛选。保留已登记的 frame1–15 / frame16 的 60 / 72.5 mm 历史口径。frame17、frame18 和未登记版本要求显式配置。混合固件或参数冲突应报错。`--spin-ref-mradps` 只覆盖筛选目标。两个脚本共同使用 `v_i = sign_i × rotor_dps_i × π/180 × radius_m_i / ratio_i`，相位拟合用同一配置的几何、旋转基项和适用的逐轮微调。对算法未支持的轮型显式报错。
+- [x] 为 `build/frame17_ground_drift_20261110/` 的原始文件逐份核对 SHA-256 和配置来源，按 0.076 m / 6892 mrad/s 重放这批数据。将专用摘要的 `wheel_odometry_n_velocity_mmps` 更名为 `wheel_odometry_n_velocity_mps`，标记输出 schema 版本，沿用原数值。原 JSON 作为历史格式。通用审计如需取本批稳定区间，使用专用摘要或显式参考值。
+- [x] 测试已知轮速、缺失/冲突配置、非法参数、手动筛选绕过、历史缩放、旧摘要单位和重复输出。用含稳定非零平移的合成日志验证相位拟合，用真实纯自旋日志验证参数选择与专用统计。相同文件与配置应得到同一结果。
 
 ## 2. P0 · 传播 SPI 状态并区分采样新鲜度
 
@@ -64,6 +65,25 @@ arm-none-eabi-size ./build/wheel_imu_obs_check/basic_framework_ATYPE.elf
 - [ ] 在原生更新点记录 IMU 原始六轴、标定后的输入、姿态和重力、杆臂前后值、软件低通输出、有效性；记录四轮与 yaw 的原始/滤波反馈及 CAN 序号、接收时间；记录控制实际使用的 yaw、轮速参考和门控理由。记录头包含版本、来源、序号、时间类型和时钟代际。采集配置从 `ChassisMotionGetConfig` 获取实际生效值，覆盖定制配置。导出记录用固定字节序及显式长度，解码端校验版本、记录边界和校验和。
 - [ ] 各生产者写入预分配的短时缓冲，写满或到达采集时长即冻结，记录缺帧、溢出及各流覆盖范围。用低优先级非阻塞 RTT 独立通道导出冻结数据，保留当前 10 Hz 文本诊断格式。先用 `.map`、栈余量和任务周期分布确认内存及采样开销。容量至少覆盖完整 0.25 s 窗口、对齐前后余量及连续有效窗口。测试溢出、坏包、时间回绕和导出期间无控制周期超时。
 - [ ] 在 SHADOW 下采集静止、固定底盘云台俯仰、直线启停和匀速、正反向落地自旋。每类至少三次，同步记录外部中心位置及航向。采集开始前固定工况、分段边界规则和测量精度，留出至少一轮独立数据验收。先保留原 frame18 构建和低频对照，再用带诊断的 frame18 构建采集逐样本基线。frame17 的 10 Hz 文本与秒级统计仅用来复核历史现象。
+
+### WIMU v1 抓取与验收
+
+采集固件用于单板 X 型全向轮。每次抓取最长 350 ms，任一来源写满、时钟代际切换或离开 SHADOW 时提前冻结。IMU 时间是 SPI 完成时刻，电机时间是 CAN 接收时刻。采集功能由编译开关启用，启用后的固件仍需等到 SHADOW 和当前时钟代际的有效 INS 就绪才接受触发。
+
+~~~powershell
+New-Item -ItemType Directory -Path build/wheel_imu_capture_check -Force | Out-Null
+make -j4 BUILD_DIR=build/wheel_imu_capture_check EXTRA_DEFS=-DWHEEL_IMU_CAPTURE=1
+arm-none-eabi-nm build/wheel_imu_capture_check/basic_framework_ATYPE.elf |
+    Select-String 'wheel_imu_capture_request|_SEGGER_RTT'
+~~~
+
+启动二进制 RTT 通道 1 的接收后，通过不停机的 SWD 写入向 ELF 中的 `wheel_imu_capture_request` 写一个非零 token。OpenOCD 可用 `rtt server start 19021 1` 暴露通道 1，再用 TCP 客户端原样保存一次抓取。通道 0 继续输出常规文本。每次仅触发一份，等二进制传输完毕再触发下一份。
+
+~~~powershell
+python -B ./tools/decode_wheel_imu_capture.py ./capture.wimu --output ./capture.json --metadata-out ./capture.metadata.json --firmware-artifact ./build/wheel_imu_capture_check/basic_framework_ATYPE.bin
+~~~
+
+留存实际烧录产物和原始字节。检查 CRC、冻结原因、每路记录数和共同时间覆盖。比较启停与稳态时分别触发多次，并留出缓冲开头因前序样本尚未进入记录造成的边界。固定姿态回放可直接使用记录的姿态与重力。重算 EKF 时需用预热段收敛，并明确排除预热窗口。
 
 ## 4. P1 · 用原始序列做对齐与刚体消融
 
