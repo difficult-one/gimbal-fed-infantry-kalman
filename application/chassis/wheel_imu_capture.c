@@ -256,14 +256,14 @@ static void Export(void)
 
 void WheelIMUCaptureService(uint8_t arm_allowed, float yaw_zero_deg)
 {
+    if (!rtt_ready) {
+        if (SEGGER_RTT_ConfigUpBuffer(RTT_CHANNEL, "WheelIMU_Capture", rtt_buffer,
+                                      sizeof(rtt_buffer), SEGGER_RTT_MODE_NO_BLOCK_SKIP) < 0) return;
+        rtt_ready = 1;
+    }
     if (phase == IDLE) {
         uint32_t token = wheel_imu_capture_request;
         if (!token || !arm_allowed) return;
-        if (!rtt_ready) {
-            if (SEGGER_RTT_ConfigUpBuffer(RTT_CHANNEL, "WheelIMU_Capture", rtt_buffer,
-                                          sizeof(rtt_buffer), SEGGER_RTT_MODE_NO_BLOCK_SKIP) < 0) return;
-            rtt_ready = 1;
-        }
         Arm(token, yaw_zero_deg);
         return;
     }

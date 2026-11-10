@@ -9,7 +9,7 @@ uint32_t host_primask;
 static uint32_t now, generation;
 static uint8_t transport_full;
 static uint8_t transport[100000];
-static unsigned written;
+static unsigned written, configured;
 static int wheel;
 
 uint64_t DWT_GetTimeline_us(void) { return now; }
@@ -19,6 +19,7 @@ int SEGGER_RTT_ConfigUpBuffer(unsigned index, const char *name, void *buffer,
                              unsigned size, unsigned flags)
 {
     assert(index == 1 && name && buffer && size > 512 && flags == SEGGER_RTT_MODE_NO_BLOCK_SKIP);
+    configured++;
     return 0;
 }
 
@@ -66,6 +67,8 @@ int main(int argc, char **argv)
     WheelIMUCaptureRegisterMotor(WIMU_LF, &wheel);
     now = UINT32_MAX - 100;
     generation = 7;
+    WheelIMUCaptureService(0, 16.25965f);
+    assert(configured == 1 && !WheelIMUCaptureActive());
     wheel_imu_capture_request = 42;
     WheelIMUCaptureService(0, 16.25965f);
     assert(!WheelIMUCaptureActive() && wheel_imu_capture_request == 42);
