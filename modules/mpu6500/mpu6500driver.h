@@ -19,11 +19,13 @@
 #define MPU6500_GYRO_500_SEN 2.6646247667514843087362171331637e-4
 #define MPU6500_GYRO_250_SEN 1.3323123833757421543681085665818e-4
 
-uint8_t mpu_write_byte(uint8_t const reg, uint8_t const data);
-uint8_t mpu_read_byte(uint8_t const reg);
-uint8_t mpu_read_bytes(uint8_t const regAddr, uint8_t* pData, uint8_t len);
+HAL_StatusTypeDef mpu_write_byte(uint8_t reg, uint8_t data);
+HAL_StatusTypeDef mpu_read_bytes(uint8_t reg, uint8_t *data, uint8_t length);
+/* Accel XYZ, temperature, gyro XYZ. The caller's raw array changes only
+ * when the SPI transaction succeeds and the sensor reports fresh data. */
+HAL_StatusTypeDef mpu_read_sample(int16_t raw[7], uint8_t *fresh);
 
-void mpu6500_device_init(void);
+HAL_StatusTypeDef mpu6500_device_init(void);
 
 
 #endif // !MPU6500Driver_H
