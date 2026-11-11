@@ -96,6 +96,25 @@ static void TestDirectTranslation(const ChassisMotionConfig *config)
     ChassisMotionGetState(&state);
     assert(fabsf(hypotf(state.ref_g[0],state.ref_g[1])-bounded.max_velocity)<1e-6f);
 }
+static void TestExecutionSnapshot(const ChassisMotionConfig *config)
+{
+    assert(ChassisMotionConfigure(config));
+    ChassisMotionInput input = {0};
+    input.pose_valid = 1u;
+    input.wheel_online_mask = 15u;
+    for (unsigned i = 0; i < config->log_decimation; ++i) {
+        AdvanceSample(&input);
+        ChassisMotionSetExecutionState(1u, 0u, 1u);
+        ChassisMotionRecord();
+    }
+    ChassisMotionSetExecutionState(2u, 1u, 0u);
+    ChassisMotionState state;
+    ChassisMotionObservationState observation;
+    assert(ChassisMotionPopDiagnosticLog(&state, NULL, &observation));
+    assert(observation.chassis_mode == 1u && observation.control_mode == 0u);
+    assert(observation.output_enabled == 1u);
+    assert(!ChassisMotionPopDiagnosticLog(&state, NULL, &observation));
+}
 #endif
 int main(void)
 {
@@ -165,6 +184,7 @@ int main(void)
     ChassisMotionGetState(&state);
     assert(fabsf(state.omega_ref-9.0f)<2e-5f); // 6000 now exceeds the SI cap.
     TestDirectTranslation(&c);
+    TestExecutionSnapshot(&c);
 #endif
     puts("PASS: project board/drive selection, 152 mm wheel units, spin trim, direct translation and bounded portable profile");
 }

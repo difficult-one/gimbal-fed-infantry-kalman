@@ -863,6 +863,16 @@ void ChassisMotionVisitRecord(void (*visit)(const ChassisMotionState *,
     visit(&s, &observation);
 }
 
+void ChassisMotionSetExecutionState(uint8_t chassis_mode, uint8_t control_mode,
+                                    uint8_t output_enabled)
+{
+    uint32_t key = Lock();
+    observation.chassis_mode = chassis_mode;
+    observation.control_mode = control_mode;
+    observation.output_enabled = output_enabled != 0u;
+    Unlock(key);
+}
+
 void ChassisMotionRecord(void)
 {
     if (!config.log_decimation || s.seq % config.log_decimation) return;

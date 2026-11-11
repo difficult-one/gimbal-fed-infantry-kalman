@@ -4,7 +4,7 @@ import csv
 import struct
 from pathlib import Path
 
-VERSION = 0x20261110
+VERSION = 0x20261111
 HEADER = struct.Struct("<4sII")
 # 字段顺序与 ChassisMotionState 一致；数组在 CSV 中展开为 name_0...。
 FIELDS = [
@@ -52,7 +52,7 @@ def decode(data):
         if end > len(data):
             return
         values = PAYLOAD.unpack_from(data, pos + HEADER.size)
-        if values[0] not in (0x20261016, 0x20261026, 0x20261027, 0x20261028, 0x20261029, 0x20261030, 0x20261031, 0x20261105, 0x20261106, 0x20261107, 0x20261108, VERSION):
+        if values[0] not in (0x20261016, 0x20261026, 0x20261027, 0x20261028, 0x20261029, 0x20261030, 0x20261031, 0x20261105, 0x20261106, 0x20261107, 0x20261108, 0x20261110, VERSION):
             pos += 1
             continue
         yield [dropped, *values]

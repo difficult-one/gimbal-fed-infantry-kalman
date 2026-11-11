@@ -17,7 +17,89 @@ SAMPLE = """00> [STATUS] seq=20 t_us=4656972 fw=20261106 frame=12 mode=2 valid=0
 """
 
 
+def frame19_sample():
+    lines = SAMPLE.replace("frame=12", "frame=19").splitlines()
+    lines = [line for line in lines if "[YAW]" not in line]
+    lines[0] += " imu_seq=4812 chassis_mode=1 control_mode=0 output_enabled=1"
+    lines[1] += " raw_dps=0,0,0,0 age_us=1,2,3,4 wheel_seq=100,101,102,103 scale_x1000=1000"
+    lines[3] += " p_x1e6=10,20,30,40"
+    lines.append("[OBS] seq=20 imu_t_us=4656100 clock_gen=1 recovering=0 good_ms=500 "
+                 "tilt_mrad=0,0 chi_x1000=10 att_flags=3 dv_res_mmps=0,0 window_ms=250 "
+                 "gate=1 rejects=0 dv_now_mmps=0,0 v_res_mmps=0,0 reject_reason=0 control_ready=0 "
+                 "control_inhibit=128 control_good_ms=200 control_blend_x1000=0 "
+                 "control_v_err_mmps=5 control_a_res_mmps2=30")
+    return "\n".join(lines) + "\n"
+
+
 class TextLogTests(unittest.TestCase):
+    def test_frame19_core_does_not_require_slow_diagnostics(self):
+        sample = frame19_sample()
+        rows, _, report = parse(sample)
+        self.assertEqual(len(rows), 1)
+        self.assertNotIn("YAW", rows[0])
+        self.assertNotIn("q_1e6", rows[0]["OBS"])
+        self.assertEqual(report["complete_frames"], 1)
+        for tag in ("STATUS", "WHEEL", "IMU", "KF", "DIR", "OBS"):
+            damaged = "\n".join(line for line in sample.splitlines() if f"[{tag}]" not in line)
+            with self.subTest(tag=tag):
+                self.assertEqual(parse(damaged)[0], [])
+
+    def test_frame19_requires_new_same_sample_fields(self):
+        sample = frame19_sample()
+        for token in (" imu_seq=4812", " chassis_mode=1", " control_mode=0", " output_enabled=1",
+                      " raw_dps=0,0,0,0", " age_us=1,2,3,4", " wheel_seq=100,101,102,103",
+                      " scale_x1000=1000", " p_x1e6=10,20,30,40"):
+            with self.subTest(token=token):
+                self.assertEqual(parse(sample.replace(token, ""))[0], [])
+        self.assertEqual(parse(sample.replace("age_us=1,2,3,4", "age_us=1,2,3"))[0], [])
+        self.assertEqual(parse(sample.replace("fw=20261106", "fw=123"))[0], [])
+
+    def test_frame19_damaged_optional_diagnostics_do_not_lose_core_data(self):
+        detail = "[DETAIL] seq=20 q_1e6=1000000,0,0,0 gravity_mmps2=0,0,9810 innov_x1000=0,0,0,0 r_x1e6=1,2,3,4\n"
+        health = "[HEALTH] seq=20 t_us=4656972 read_t_us=4656100 attempt_seq=4813 accepted_seq=4812 " \
+                 "status=0 startup=0 timeout=0 error=0 busy=0 not_ready=1 gaps=0\n"
+        rows, _, report = parse(frame19_sample()+detail+health)
+        self.assertEqual(len(rows), 1)
+        self.assertIn("DETAIL", rows[0])
+        self.assertIn("HEALTH", rows[0])
+        self.assertEqual(report["diagnostic_only_sequences"], 0)
+        cases = ((detail.replace("1,2,3,4", "1,2,3"), "DETAIL"),
+                 (health.replace(" gaps=0", ""), "HEALTH"),
+                 (detail+detail, "DETAIL"),
+                 ("[YAW] seq=20 ref_mdeg=1 fb_mdeg=2 out_raw=3\n", "YAW"))
+        for damaged, tag in cases:
+            with self.subTest(damaged=damaged):
+                rows, _, report = parse(frame19_sample()+damaged)
+                self.assertEqual(len(rows), 1)
+                self.assertNotIn(tag, rows[0])
+                self.assertTrue(any(issue.get("tag") == tag for issue in report["issues"]))
+        merged = detail.rstrip()+health
+        rows, _, report = parse(frame19_sample()+merged)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(report["issues"][-1]["reason"], "merged_tags")
+        lines = frame19_sample().splitlines()
+        lines[0] += detail.strip()
+        self.assertEqual(parse("\n".join(lines))[0], [])
+        orphan = detail.replace("seq=20", "seq=40")
+        self.assertEqual(parse(frame19_sample()+orphan)[2]["observed_sequences"], 1)
+        self.assertEqual(parse(frame19_sample()+orphan)[2]["diagnostic_only_sequences"], 1)
+
+    def test_legacy_corrupt_yaw_is_still_rejected(self):
+        self.assertEqual(parse(SAMPLE.replace("fb_mdeg=-306", "fb_mdeg=bad"))[0], [])
+
+    def test_audit_uses_recorded_signed_spin_target_and_optional_diagnostics(self):
+        first = frame19_sample().replace("omega_mradps=0 omega_ref_mradps=0", "omega_mradps=6892 omega_ref_mradps=6892")
+        second = first.replace("seq=20", "seq=40").replace("omega_mradps=6892 omega_ref_mradps=6892",
+                                                                       "omega_mradps=-6892 omega_ref_mradps=-6892")
+        disabled = first.replace("seq=20", "seq=60").replace("output_enabled=1", "output_enabled=0")
+        following = first.replace("seq=20", "seq=80").replace("chassis_mode=1", "chassis_mode=3")
+        force = first.replace("seq=20", "seq=100").replace("control_mode=0", "control_mode=1")
+        wheel_missing = first.replace("seq=20", "seq=120").replace("wheel_mask=15", "wheel_mask=7")
+        result = audit(first+second+disabled+following+force+wheel_missing)
+        self.assertEqual(result["high_rotation_frames"], 3)
+        self.assertEqual(result["steady_rotation_frames"], 2)
+        self.assertEqual(result["diagnostic_frames"]["YAW"], 0)
+
     def test_frame17_control_permission_diagnostics_required(self):
         old = "[OBS] seq=20 imu_t_us=4656100 clock_gen=1 recovering=0 good_ms=500 q_1e6=1000000,0,0,0 gravity_mmps2=0,0,9810 tilt_mrad=0,0 chi_x1000=10 att_flags=3 innov_x1000=0,0,0,0 r_x1e6=2500,40000,2500,40000 dv_res_mmps=0,0 window_ms=20 gate=1 rejects=0 dv_now_mmps=0,0 v_res_mmps=0,0 reject_reason=0"
         extra = " control_ready=0 control_inhibit=128 control_good_ms=200 control_blend_x1000=0 control_v_err_mmps=5 control_a_res_mmps2=30"

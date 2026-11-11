@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from chassis_capture_config import motor_mps_per_dps, read_capture_input, resolve_capture_config
-from chassis_text_parser import parse
+from chassis_text_parser import has_speed_spin_command, parse
 
 
 def vector(row, tag, key):
@@ -30,19 +30,23 @@ def select_spin_rows(rows, spin_ref_mradps=None, config=None):
         config = resolve_capture_config(rows, None, None)
     target = str(spin_reference(rows, spin_ref_mradps, config))
     trim_enabled = any(config["spin_wheel_trim_dps"])
+    decimation = config.get("decimation", 20)
+    history_steps = max(1, round(500_000 / (config.get("period_us", 5000) * decimation)))
     selected, rates = [], []
     for i, row in enumerate(rows):
         if i == 0:
             continue
         previous = rows[i-1]
         if (row["STATUS"]["exit"] == "0" and
+                has_speed_spin_command(row) and has_speed_spin_command(previous) and
                 row["WHEEL"]["omega_ref_mradps"] == target and
                 previous["WHEEL"]["omega_ref_mradps"] == target and
-                int(row["STATUS"]["seq"]) - int(previous["STATUS"]["seq"]) == 20):
+                int(row["STATUS"]["seq"]) - int(previous["STATUS"]["seq"]) == decimation):
             dt = (int(row["STATUS"]["t_us"]) - int(previous["STATUS"]["t_us"])) * 1e-6
             delta = (int(row["IMU"]["theta_mrad"]) - int(previous["IMU"]["theta_mrad"])) * .001
-            rates.append(math.atan2(math.sin(delta), math.cos(delta))/dt)
-        if i < 5 or row["STATUS"]["exit"] != "0" or row["WHEEL"]["omega_ref_mradps"] != target:
+            if dt > 0:
+                rates.append(math.atan2(math.sin(delta), math.cos(delta))/dt)
+        if i < history_steps or row["STATUS"]["exit"] != "0" or row["WHEEL"]["omega_ref_mradps"] != target:
             continue
         ref = vector(row, "KF", "ref_g_mmps")
         norm = np.linalg.norm(ref)
@@ -50,8 +54,9 @@ def select_spin_rows(rows, spin_ref_mradps=None, config=None):
         # those samples outside the translation phase fit even in ACTIVE logs.
         if norm < 80 or (trim_enabled and np.linalg.norm(vector(row, "KF", "cmd_g_mmps")) < 5):
             continue
-        history = rows[i-5:i+1]
-        if any(int(h["STATUS"]["seq"]) != int(row["STATUS"]["seq"]) - 20*(5-j)
+        history = rows[i-history_steps:i+1]
+        if any(not has_speed_spin_command(h) or
+               int(h["STATUS"]["seq"]) != int(row["STATUS"]["seq"]) - decimation*(history_steps-j)
                for j, h in enumerate(history)):
             continue
         if any(np.linalg.norm(vector(h, "KF", "ref_g_mmps")) < 80 or
@@ -64,7 +69,7 @@ def select_spin_rows(rows, spin_ref_mradps=None, config=None):
 
 def analyze(text, spin_ref_mradps=None, metadata=None, raw_sha256=None):
     rows, _, parsing = parse(text)
-    config = resolve_capture_config(rows, metadata, raw_sha256)
+    config = resolve_capture_config(rows, metadata, raw_sha256, parsing["config_records"])
     target = spin_reference(rows, spin_ref_mradps, config)
     selected, rates = select_spin_rows(rows, target, config)
     if not selected or not rates:
@@ -110,7 +115,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--metadata", type=Path, help="采集配置 JSON，frame17 起必填")
+    parser.add_argument("--metadata", type=Path, help="采集配置 JSON，frame17/18 或无内嵌 CONFIG 时需要")
     parser.add_argument("--spin-ref-mradps", type=int, help="只覆盖配置中的自旋参考筛选值")
     args = parser.parse_args()
     try:

@@ -311,7 +311,7 @@ const INS_Init_Config g_imu_config = {
 #define HALF_TRACK_WIDTH (TRACK_WIDTH / 2.0f)
 /* 集中标定区。以下为工程初值，不能替代调试手册 S01～S14 的实测。 */
 #define MC_CONFIG_VERSION 0x20261111u
-#define MC_FRAME_REVISION 18u /* 纯自旋逐轮轮速微调；状态与文本字段布局不变。 */
+#define MC_FRAME_REVISION 19u /* 六行核心快照与低频详细诊断/配置，MCL1状态布局不变。 */
 #define MC_DEFAULT_MODE MC_SHADOW /* 估计/候选补偿只用于观测；实车验证前不向轮速追加。 */
 #ifndef MC_WHEEL_LIMIT_ROTATION_PRIORITY
 /* 2026-11-08 平移手感：轮速不足时等比例降低平移和旋转；原地自旋保持原目标。

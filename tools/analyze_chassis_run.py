@@ -9,7 +9,7 @@ import numpy as np
 
 from analyze_spin_phase import select_spin_rows, spin_reference, vector
 from chassis_capture_config import motor_mps_per_dps, read_capture_input, resolve_capture_config
-from chassis_text_parser import parse
+from chassis_text_parser import has_speed_spin_command, parse
 
 
 def summary(values):
@@ -44,7 +44,9 @@ def current_g_proxy(row, config=None):
 
 def analyze(text, spin_ref_mradps=None, metadata=None, raw_sha256=None):
     rows, _, parsing = parse(text)
-    config = resolve_capture_config(rows, metadata, raw_sha256)
+    config = resolve_capture_config(rows, metadata, raw_sha256, parsing["config_records"])
+    decimation = config.get("decimation", 20)
+    release_samples = max(1, round(500_000 / (config.get("period_us", 5000) * decimation)))
     target = spin_reference(rows, spin_ref_mradps, config)
     selected, _ = select_spin_rows(rows, target, config)
     groups = {}
@@ -74,7 +76,8 @@ def analyze(text, spin_ref_mradps=None, metadata=None, raw_sha256=None):
             "ref_mean_mmps": float(np.mean(a[:, 3])),
             "hat_wheel_difference_mean_mmps": float(np.mean(a[:, 4])),
         }
-    spin = [r for r in rows if r["STATUS"]["exit"] == "0" and r["WHEEL"]["omega_ref_mradps"] == str(target)]
+    spin = [r for r in rows if r["STATUS"]["exit"] == "0" and r["WHEEL"]["omega_ref_mradps"] == str(target)
+            and has_speed_spin_command(r)]
     large = [r for r in spin if np.linalg.norm(vector(r, "KF", "user_g_mmps")) > 800]
     out["large_input"] = {
         "n": len(large),
@@ -101,7 +104,7 @@ def analyze(text, spin_ref_mradps=None, metadata=None, raw_sha256=None):
             }
     out["gaps"] = [{"from_seq": int(p["STATUS"]["seq"]), "to_seq": int(r["STATUS"]["seq"]),
                     "dt_us": int(r["STATUS"]["t_us"])-int(p["STATUS"]["t_us"])}
-                   for p, r in zip(rows, rows[1:]) if int(r["STATUS"]["seq"])-int(p["STATUS"]["seq"]) > 20]
+                   for p, r in zip(rows, rows[1:]) if int(r["STATUS"]["seq"])-int(p["STATUS"]["seq"]) > decimation]
     out["dt_us"] = summary([int(r["STATUS"]["dt_us"]) for r in rows])
     out["tdrop_last"] = int(rows[-1]["STATUS"]["tdrop"])
     out["qdrop_last"] = int(rows[-1]["STATUS"]["qdrop"])
@@ -109,10 +112,10 @@ def analyze(text, spin_ref_mradps=None, metadata=None, raw_sha256=None):
     for i, (previous, row) in enumerate(zip(rows, rows[1:]), 1):
         if (np.linalg.norm(vector(previous, "KF", "user_g_mmps")) <= 20 or
                 np.linalg.norm(vector(row, "KF", "user_g_mmps")) > 20 or
-                int(row["STATUS"]["seq"])-int(previous["STATUS"]["seq"]) != 20):
+                int(row["STATUS"]["seq"])-int(previous["STATUS"]["seq"]) != decimation):
             continue
         window = []
-        for r in rows[max(0, i-1):i+5]:
+        for r in rows[max(0, i-1):i+release_samples]:
             window.append({"seq": int(r["STATUS"]["seq"]), "t_us": int(r["STATUS"]["t_us"]),
                            "omega_ref_mradps": int(r["WHEEL"]["omega_ref_mradps"]),
                            **{key: vector(r, "KF", f"{key}_g_mmps").tolist() for key in ("user", "ref", "hat", "dv", "cmd")},
@@ -127,7 +130,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--metadata", type=Path, help="采集配置 JSON，frame17 起必填")
+    parser.add_argument("--metadata", type=Path, help="采集配置 JSON，frame17/18 或无内嵌 CONFIG 时需要")
     parser.add_argument("--spin-ref-mradps", type=int, help="只覆盖配置中的自旋参考筛选值")
     args = parser.parse_args()
     try:

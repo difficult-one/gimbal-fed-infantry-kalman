@@ -76,6 +76,8 @@ typedef struct {
     float control_good_s, control_blend, control_velocity_error, control_accel_residual;
     uint16_t control_inhibit;
     uint8_t control_ready;
+    /* Adapter execution state, set before recording this control cycle. */
+    uint8_t chassis_mode, control_mode, output_enabled;
 } ChassisMotionObservationState;
 enum { MC_REJECT_PREFIX=1u, MC_REJECT_WINDOW=2u, MC_REJECT_VELOCITY=4u };
 enum {
@@ -126,6 +128,8 @@ void ChassisMotionUpdate(const ChassisMotionInput *input);
 void ChassisMotionControl(const float user_g[2], float omega, uint8_t enabled,
                           uint8_t control_key, float motor_ref_dps[4]);
 void ChassisMotionRecord(void);
+void ChassisMotionSetExecutionState(uint8_t chassis_mode, uint8_t control_mode,
+                                    uint8_t output_enabled);
 /* Called by the single control writer before queueing the current frame. */
 void ChassisMotionVisitRecord(void (*visit)(const ChassisMotionState *,
                                             const ChassisMotionObservationState *));

@@ -12,7 +12,9 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from analyze_chassis_run import wheel_g
-from analyze_spin_phase import spin_reference, wheel_radius_m
+from analyze_spin_phase import select_spin_rows, spin_reference, wheel_radius_m
+from chassis_capture_config import resolve_capture_config
+from chassis_text_parser import parse
 
 
 C45 = math.sqrt(0.5)
@@ -74,6 +76,35 @@ def metadata_for(raw):
             "spin_ref_mradps": 6892}
 
 
+def embedded_log():
+    raw = log_text(fw="20261111")
+    lines = []
+    for line in raw.decode().splitlines():
+        seq = line.split("seq=", 1)[1].split()[0]
+        if line.startswith("[YAW]"):
+            continue
+        if line.startswith("[STATUS]"):
+            line = line.replace("frame=17", "frame=19")
+            line += " imu_seq=100 chassis_mode=1 control_mode=0 output_enabled=1"
+        elif line.startswith("[WHEEL]"):
+            line += " raw_dps=0,0,0,0 age_us=1,2,3,4 wheel_seq=1,2,3,4 scale_x1000=1000"
+        elif line.startswith("[KF]"):
+            line += " p_x1e6=1,2,3,4"
+        elif line.startswith("[OBS]"):
+            line = " ".join(token for token in line.split() if not token.startswith(
+                ("q_1e6=", "gravity_mmps2=", "innov_x1000=", "r_x1e6=")))
+        lines.append(line)
+        if seq == "20" and line.startswith("[STATUS]"):
+            gear = ",".join(str(round(ratio*1000)) for ratio in metadata_for(raw)["gear_ratio"])
+            rows = ",".join(str(round(value*1e6)) for row in metadata_for(raw)["kinematics"] for value in row)
+            lines.append(f"[CONFIG] seq=20 fw=20261111 frame=19 period_us=5000 decimation=20 direct=1 "
+                         f"rotation_priority=0 imu_on_gimbal=1 imu_follows_pitch=1 drive=3 radius_um=76000,76000,76000,76000 "
+                         f"gear_x1000={gear} motor_sign=1,-1,1,1 rows_x1e6={rows} trim_dps=66,-107,29,12 "
+                         "spin_ref_mradps=6892 max_wheel_dps=36000,36000,36000,36000 current_limit_raw=8000 "
+                         "algebra_y_sign=-1 center_y_sign=-1")
+    return ("\r\n".join(lines)+"\r\n").encode()
+
+
 class CaptureCalibrationTests(unittest.TestCase):
     def setUp(self):
         directory = tempfile.TemporaryDirectory()
@@ -101,6 +132,80 @@ class CaptureCalibrationTests(unittest.TestCase):
         self.assertEqual(spin_reference([row(15)]), 8162)
         self.assertEqual(spin_reference([row(16)]), 6575)
         self.assertEqual(spin_reference([row(16)], 9000), 9000)
+
+    def test_frame19_embedded_configuration_replays_without_sidecar(self):
+        raw = embedded_log()
+        self.capture.write_bytes(raw)
+        result = self.run_script("analyze_chassis_run.py", self.capture)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(result.stdout)
+        config = report["capture_config"]
+        self.assertEqual(config["source"], "embedded_config")
+        self.assertEqual(config["frame"], 19)
+        self.assertEqual(config["direct_translation"], 1)
+        self.assertEqual(config["wheel_radius_m"], [.076]*4)
+        self.assertEqual(config["raw_sha256"], hashlib.sha256(raw).hexdigest())
+        self.assertAlmostEqual(report["directions"]["all"]["actual_mean_mmps"], 250, delta=.1)
+
+    def test_embedded_configuration_rejects_stale_conflicting_or_unsupported_values(self):
+        good = embedded_log().decode()
+        config = next(line for line in good.splitlines() if line.startswith("[CONFIG]"))
+        cases = (
+            good.replace(config, config.replace("fw=20261111", "fw=20261110")),
+            good.replace(config, config.replace("frame=19", "frame=18")),
+            good.replace(config, config.replace("radius_um=76000,76000,76000,76000", "radius_um=76000,0,76000,76000")),
+            good.replace(config, config.replace("drive=3", "drive=2")),
+            good.replace(config, config.replace("algebra_y_sign=-1", "algebra_y_sign=1")),
+            good + config.replace("seq=20", "seq=40").replace("direct=1", "direct=0")+"\n",
+            good + config.replace("seq=20", "seq=300").replace("direct=1", "direct=0")+"\n",
+        )
+        for text in cases:
+            with self.subTest(config=text[text.find("[CONFIG]"):text.find("[CONFIG]")+200]):
+                rows, _, parsing = parse(text)
+                with self.assertRaises(ValueError):
+                    resolve_capture_config(rows, None, hashlib.sha256(text.encode()).hexdigest(), parsing["config_records"])
+        # Repeated records with identical calibration, even without their core frame, are valid.
+        repeated = good + config.replace("seq=20", "seq=40")+"\n"
+        rows, _, parsing = parse(repeated)
+        self.assertEqual(resolve_capture_config(rows, None, hashlib.sha256(repeated.encode()).hexdigest(),
+                                                parsing["config_records"])["frame"], 19)
+        orphaned = good.replace(config, config.replace("seq=20", "seq=300"))
+        rows, _, parsing = parse(orphaned)
+        self.assertEqual(parsing["complete_frames"], 10)
+        self.assertEqual(parsing["diagnostic_only_sequences"], 1)
+        self.assertEqual(resolve_capture_config(rows, None, None, parsing["config_records"])["frame"], 19)
+
+    def test_frame19_spin_analysis_excludes_non_speed_spin_commands(self):
+        text = embedded_log().decode()
+        for original, substitute in (("chassis_mode=1", "chassis_mode=3"),
+                                     ("control_mode=0", "control_mode=1"),
+                                     ("output_enabled=1", "output_enabled=0")):
+            with self.subTest(field=original):
+                invalid = next(line for line in text.splitlines() if line.startswith("[STATUS] seq=40 "))
+                altered = text.replace(invalid, invalid.replace(original, substitute))
+                rows, _, parsing = parse(altered)
+                config = resolve_capture_config(rows, None, None, parsing["config_records"])
+                selected, rates = select_spin_rows(rows, config=config)
+                self.assertEqual([row["STATUS"]["seq"] for row in selected], ["160", "180", "200"])
+                self.assertEqual(len(rates), 7)
+                self.capture.write_text(altered, encoding="utf-8")
+                report = self.run_script("analyze_chassis_run.py", self.capture)
+                self.assertEqual(report.returncode, 0, report.stderr)
+                self.assertEqual(json.loads(report.stdout)["spin_execute"]["n"], 9)
+
+    def test_sidecar_must_agree_with_logged_configuration_within_quantization(self):
+        raw = embedded_log()
+        digest = hashlib.sha256(raw).hexdigest()
+        rows, _, parsing = parse(raw.decode())
+        records = parsing["config_records"]
+        config = resolve_capture_config(rows, None, digest, records)
+        sidecar = {**config, "wheel_radius_m": [.0760005]*4, "loaded_rolling_radius_m": [.073]*4}
+        resolved = resolve_capture_config(rows, sidecar, digest, records)
+        self.assertEqual(resolved["loaded_rolling_radius_m"], [.073]*4)
+        for key, stale in (("wheel_radius_m", [.0725]*4), ("gear_ratio", [19]*4),
+                           ("motor_sign", [1]*4), ("decimation", 10), ("spin_ref_mradps", 8162)):
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, key):
+                resolve_capture_config(rows, {**sidecar, key: stale}, digest, records)
 
     def test_unregistered_frames_and_mixed_firmware_require_explicit_configuration(self):
         for frame in (17, 18):

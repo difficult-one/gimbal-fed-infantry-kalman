@@ -557,6 +557,11 @@ void ChassisTask()
         }
     }
 
+    uint8_t drive_enabled = 1u;
+    for (unsigned i = 0; i < 4; ++i)
+        drive_enabled &= motors[i]->stop_flag == MOTOR_ENALBED;
+    ChassisMotionSetExecutionState((uint8_t)chassis_cmd_recv.chassis_mode,
+                                   (uint8_t)chassis_cmd_recv.control_mode, drive_enabled);
 #if WHEEL_IMU_CAPTURE
     ChassisMotionVisitRecord(WheelIMUCaptureRecordControl);
 #endif

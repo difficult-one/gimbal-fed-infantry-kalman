@@ -6,7 +6,7 @@ import math
 from pathlib import Path
 import statistics
 
-from chassis_text_parser import parse
+from chassis_text_parser import has_speed_spin_command, parse
 
 
 def audit(text):
@@ -20,10 +20,13 @@ def audit(text):
     def counts(tag, key):
         return dict(Counter(r[tag][key] for r in rows))
 
-    # 仅以记录到的目标/实测角速度选段，不能替代未记录的遥控运动模式。
-    spin = [r for r in rows if abs(int(r["WHEEL"]["omega_ref_mradps"])) > 4000]
-    steady = [r for r in spin if int(r["WHEEL"]["omega_ref_mradps"]) == 8162
-              and abs(int(r["WHEEL"]["omega_mradps"]) - 8162) < 500]
+    def high_rotation(row):
+        target = int(row["WHEEL"]["omega_ref_mradps"])
+        return abs(target) > 4000 and has_speed_spin_command(row)
+
+    spin = [r for r in rows if high_rotation(r)]
+    steady = [r for r in spin if r["STATUS"]["wheel_mask"] == "15"
+              and abs(int(r["WHEEL"]["omega_mradps"])-int(r["WHEEL"]["omega_ref_mradps"])) < 500]
     tracking = {}
     for i, name in enumerate(("LF", "RF", "LB", "RB")):
         error = [vector(r, "WHEEL", "dps")[i] - vector(r, "WHEEL", "req_dps")[i]
@@ -41,12 +44,18 @@ def audit(text):
         for key in ("gate", "recovering", "clock_gen", "att_flags"):
             observation[key] = dict(Counter(r["OBS"][key] for r in observed))
         observation["last_rejected_windows"] = int(observed[-1]["OBS"]["rejects"])
-        for key in ("q_1e6", "gravity_mmps2", "tilt_mrad", "chi_x1000", "innov_x1000", "r_x1e6", "dv_res_mmps"):
-            nonfinite[f"OBS.{key}"] = sum(-2147483648 in vector(r, "OBS", key) for r in observed)
-    for tag, key in (("IMU", "psi_bn_mrad"), ("IMU", "psi_gn_mrad"),
-                     ("IMU", "nav_a_mmps2"), ("IMU", "center_a_mmps2"),
-                     ("YAW", "ref_mdeg"), ("YAW", "fb_mdeg"), ("YAW", "out_raw")):
-        nonfinite[f"{tag}.{key}"] = sum(-2147483648 in vector(r, tag, key) for r in rows)
+    fields = {
+        "OBS": "q_1e6 gravity_mmps2 tilt_mrad chi_x1000 innov_x1000 r_x1e6 dv_res_mmps",
+        "DETAIL": "q_1e6 gravity_mmps2 innov_x1000 r_x1e6",
+        "IMU": "psi_bn_mrad psi_gn_mrad nav_a_mmps2 center_a_mmps2",
+        "YAW": "ref_mdeg fb_mdeg out_raw",
+        "KF": "p_x1e6",
+    }
+    for tag, names in fields.items():
+        for key in names.split():
+            present = [r for r in rows if key in r.get(tag, {})]
+            if present:
+                nonfinite[f"{tag}.{key}"] = sum(-2147483648 in vector(r, tag, key) for r in present)
     return {
         "complete_frames": len(rows), "incomplete_frames": parsing["incomplete_frames"],
         "parsing": parsing,
@@ -58,6 +67,7 @@ def audit(text):
                                          zip(vector(r, "KF", "cmd_g_mmps"), vector(r, "KF", "ref_g_mmps"))),
         "zero_dt_seq": [int(r["STATUS"]["seq"]) for r in rows if int(r["STATUS"]["dt_us"]) == 0],
         "nonfinite_frame_counts": nonfinite,
+        "diagnostic_frames": {tag: sum(tag in r for r in rows) for tag in ("YAW", "DETAIL", "HEALTH", "CONFIG")},
         "observation": observation,
         "kf_velocity_counts": counts("KF", "v_n_mmps"),
         "wheel_nav_velocity_counts": counts("WHEEL", "vn_mmps"),
