@@ -8,11 +8,104 @@ void ChassisMotionCustomizeConfig(ChassisMotionConfig *config)
 {
     customized++; config->max_velocity=.75f;
 }
+#if !defined(CHASSIS_DRIVE_SWERVE) && !defined(CHASSIS_DRIVE_MECANUM)
+static void AdvanceSample(ChassisMotionInput *input)
+{
+    input->time_us+=5000u;
+    input->imu_time_us=input->time_us;
+    input->imu_seq++;
+    for (unsigned i=0;i<4;++i) {
+        input->wheel_time_us[i]=input->time_us;
+        input->wheel_seq[i]++;
+    }
+    ChassisMotionUpdate(input);
+}
+
+static void TestDirectTranslation(const ChassisMotionConfig *config)
+{
+    assert(ChassisMotionConfigure(config));
+    ChassisMotionInput input={0};
+    input.pose_valid=1u;
+    input.wheel_online_mask=15u;
+    float motors[4], zero[2]={0};
+    AdvanceSample(&input);
+    ChassisMotionControl(zero,0.0f,1u,0u,motors);
+
+    /* Both directions exceed the historical chassis limit, while remaining
+     * feasible for the calibrated wheels. Each request must apply in one tick. */
+    const float requests[3][2]={{1.4f,.6f},{-1.4f,-.6f},{0.0f,0.0f}};
+    for (unsigned step=0;step<3;++step) {
+        AdvanceSample(&input);
+        ChassisMotionControl(requests[step],0.0f,1u,0u,motors);
+        ChassisMotionState state;
+        ChassisMotionGetState(&state);
+        for (unsigned axis=0;axis<2;++axis) {
+            assert(fabsf(state.ref_g[axis]-requests[step][axis])<1e-6f);
+            assert(fabsf(state.cmd_g[axis]-requests[step][axis])<1e-6f);
+        }
+        /* Independently decode the four calibrated X-omni wheel velocities. */
+        float wheel[4];
+        for (unsigned i=0;i<4;++i)
+            wheel[i]=motors[i]*g_chassis_config.mps_per_motor_dps;
+        float vx=(-wheel[0]+wheel[1]-wheel[2]+wheel[3])/(4.0f*.7071067812f);
+        float vy=(wheel[0]+wheel[1]-wheel[2]-wheel[3])/(4.0f*.7071067812f);
+        assert(fabsf(vx-requests[step][0])<1e-6f);
+        assert(fabsf(vy-requests[step][1])<1e-6f);
+    }
+
+    AdvanceSample(&input);
+    ChassisMotionControl(zero,1.0f,1u,0u,motors);
+    ChassisMotionState state;
+    ChassisMotionGetState(&state);
+    assert(fabsf(state.omega_ref-config->omega_slew*.005f)<1e-6f);
+
+    const float excessive[2]={20.0f,10.0f};
+    AdvanceSample(&input);
+    ChassisMotionControl(excessive,0.0f,1u,0u,motors);
+    ChassisMotionGetState(&state);
+    assert(state.limit_flags&MC_LIMIT_REF);
+    assert(state.ref_g[0]>0.0f && state.ref_g[0]<excessive[0]);
+    assert(fabsf(state.ref_g[0]/state.ref_g[1]-2.0f)<1e-6f);
+    for (unsigned i=0;i<4;++i)
+        assert(fabsf(motors[i])<=config->wheels.max_motor_dps[i]+.02f);
+
+    ChassisMotionControl(excessive,0.0f,0u,0u,motors);
+    for (unsigned i=0;i<4;++i) assert(motors[i]==0.0f);
+    AdvanceSample(&input);
+    const float invalid[2]={NAN,0.0f};
+    ChassisMotionControl(invalid,0.0f,1u,0u,motors);
+    for (unsigned i=0;i<4;++i) assert(motors[i]==0.0f);
+
+    /* Existing portable profiles may still request a bounded, ramped reference. */
+    ChassisMotionConfig bounded=*config;
+    bounded.direct_translation=0u;
+    assert(ChassisMotionConfigure(&bounded));
+    input=(ChassisMotionInput){0};
+    input.pose_valid=1u;
+    input.wheel_online_mask=15u;
+    AdvanceSample(&input);
+    ChassisMotionControl(zero,0.0f,1u,0u,motors);
+    AdvanceSample(&input);
+    ChassisMotionControl(requests[0],0.0f,1u,0u,motors);
+    ChassisMotionGetState(&state);
+    assert(fabsf(hypotf(state.ref_g[0],state.ref_g[1])-bounded.velocity_slew*.005f)<1e-6f);
+    for (unsigned n=0;n<300;++n) {
+        AdvanceSample(&input);
+        ChassisMotionControl(requests[0],0.0f,1u,0u,motors);
+    }
+    ChassisMotionGetState(&state);
+    assert(fabsf(hypotf(state.ref_g[0],state.ref_g[1])-bounded.max_velocity)<1e-6f);
+}
+#endif
 int main(void)
 {
     ChassisMotionInit();
     ChassisMotionConfig c; ChassisMotionGetConfig(&c);
     assert(customized==1 && c.max_velocity==.75f && c.initial_mode==MC_SHADOW);
+    assert(c.direct_translation==1u);
+    ChassisMotionConfig portable;
+    ChassisMotionConfigDefault(&portable,CK_OMNI_X);
+    assert(portable.direct_translation==0u);
 #ifdef CHASSIS_BOARD
     assert(!c.imu_on_gimbal && !c.imu_follows_pitch && c.use_center_accel);
 #else
@@ -71,6 +164,7 @@ int main(void)
     }
     ChassisMotionGetState(&state);
     assert(fabsf(state.omega_ref-9.0f)<2e-5f); // 6000 now exceeds the SI cap.
+    TestDirectTranslation(&c);
 #endif
-    puts("PASS: project board/drive selection, 152 mm wheel units, spin trim and user hook");
+    puts("PASS: project board/drive selection, 152 mm wheel units, spin trim, direct translation and bounded portable profile");
 }

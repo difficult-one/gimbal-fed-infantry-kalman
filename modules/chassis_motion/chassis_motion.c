@@ -782,12 +782,13 @@ void ChassisMotionControl(const float user[2], float omega, uint8_t enabled,
                                    config.max_phase_lead);
         direction.theta_output_bg += direction.lead_rad;
     }
-    if (LimitVector(target, config.max_velocity)) s.limit_flags |= MC_LIMIT_REF;
+    if (!config.direct_translation && LimitVector(target, config.max_velocity)) s.limit_flags |= MC_LIMIT_REF;
     omega = Clamp(omega, config.max_omega);
     LimitTwistToWheelSpeed(target, &omega, control_key);
-    SlewVector(target, s.ref_g, config.velocity_slew * s.dt_s);
+    if (config.direct_translation) memcpy(s.ref_g, target, sizeof(s.ref_g));
+    else SlewVector(target, s.ref_g, config.velocity_slew * s.dt_s);
     s.omega_ref += Clamp(omega - s.omega_ref, config.omega_slew * s.dt_s);
-    /* 平移与旋转独立斜坡的中间组合也需可实现，再把它作为误差目标。 */
+    /* 平移目标与旋转斜坡的当前组合也需可实现，再把它作为误差目标。 */
     LimitTwistToWheelSpeed(s.ref_g, &s.omega_ref, control_key);
     /* 以经过上游可行性处理的 ref 比较，不把上次 cmd 再当本次目标。 */
     for (uint8_t i = 0; i < 2; ++i) s.error_g[i] = s.ref_g[i] - s.hat_g[i];

@@ -310,7 +310,7 @@ const INS_Init_Config g_imu_config = {
 #define HALF_WHEEL_BASE (WHEEL_BASE / 2.0f)
 #define HALF_TRACK_WIDTH (TRACK_WIDTH / 2.0f)
 /* 集中标定区。以下为工程初值，不能替代调试手册 S01～S14 的实测。 */
-#define MC_CONFIG_VERSION 0x20261110u
+#define MC_CONFIG_VERSION 0x20261111u
 #define MC_FRAME_REVISION 18u /* 纯自旋逐轮轮速微调；状态与文本字段布局不变。 */
 #define MC_DEFAULT_MODE MC_SHADOW /* 估计/候选补偿只用于观测；实车验证前不向轮速追加。 */
 #ifndef MC_WHEEL_LIMIT_ROTATION_PRIORITY
@@ -457,10 +457,8 @@ const INS_Init_Config g_imu_config = {
 #define MC_KP_MAX 0.30f
 #define MC_DV_MAX_MPS 0.10f
 #define MC_DV_SLEW_MPS2 0.5f
-/* 遥控平移速度上限由 0.5 提高到 1.0 m/s；按平移向量限幅，斜向不额外加速。 */
+/* 兼容受限平移配置，仅 direct_translation=0 时使用以下速度上限和斜坡。 */
 #define MC_V_MAX_MPS 1.0f
-/* 2026-11-08 启速手感：平移参考加/减速 3 m/s²，0→1 m/s 约0.335 s。
- * 三种速控运动模式共用向量斜坡，松杆减速同速率；轮速可行性仍单独限制。 */
 #define MC_V_SLEW_MPS2 3.0f
 /* SI角速度上限；轮径修正不同时提高该限制。 */
 #define MC_W_MAX_RPS 9.0f
@@ -588,6 +586,7 @@ const ChassisMotionConfig g_chassis_motion_config = {
     .dv_slew = MC_DV_SLEW_MPS2,
     .max_velocity = MC_V_MAX_MPS,
     .velocity_slew = MC_V_SLEW_MPS2,
+    .direct_translation = 1u, /* 平移指令本周期直接进入四轮解算，仍约束轮速与电流。 */
     .max_omega = MC_W_MAX_RPS,
     .omega_slew = MC_W_SLEW_RPS2,
     .current_limit = MC_CURRENT_LIMIT_RAW,

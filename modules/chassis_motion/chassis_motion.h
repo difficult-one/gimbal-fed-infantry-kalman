@@ -39,6 +39,7 @@ typedef struct {
     uint32_t sample_max_us, sample_skew_us, inertial_max_us;
     uint16_t recover_samples, log_decimation;
     uint8_t rotation_priority;
+    uint8_t direct_translation; /* 1 bypasses max_velocity/velocity_slew; wheel limits still apply. */
 } ChassisMotionConfig;
 enum { MC_LIMIT_REF = 1u, MC_LIMIT_DV = 2u, MC_LIMIT_WHEEL = 4u };
 
