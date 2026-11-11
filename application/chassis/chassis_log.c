@@ -267,6 +267,7 @@ void ChassisMotionLogTask(void)
 #if WHEEL_IMU_CAPTURE
     ServiceCapture(&state);
 #endif
+    uint8_t last_core_sent = 0u;
     while (ChassisMotionPopDiagnosticLog(&state, &direction, &observation))
     {
         /* 六行核心数据来自同一控制快照，三元组为xyz，四轮LF/RF/LB/RB。
@@ -365,8 +366,10 @@ void ChassisMotionLogTask(void)
             (long)MotionLogScaled(observation.control_blend,1000),
             (long)MotionLogScaled(observation.control_velocity_error,1000),
             (long)MotionLogScaled(observation.control_accel_residual,1000));
-        if (MotionWritePacket(text, sizeof(text), used))
-            MotionAuxiliaryLog(&state, &observation, text, sizeof(text));
+        last_core_sent = MotionWritePacket(text, sizeof(text), used);
     }
+    /* 先发送积压的核心帧，辅助包只关联最后一帧已成功发送的快照。 */
+    if (last_core_sent)
+        MotionAuxiliaryLog(&state, &observation, text, sizeof(text));
     MotionDiagnosticLog();
 }

@@ -1,5 +1,6 @@
 """按版本严格对齐底盘文本日志，统计融合门控、非有限值和电机零输出。"""
 import argparse
+from bisect import bisect_left, bisect_right
 from collections import Counter
 import json
 import math
@@ -7,6 +8,39 @@ from pathlib import Path
 import statistics
 
 from chassis_text_parser import has_speed_spin_command, parse
+
+
+def _sequence_summary(rows, config_records, rejected_sequences):
+    """Count gaps between accepted core frames and wholly absent records."""
+    status = [row["STATUS"] for row in rows]
+    versions = {(record["fw"].lower(), int(record["frame"])) for record in status}
+    versions.update((record["fw"].lower(), int(record["frame"])) for record in config_records)
+    cadences = {(int(record["decimation"]), int(record["period_us"]))
+                for record in config_records}
+    decimation, period_us = (0, 0)
+    if len(versions) == 1 and len(cadences) <= 1:
+        decimation, period_us = next(iter(cadences), (20, 5000))
+    rejected = sorted(seq for seq in rejected_sequences if decimation > 0 and seq % decimation == 0)
+    gaps = missing = unchecked = 0
+    for before, after in zip(status, status[1:]):
+        first_seq, last_seq = int(before["seq"]), int(after["seq"])
+        step = last_seq-first_seq
+        elapsed = int(after["t_us"])-int(before["t_us"])
+        # Allow timing jitter down to half the nominal period. Backward clocks
+        # or counters and implausible jumps are ambiguous across sessions.
+        if (not 0 < decimation <= 65535 or period_us <= 0
+                or not 0 <= first_seq < last_seq <= 0xffffffff
+                or first_seq % decimation or last_seq % decimation
+                or elapsed <= 0 or step*period_us > 2*elapsed
+                or any(int(after[key]) < int(before[key]) for key in ("qdrop", "tdrop"))):
+            unchecked += 1
+            continue
+        if step > decimation:
+            gaps += 1
+            incomplete = bisect_left(rejected, last_seq)-bisect_right(rejected, first_seq)
+            missing += step//decimation-1-incomplete
+    return {"sequence_gaps": gaps, "missing_core_frames": missing,
+            "sequence_unchecked_transitions": unchecked}
 
 
 def audit(text):
@@ -58,6 +92,7 @@ def audit(text):
                 nonfinite[f"{tag}.{key}"] = sum(-2147483648 in vector(r, tag, key) for r in present)
     return {
         "complete_frames": len(rows), "incomplete_frames": parsing["incomplete_frames"],
+        **_sequence_summary(rows, parsing["config_records"], parsing["rejected_sequences"]),
         "parsing": parsing,
         "first_seq": int(rows[0]["STATUS"]["seq"]), "last_seq": int(rows[-1]["STATUS"]["seq"]),
         "first_t_us": int(rows[0]["STATUS"]["t_us"]), "last_t_us": int(rows[-1]["STATUS"]["t_us"]),

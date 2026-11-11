@@ -87,6 +87,62 @@ class TextLogTests(unittest.TestCase):
     def test_legacy_corrupt_yaw_is_still_rejected(self):
         self.assertEqual(parse(SAMPLE.replace("fb_mdeg=-306", "fb_mdeg=bad"))[0], [])
 
+    def test_audit_counts_missing_complete_core_frame(self):
+        first = frame19_sample()
+        last = first.replace("seq=20", "seq=60").replace("t_us=4656972", "t_us=4856972")
+        result = audit(first+last)
+        self.assertEqual(result["complete_frames"], 2)
+        self.assertEqual(result["incomplete_frames"], 0)
+        self.assertEqual(result["sequence_gaps"], 1)
+        self.assertEqual(result["missing_core_frames"], 1)
+        self.assertEqual(result["sequence_unchecked_transitions"], 0)
+
+    def test_audit_does_not_double_count_incomplete_frames(self):
+        first = frame19_sample()
+        partial = first.split("[OBS]")[0].replace("seq=20", "seq=40")
+        last = first.replace("seq=20", "seq=60").replace("t_us=4656972", "t_us=4856972")
+        result = audit(first+partial+last)
+        self.assertEqual(result["incomplete_frames"], 1)
+        self.assertEqual(result["sequence_gaps"], 1)
+        self.assertEqual(result["missing_core_frames"], 0)
+
+    def test_audit_gap_count_uses_recorded_cadence(self):
+        first = frame19_sample()
+        config = (
+            "[CONFIG] seq=20 fw=20261106 frame=19 period_us=5000 decimation=10 direct=1 "
+            "rotation_priority=0 imu_on_gimbal=1 imu_follows_pitch=1 drive=3 "
+            "radius_um=76000,76000,76000,76000 gear_x1000=19000,19000,19000,19000 "
+            "motor_sign=1,1,1,1 rows_x1e6=-707107,707107,229810,707107,707107,229810,"
+            "-707107,-707107,229810,707107,-707107,229810 trim_dps=66,-107,29,12 "
+            "spin_ref_mradps=6892 max_wheel_dps=36000,36000,36000,36000 current_limit_raw=8000 "
+            "algebra_y_sign=-1 center_y_sign=-1\n"
+        )
+        last = first.replace("seq=20", "seq=50").replace("t_us=4656972", "t_us=4806972")
+        result = audit(first+config+last)
+        self.assertEqual(result["sequence_gaps"], 1)
+        self.assertEqual(result["missing_core_frames"], 2)
+        self.assertEqual(result["sequence_unchecked_transitions"], 0)
+        for conflicting in (config.replace("decimation=10", "decimation=20"),
+                            config.replace("fw=20261106", "fw=20261111")):
+            result = audit(first+config+last+conflicting.replace("seq=20", "seq=50"))
+            self.assertEqual(result["missing_core_frames"], 0)
+            self.assertEqual(result["sequence_unchecked_transitions"], 1)
+
+    def test_audit_does_not_count_ambiguous_transitions_as_loss(self):
+        first = frame19_sample()
+        last = first.replace("seq=20", "seq=60").replace("t_us=4656972", "t_us=4856972")
+        cases = (last+first,
+                 first+last.replace("fw=20261106", "fw=20261111"),
+                 first+last.replace("seq=60", "seq=61"),
+                 first+last.replace("t_us=4856972", "t_us=1000"),
+                 first+last.replace("seq=60", "seq=4294967280"))
+        for capture in cases:
+            with self.subTest(capture=capture):
+                result = audit(capture)
+                self.assertEqual(result["sequence_gaps"], 0)
+                self.assertEqual(result["missing_core_frames"], 0)
+                self.assertEqual(result["sequence_unchecked_transitions"], 1)
+
     def test_audit_uses_recorded_signed_spin_target_and_optional_diagnostics(self):
         first = frame19_sample().replace("omega_mradps=0 omega_ref_mradps=0", "omega_mradps=6892 omega_ref_mradps=6892")
         second = first.replace("seq=20", "seq=40").replace("omega_mradps=6892 omega_ref_mradps=6892",

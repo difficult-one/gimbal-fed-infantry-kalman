@@ -62,11 +62,12 @@ static char captured[32][sizeof(packet)];
 static unsigned successful, fail_call;
 void DWT_GetClockDebug(DWT_ClockDebug *out) { memset(out,0,sizeof(*out)); }
 uint64_t DWT_GetTimeline_us(void) { return 1000000; }
-static unsigned calls, fail;
+static unsigned calls, fail, rtt_space=UINT32_MAX;
 static void INS_GetCompensationDebug(IMURigidStats *x, IMUYawBiasDebug *y) { *x=r; *y=a; }
 static unsigned SEGGER_RTT_Write(unsigned channel, const char *text, unsigned size) {
     assert(channel==0 && size<sizeof(packet)); calls++;
-    if (fail || calls==fail_call) return 0;
+    if (fail || calls==fail_call || size>rtt_space) return 0;
+    rtt_space-=size;
     memcpy(packet,text,size); packet[size]=0;
     assert(successful<32); memcpy(captured[successful],packet,size+1); successful++;
     return size;
@@ -140,10 +141,12 @@ void ChassisMotionGetConfig(ChassisMotionConfig *x) {
 uint8_t ChassisMotionPopDiagnosticLog(ChassisMotionState *s,ChassisMotionDirectionState *d,
                                      ChassisMotionObservationState *o) {
     if (!ready) return 0;
-    ready=0;
+    ready--;
     memset(s,pattern ? 0x7f : 0,sizeof(*s)); memset(d,pattern ? 0x7f : 0,sizeof(*d));
     memset(o,pattern ? 0x7f : 0,sizeof(*o));
     s->seq=sample_seq; s->time_us=sample_time; s->version=@CONFIG_VERSION@; s->mode=MC_SHADOW;
+    sample_seq+=20;
+    sample_time+=100000;
     if (!pattern) {
         s->imu_q[0]=.125f; o->gravity_b[2]=9.81f; o->attitude_chi_ratio=.123f;
         o->clock_generation=3; o->imu_recovering=1; o->gate=2;
@@ -204,6 +207,24 @@ int main(void) {
     assert(used==sizeof(short_packet));
     assert(!MotionWritePacket(short_packet,sizeof(short_packet),used));
     assert(calls==17 && successful==15 && motion_transport_drop==3);
+
+    /* Model a shared ring with space for two core frames and no host reads.
+     * A due auxiliary packet must wait until both queued core frames are sent. */
+    rtt_space=2500; sample_seq=240; sample_time=2800000; ready=2;
+    ChassisMotionLogTask();
+    assert(strstr(captured[15],"[STATUS] seq=240"));
+    assert(strstr(captured[16],"[STATUS] seq=260"));
+    assert(calls==20 && successful==17 && motion_transport_drop==4);
+    rtt_space=UINT32_MAX; ready=1;
+    ChassisMotionLogTask();
+    assert(calls==22 && successful==19 && strstr(packet,"[DETAIL] seq=280"));
+
+    /* If the final core was dropped, it cannot anchor a detail packet. */
+    rtt_space=1500; sample_seq=300; sample_time=4100000; ready=2;
+    ChassisMotionLogTask();
+    assert(calls==24 && successful==20 && motion_transport_drop==5);
+    assert(strstr(packet,"[STATUS] seq=300"));
+
     for(unsigned i=0;i<successful;++i) puts(captured[i]);
     return 0;
 }
@@ -227,7 +248,7 @@ packet = result.stdout
 print(result.stderr.strip())
 parser = runpy.run_path(str(root / "tools/chassis_text_parser.py"))
 frames, _, metadata = parser["parse"](packet)
-assert metadata["complete_frames"] == 9 and not metadata["incomplete_frames"]
+assert metadata["complete_frames"] == 13 and not metadata["incomplete_frames"]
 assert frames[0]["STATUS"]["frame"] == revision.rstrip("u")
 assert frames[0]["STATUS"]["fw"] == f"{int(config_version.rstrip('u'), 0):08x}"
 assert frames[0]["OBS"]["chi_x1000"] == "123"
