@@ -1,5 +1,5 @@
 #include "power_control.h"
-#include "general_def.h"
+#include "math_units.h"
 #include "bsp_dwt.h"
 #include "bsp_log.h"
 

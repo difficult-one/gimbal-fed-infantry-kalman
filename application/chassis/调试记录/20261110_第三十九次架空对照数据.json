@@ -1,0 +1,825 @@
+{
+  "supported": {
+    "source": "C:\\Users\\xuzih\\.codex\\attachments\\b6d1f884-43ab-4d44-9e9f-bce2c70e93a3\\Pasted text.txt",
+    "sha256": "5b746003d55e9d5dba17678180afc504958e21577e6f30a0528ace468f9a63a6",
+    "parsing": {
+      "observed_sequences": 714,
+      "complete_frames": 714,
+      "incomplete_frames": 0,
+      "rejected_sequences": [],
+      "issues": [],
+      "tag_counts": {
+        "STATUS": 714,
+        "WHEEL": 714,
+        "IMU": 714,
+        "KF": 714,
+        "YAW": 714,
+        "DIR": 714,
+        "OBS": 714,
+        "RIGID": 72
+      }
+    },
+    "versions": {
+      "20261108/16/2": 714
+    },
+    "gaps": [
+      {
+        "from_seq": "60",
+        "to_seq": "13680",
+        "seconds": 68.099994
+      },
+      {
+        "from_seq": "13920",
+        "to_seq": "13960",
+        "seconds": 0.20000100000000032
+      },
+      {
+        "from_seq": "14640",
+        "to_seq": "14780",
+        "seconds": 0.6999799999999965
+      },
+      {
+        "from_seq": "17920",
+        "to_seq": "18480",
+        "seconds": 2.8000020000000063
+      }
+    ],
+    "tdrop_first_last": [
+      0,
+      714
+    ],
+    "qdrop_first_last": [
+      0,
+      0
+    ],
+    "clock_generations": [
+      1
+    ],
+    "spin_reference_interval_s": [
+      91.96727899999999,
+      125.96726799999999
+    ],
+    "all_constant_reference": {
+      "n": 303,
+      "spans_s": [
+        [
+          92.46726799999999,
+          94.16726799999999
+        ],
+        [
+          96.96727,
+          125.367278
+        ]
+      ],
+      "valid": 303,
+      "accel_used": 303,
+      "exits": {
+        "0": 303
+      },
+      "gates": {
+        "1": 303
+      },
+      "reject_reasons": {
+        "0": 303
+      },
+      "center_rms_mps2": 0.04903962161812471,
+      "center_mean_mps2": [
+        0.01204950495049505,
+        -0.023838283828382836
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.72647677867996,
+        9.821026066557405,
+        9.915932627805036
+      ],
+      "gyro_xy_rms_radps": 0.003612866629219525,
+      "estimated_speed_mean_max_mps": [
+        0.00041869136955600435,
+        0.00282842712474619
+      ],
+      "wheel_omega_mean_radps": 6.564102310231023,
+      "heading_omega_mean_radps": -0.0005647839030474677,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 28,
+        "samples": 28041,
+        "ids": [
+          89,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ],
+        "before_rms_mmps2": 0.038034249241998275,
+        "after_rms_mmps2": 0.05043102757011908,
+        "corr_rms_mmps2": 0.03572983673618243
+      }
+    },
+    "stable_pure_spin": {
+      "n": 265,
+      "spans_s": [
+        [
+          98.96726799999999,
+          125.367278
+        ]
+      ],
+      "valid": 265,
+      "accel_used": 265,
+      "exits": {
+        "0": 265
+      },
+      "gates": {
+        "1": 265
+      },
+      "reject_reasons": {
+        "0": 265
+      },
+      "center_rms_mps2": 0.048996303287585447,
+      "center_mean_mps2": [
+        0.013116981132075472,
+        -0.022939622641509432
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.727893253568618,
+        9.824521667745458,
+        9.914913131203644
+      ],
+      "gyro_xy_rms_radps": 0.003611303010543738,
+      "estimated_speed_mean_max_mps": [
+        0.00033859593230701075,
+        0.001414213562373095
+      ],
+      "wheel_omega_mean_radps": 6.564143396226415,
+      "heading_omega_mean_radps": -0.0005681816029615138,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 25,
+        "samples": 25037,
+        "ids": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120
+        ],
+        "before_rms_mmps2": 0.038446328071606,
+        "after_rms_mmps2": 0.050740564293276204,
+        "corr_rms_mmps2": 0.03579743182038477
+      }
+    },
+    "before_last_10s": {
+      "n": 92,
+      "spans_s": [
+        [
+          81.967282,
+          91.067272
+        ]
+      ],
+      "valid": 92,
+      "accel_used": 92,
+      "exits": {
+        "0": 92
+      },
+      "gates": {
+        "1": 92
+      },
+      "reject_reasons": {
+        "0": 92
+      },
+      "center_rms_mps2": 0.04166885501499735,
+      "center_mean_mps2": [
+        0.0044130434782608694,
+        -0.02390217391304348
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.7998233774443,
+        9.821619749290043,
+        9.84322959139024
+      ],
+      "gyro_xy_rms_radps": 0.0013870519252999365,
+      "estimated_speed_mean_max_mps": [
+        0.005541333082089586,
+        0.00608276253029822
+      ],
+      "wheel_omega_mean_radps": 0.0,
+      "heading_omega_mean_radps": -0.00021978046129721008,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 8,
+        "samples": 8012,
+        "ids": [
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "before_rms_mmps2": 0.027518638443921765,
+        "after_rms_mmps2": 0.04047726844919674,
+        "corr_rms_mmps2": 0.0327815352968005
+      }
+    },
+    "after_first_5s": {
+      "n": 51,
+      "spans_s": [
+        [
+          126.167279,
+          131.167272
+        ]
+      ],
+      "valid": 51,
+      "accel_used": 51,
+      "exits": {
+        "0": 51
+      },
+      "gates": {
+        "1": 51
+      },
+      "reject_reasons": {
+        "0": 51
+      },
+      "center_rms_mps2": 0.04807653212510726,
+      "center_mean_mps2": [
+        0.00819607843137255,
+        -0.03480392156862745
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.799732793543356,
+        9.82701017604032,
+        9.864846904765507
+      ],
+      "gyro_xy_rms_radps": 0.0016329931618554521,
+      "estimated_speed_mean_max_mps": [
+        0.006983184958695982,
+        0.00824621125123532
+      ],
+      "wheel_omega_mean_radps": 0.00017647058823529413,
+      "heading_omega_mean_radps": -0.0008000011200015674,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 4,
+        "samples": 4007,
+        "ids": [
+          123,
+          124,
+          125,
+          126
+        ],
+        "before_rms_mmps2": 0.03331309301474623,
+        "after_rms_mmps2": 0.04687496976124139,
+        "corr_rms_mmps2": 0.035326842130226355
+      }
+    },
+    "tail_10s": {
+      "n": 100,
+      "spans_s": [
+        [
+          137.46728299999998,
+          147.367282
+        ]
+      ],
+      "valid": 100,
+      "accel_used": 100,
+      "exits": {
+        "0": 100
+      },
+      "gates": {
+        "1": 100
+      },
+      "reject_reasons": {
+        "0": 100
+      },
+      "center_rms_mps2": 0.04776012981556897,
+      "center_mean_mps2": [
+        0.00776,
+        -0.03347
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.800438051411462,
+        9.822710149144498,
+        9.854546234544882
+      ],
+      "gyro_xy_rms_radps": 0.0017117242768623687,
+      "estimated_speed_mean_max_mps": [
+        0.006653540460446991,
+        0.007280109889280519
+      ],
+      "wheel_omega_mean_radps": 0.0,
+      "heading_omega_mean_radps": -0.0006060606672788547,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 9,
+        "samples": 9014,
+        "ids": [
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142
+        ],
+        "before_rms_mmps2": 0.03226988991969654,
+        "after_rms_mmps2": 0.04640429455730836,
+        "corr_rms_mmps2": 0.03613444068222043
+      }
+    },
+    "shadow_cmd_minus_ref_max_mps": 0.0,
+    "reject_counter_first_last": [
+      0,
+      154
+    ],
+    "aux_counts": {
+      "rigid": 72,
+      "aid": 72,
+      "clock": 72
+    }
+  },
+  "ground": {
+    "source": "C:\\Users\\xuzih\\.codex\\attachments\\0af3da59-e597-489f-a377-14d65dea1291\\已粘贴的文本.txt",
+    "sha256": "eb15add768ebb9dd483ca06b423e4f38c16198f25ca432a8d0ff8e6b977fc8c9",
+    "parsing": {
+      "observed_sequences": 1370,
+      "complete_frames": 1369,
+      "incomplete_frames": 1,
+      "rejected_sequences": [
+        17160
+      ],
+      "issues": [],
+      "tag_counts": {
+        "WHEEL": 1370,
+        "IMU": 1370,
+        "KF": 1370,
+        "YAW": 1370,
+        "DIR": 1370,
+        "OBS": 1370,
+        "STATUS": 1369,
+        "RIGID": 137
+      }
+    },
+    "versions": {
+      "20261108/16/2": 1369
+    },
+    "gaps": [],
+    "tdrop_first_last": [
+      184,
+      184
+    ],
+    "qdrop_first_last": [
+      0,
+      0
+    ],
+    "clock_generations": [
+      1
+    ],
+    "spin_reference_interval_s": [
+      96.667704,
+      160.467695
+    ],
+    "all_constant_reference": {
+      "n": 626,
+      "spans_s": [
+        [
+          97.367684,
+          159.867694
+        ]
+      ],
+      "valid": 1,
+      "accel_used": 7,
+      "exits": {
+        "12": 619,
+        "8": 6,
+        "0": 1
+      },
+      "gates": {
+        "2": 619,
+        "1": 7
+      },
+      "reject_reasons": {
+        "1": 618,
+        "0": 7,
+        "2": 1
+      },
+      "center_rms_mps2": 0.9948572167849703,
+      "center_mean_mps2": [
+        -0.13295047923322684,
+        0.025349840255591054
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        8.222686006611887,
+        9.913447733854545,
+        11.672001100176905
+      ],
+      "gyro_xy_rms_radps": 0.15129028125189653,
+      "estimated_speed_mean_max_mps": [
+        0.008466517625551192,
+        0.03220248437620924
+      ],
+      "wheel_omega_mean_radps": 6.551477635782748,
+      "heading_omega_mean_radps": 6.801288526005226,
+      "gravity_update_rejected": 368,
+      "fullrate": {
+        "windows": 61,
+        "samples": 61087,
+        "ids": [
+          94,
+          95,
+          96,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155
+        ],
+        "before_rms_mmps2": 1.0104214462826042,
+        "after_rms_mmps2": 0.9768239782761126,
+        "corr_rms_mmps2": 0.36394726344871375
+      }
+    },
+    "stable_pure_spin": {
+      "n": 606,
+      "spans_s": [
+        [
+          99.367688,
+          159.867694
+        ]
+      ],
+      "valid": 1,
+      "accel_used": 7,
+      "exits": {
+        "12": 599,
+        "8": 6,
+        "0": 1
+      },
+      "gates": {
+        "2": 599,
+        "1": 7
+      },
+      "reject_reasons": {
+        "1": 598,
+        "0": 7,
+        "2": 1
+      },
+      "center_rms_mps2": 0.9877957342190005,
+      "center_mean_mps2": [
+        -0.13631188118811882,
+        0.03145049504950495
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        8.211449618161234,
+        9.905796026184863,
+        11.672001100176905
+      ],
+      "gyro_xy_rms_radps": 0.1519806201819531,
+      "estimated_speed_mean_max_mps": [
+        0.00834440983887166,
+        0.03220248437620924
+      ],
+      "wheel_omega_mean_radps": 6.552014851485149,
+      "heading_omega_mean_radps": 6.801259330021433,
+      "gravity_update_rejected": 354,
+      "fullrate": {
+        "windows": 59,
+        "samples": 59084,
+        "ids": [
+          96,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155
+        ],
+        "before_rms_mmps2": 1.0054657973984,
+        "after_rms_mmps2": 0.9711467659644759,
+        "corr_rms_mmps2": 0.3630759471132013
+      }
+    },
+    "before_last_10s": {
+      "n": 61,
+      "spans_s": [
+        [
+          90.467688,
+          96.467708
+        ]
+      ],
+      "valid": 61,
+      "accel_used": 61,
+      "exits": {
+        "0": 61
+      },
+      "gates": {
+        "1": 61
+      },
+      "reject_reasons": {
+        "0": 61
+      },
+      "center_rms_mps2": 0.035035345150805426,
+      "center_mean_mps2": [
+        0.001918032786885246,
+        -0.009950819672131147
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.770202966161962,
+        9.800301628011251,
+        9.831442111918271
+      ],
+      "gyro_xy_rms_radps": 0.0022506829564582845,
+      "estimated_speed_mean_max_mps": [
+        0.0012654669722416056,
+        0.0022360679774997894
+      ],
+      "wheel_omega_mean_radps": 0.0,
+      "heading_omega_mean_radps": -0.0001666661111129628,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 5,
+        "samples": 5008,
+        "ids": [
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "before_rms_mmps2": 0.022531150782662084,
+        "after_rms_mmps2": 0.03421335286663669,
+        "corr_rms_mmps2": 0.033063829981342815
+      }
+    },
+    "after_first_5s": {
+      "n": 50,
+      "spans_s": [
+        [
+          160.767684,
+          165.667688
+        ]
+      ],
+      "valid": 35,
+      "accel_used": 36,
+      "exits": {
+        "12": 14,
+        "8": 1,
+        "0": 35
+      },
+      "gates": {
+        "2": 14,
+        "1": 36
+      },
+      "reject_reasons": {
+        "1": 14,
+        "0": 36
+      },
+      "center_rms_mps2": 0.18521922146472813,
+      "center_mean_mps2": [
+        -0.13478,
+        0.02346
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.772815121601358,
+        9.807813976550475,
+        9.833796449125781
+      ],
+      "gyro_xy_rms_radps": 0.005370288632839021,
+      "estimated_speed_mean_max_mps": [
+        0.015694131504199946,
+        0.029274562336608894
+      ],
+      "wheel_omega_mean_radps": -0.00021999999999999998,
+      "heading_omega_mean_radps": 0.0016326517284475693,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 4,
+        "samples": 4007,
+        "ids": [
+          157,
+          158,
+          159,
+          160
+        ],
+        "before_rms_mmps2": 0.15373542040108934,
+        "after_rms_mmps2": 0.15326180682901117,
+        "corr_rms_mmps2": 0.0350913741830013
+      }
+    },
+    "tail_10s": {
+      "n": 100,
+      "spans_s": [
+        [
+          217.367694,
+          227.267709
+        ]
+      ],
+      "valid": 100,
+      "accel_used": 100,
+      "exits": {
+        "0": 100
+      },
+      "gates": {
+        "1": 100
+      },
+      "reject_reasons": {
+        "0": 100
+      },
+      "center_rms_mps2": 0.034974419223197974,
+      "center_mean_mps2": [
+        -0.00527,
+        -0.011000000000000001
+      ],
+      "raw_norm_p5_p50_p95_mps2": [
+        9.782427109272511,
+        9.80814758248373,
+        9.830615003679062
+      ],
+      "gyro_xy_rms_radps": 0.0014212670403551894,
+      "estimated_speed_mean_max_mps": [
+        0.002091763695642779,
+        0.0036055512754639895
+      ],
+      "wheel_omega_mean_radps": 0.0,
+      "heading_omega_mean_radps": -0.00010100994796472535,
+      "gravity_update_rejected": 0,
+      "fullrate": {
+        "windows": 9,
+        "samples": 9015,
+        "ids": [
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222
+        ],
+        "before_rms_mmps2": 0.017178276340675324,
+        "after_rms_mmps2": 0.03144825046033697,
+        "corr_rms_mmps2": 0.030461417364670836
+      }
+    },
+    "shadow_cmd_minus_ref_max_mps": 0.0,
+    "reject_counter_first_last": [
+      98,
+      1048
+    ],
+    "aux_counts": {
+      "rigid": 137,
+      "aid": 137,
+      "clock": 137
+    }
+  }
+}

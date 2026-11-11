@@ -5,7 +5,8 @@
 #include "SEGGER_RTT_Conf.h"
 #include <stdio.h>
 
-#define BUFFER_INDEX 0
+/* 当前仅启用通道 0 的底盘文本日志；通道 1/2 输出暂时屏蔽。 */
+#define BUFFER_INDEX 2u
 
 
 
@@ -13,23 +14,31 @@
  * @brief 日志系统初始化
  * 
  */
-void BSPLogInit();
+void BSPLogInit(unsigned motion_channel);
 
 /**
  * @brief 日志功能原型,供下面的LOGI,LOGW,LOGE等使用
  * 
  */
+#if 0 /* 暂停通道 2 文本日志；保留原实现，便于恢复。 */
 #define LOG_PROTO(type,color,format,...)            \
         SEGGER_RTT_printf(BUFFER_INDEX,"  %s%s"format"\r\n%s", \
                           color,                    \
                           type,                     \
                           ##__VA_ARGS__,            \
                           RTT_CTRL_RESET)
+#else
+#define LOG_PROTO(type,color,format,...) ((void)0)
+#endif
 
 /*------下面是日志输出的接口--------*/
 
 /* 清屏 */
-#define LOG_CLEAR() SEGGER_RTT_WriteString(0, "  "RTT_CTRL_CLEAR)
+#if 0 /* 当前仅保留通道 0，不向文本通道发送清屏指令。 */
+#define LOG_CLEAR() SEGGER_RTT_WriteString(BUFFER_INDEX, "  "RTT_CTRL_CLEAR)
+#else
+#define LOG_CLEAR() ((void)0)
+#endif
 
 /* 无颜色日志输出 */
 #define LOG(format,...) LOG_PROTO("","",format,##__VA_ARGS__)

@@ -1,3 +1,4 @@
+#include "usart.h"
 /**
  * @file bsp_usart.c
  * @author neozng
@@ -131,5 +132,17 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
             __HAL_DMA_DISABLE_IT(usart_instance[i]->usart_handle->hdmarx, DMA_IT_HT);
             return;
         }
+    }
+}
+UART_HandleTypeDef *BSPUSARTHandle(unsigned port)
+{
+    switch (port) {
+    case 1: return &huart1;
+    case 2: return &huart2;
+    case 3: return &huart3;
+    case 6: return &huart6;
+    case 7: return &huart7;
+    case 8: return &huart8;
+    default: return NULL;
     }
 }

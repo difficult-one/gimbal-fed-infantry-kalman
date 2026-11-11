@@ -32,24 +32,19 @@ unsigned SEGGER_RTT_Write(unsigned index, const void *buffer, unsigned size)
     return size;
 }
 
-void ChassisMotionGetConfig(ChassisMotionConfig *config)
-{
-    static const float rows[4][3] = {
+static const WheelIMUCaptureConfig capture_config = {
+    .version = 0x20261110u, .frame_revision = 18u,
+    .spin_ref_radps = 6.892705f, .yaw_encoder_sign = -1.0f, .yaw_zero_deg = 16.25965f,
+    .algebra_y_sign = -1, .center_y_sign = -1,
+    .radius_m = {.076f,.076f,.076f,.076f},
+    .gear_ratio = {19.0f,19.0f,19.0f,19.0f},
+    .motor_sign = {1.0f,1.0f,1.0f,1.0f},
+    .rows = {
         {-.70710678f,.70710678f,.2298097f}, {.70710678f,.70710678f,.2298097f},
-        {-.70710678f,-.70710678f,.2298097f}, {.70710678f,-.70710678f,.2298097f}
-    };
-    *config = (ChassisMotionConfig){
-        .version = 0x20261110u, .wheels.type = CK_CUSTOM, .max_omega = 9.0f,
-        .algebra_y_sign = -1, .center_y_sign = -1,
-        .spin_wheel_trim_dps = {66,-107,29,12}
-    };
-    memcpy(config->wheels.rows, rows, sizeof(rows));
-    for (unsigned i=0; i<4; ++i) {
-        config->wheels.radius_m[i] = .076f;
-        config->wheels.gear_ratio[i] = 19.0f;
-        config->wheels.motor_sign[i] = 1.0f;
-    }
-}
+        {-.70710678f,-.70710678f,.2298097f}, {.70710678f,-.70710678f,.2298097f},
+    },
+    .spin_trim_dps = {66,-107,29,12},
+};
 
 static unsigned ReadU16(unsigned offset)
 {
@@ -58,7 +53,7 @@ static unsigned ReadU16(unsigned offset)
 
 static void Drain(void)
 {
-    for (unsigned i=0; i<256; ++i) WheelIMUCaptureService(0, 16.25965f);
+    for (unsigned i=0; i<256; ++i) WheelIMUCaptureService(NULL, 350000u, 1u);
 }
 
 int main(int argc, char **argv)
@@ -67,12 +62,12 @@ int main(int argc, char **argv)
     WheelIMUCaptureRegisterMotor(WIMU_LF, &wheel);
     now = UINT32_MAX - 100;
     generation = 7;
-    WheelIMUCaptureService(0, 16.25965f);
+    WheelIMUCaptureService(NULL, 350000u, 1u);
     assert(configured == 1 && !WheelIMUCaptureActive());
     wheel_imu_capture_request = 42;
-    WheelIMUCaptureService(0, 16.25965f);
+    WheelIMUCaptureService(NULL, 350000u, 1u);
     assert(!WheelIMUCaptureActive() && wheel_imu_capture_request == 42);
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     assert(WheelIMUCaptureActive() && !wheel_imu_capture_request);
 
     WheelIMUCaptureImu imu = {.time_us=30, .accepted_seq=8, .attempt_seq=10, .generation=7,
@@ -99,7 +94,7 @@ int main(int argc, char **argv)
 
     now += 350000u;
     transport_full = 1;
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     assert(!WheelIMUCaptureActive() && written == 0);
     transport_full = 0;
     Drain();
@@ -111,7 +106,7 @@ int main(int argc, char **argv)
 
     written = 0;
     wheel_imu_capture_request = 43;
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     assert(WheelIMUCaptureActive());
     for (unsigned i=0; i<369; ++i)
         WheelIMUCaptureRecordMotor(&wheel, now+i*10u, i, -12, 370, -70.0f);
@@ -122,16 +117,16 @@ int main(int argc, char **argv)
 
     written = 0;
     wheel_imu_capture_request = 44;
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     assert(WheelIMUCaptureActive());
     generation++;
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     Drain();
     assert(written == 188 && ReadU16(32) == 3);
 
     written = 0;
     wheel_imu_capture_request = 45;
-    WheelIMUCaptureService(1, 16.25965f);
+    WheelIMUCaptureService(&capture_config, 350000u, 1u);
     obs.clock_generation = generation;
     state.time_us = now;
     state.mode = MC_ACTIVE_FIXED;

@@ -16,7 +16,7 @@
 #define POWER_CONTROL_H
 
 #include "bsp_can.h"
-#include "controller.h"
+#include "pid.h"
 #include "motor_def.h"
 #include "stdint.h"
 #include "daemon.h"

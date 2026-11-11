@@ -1,4 +1,4 @@
-#include "HC05.h"
+#include "hc05.h"
 #include "bsp_usart.h"
 #include "memory.h"
 

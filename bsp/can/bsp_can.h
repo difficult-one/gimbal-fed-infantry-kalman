@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include "can.h"
 
+CAN_HandleTypeDef *BSPCANHandle(unsigned port);
+
 // 最多能够支持的CAN设备数
 #define CAN_MX_REGISTER_CNT 16     // 这个数量取决于CAN总线的负载
 #define MX_CAN_FILTER_CNT (2 * 14) // 最多可以使用的CAN过滤器数量,目前远不会用到这么多

@@ -1,5 +1,5 @@
-#include "chassis_motion.h"
-#include "chassis_motion_config.h"
+#include "chassis_setup.h"
+#include "config.h"
 #include "kalman_filter.h"
 #include <assert.h>
 #include <math.h>
@@ -74,7 +74,7 @@ static void CompareJoseph(void)
     static KalmanFilter_t k;
     double x[2][2]={{0}}, p[2][2][2]={{{.04,0},{0,.25}},{{.04,0},{0,.25}}};
     Kalman_Filter_Init(&k,4,0,4); k.UseAutoAdjustment=0;
-    for(unsigned i=0;i<4;++i) { k.P_data[5*i]=(i&1)?MC_P_A:MC_P_V; k.R_data[5*i]=(i&1)?MC_R_AX:MC_R_VX; }
+    for(unsigned i=0;i<4;++i) { k.P_data[5*i]=(i&1)?g_chassis_motion_config.p_accel:g_chassis_motion_config.p_velocity; k.R_data[5*i]=(i&1)?g_chassis_motion_config.r_accel[0]:g_chassis_motion_config.r_velocity[0]; }
     for(unsigned step=0;step<5000;++step)
     {
         float dt=.001f+(step%11)*.0009f, z[4]={.2f*sinf(step*.01f),.5f*cosf(step*.013f),-.1f*cosf(step*.003f),.3f*sinf(step*.007f)};
@@ -121,7 +121,7 @@ static void Frame(float vx_n, float vy_n, float omega, float psi_g, float theta,
     for(unsigned i=0;i<4;++i)
     {
         in.wheel_seq[i]++; in.wheel_time_us[i]=in.time_us;
-        in.motor_dps[i]=wheels[i]/MC_MPS_PER_DPS;
+        in.motor_dps[i]=wheels[i]/g_chassis_config.mps_per_motor_dps;
     }
     ChassisMotionUpdate(&in);
 }
@@ -135,8 +135,8 @@ static void Control(float x,float y,float omega)
 static void TestWheelLimitPolicy(void)
 {
     /* Exercise a high legacy request after the physical SI angular-speed cap. */
-    const float requested_spin=6000.0f*MC_LEGACY_W_SCALE;
-    const float spin=fminf(requested_spin,MC_W_MAX_RPS);
+    const float requested_spin=6000.0f*g_chassis_config.legacy_omega_scale;
+    const float spin=fminf(requested_spin,g_chassis_motion_config.max_omega);
     ChassisMotionInit();
     ChassisMotionSetMode(MC_ESTIMATE_ONLY);
     for(unsigned i=0;i<300;++i)
@@ -147,33 +147,33 @@ static void TestWheelLimitPolicy(void)
     float wheel_mps[4],twist[3];
     for(unsigned i=0;i<4;++i)
     {
-        assert(fabsf(refs[i])<=MC_WHEEL_MAX_DPS+.01f);
-        wheel_mps[i]=refs[i]*MC_MPS_PER_DPS;
+        assert(fabsf(refs[i])<=g_chassis_motion_config.wheels.max_motor_dps[0]+.01f);
+        wheel_mps[i]=refs[i]*g_chassis_config.mps_per_motor_dps;
     }
     assert(ChassisMotionInverse(wheel_mps,twist));
-#if MC_WHEEL_LIMIT_ROTATION_PRIORITY
-    Near(twist[2],spin,0.01f);
-    assert(state.ref_g[0]>0.0f && state.ref_g[0]<.75f);
-    assert(state.limit_flags&MC_LIMIT_REF);
-#else
-    Near(twist[0]/twist[2],.75f/spin,2e-3f);
-#endif
-
-#if MC_IMU_ACCEL_VALIDATED && MC_WHEEL_LIMIT_ROTATION_PRIORITY
-    ChassisMotionInit();
-    ChassisMotionSetMode(MC_ACTIVE_FIXED);
-    for(unsigned i=0;i<300;++i)
-    {
-        Frame(0,0,0,0,0,.005f);
-        Control(.75f,0,requested_spin);
+    if (g_chassis_motion_config.rotation_priority) {
+        Near(twist[2],spin,0.01f);
+        assert(state.ref_g[0]>0.0f && state.ref_g[0]<.75f);
+        assert(state.limit_flags&MC_LIMIT_REF);
+    } else {
+        Near(twist[0]/twist[2],.75f/spin,2e-3f);
     }
-    assert(state.limit_flags&MC_LIMIT_WHEEL);
-    Near(state.kp,0,0);
-    Near(state.dv_g[0],0,0); Near(state.dv_g[1],0,0);
-    Near(state.cmd_g[0],state.ref_g[0],1e-7f);
-    Near(state.cmd_g[1],state.ref_g[1],1e-7f);
-    for(unsigned i=0;i<4;++i) assert(fabsf(refs[i])<=MC_WHEEL_MAX_DPS+.01f);
-#endif
+
+    if (g_chassis_motion_config.accel_enabled && g_chassis_motion_config.rotation_priority) {
+        ChassisMotionInit();
+        ChassisMotionSetMode(MC_ACTIVE_FIXED);
+        for(unsigned i=0;i<300;++i)
+        {
+            Frame(0,0,0,0,0,.005f);
+            Control(.75f,0,requested_spin);
+        }
+        assert(state.limit_flags&MC_LIMIT_WHEEL);
+        Near(state.kp,0,0);
+        Near(state.dv_g[0],0,0); Near(state.dv_g[1],0,0);
+        Near(state.cmd_g[0],state.ref_g[0],1e-7f);
+        Near(state.cmd_g[1],state.ref_g[1],1e-7f);
+        for(unsigned i=0;i<4;++i) assert(fabsf(refs[i])<=g_chassis_motion_config.wheels.max_motor_dps[0]+.01f);
+    }
 }
 
 int main(void)
@@ -192,7 +192,7 @@ int main(void)
     ChassisMotionGetState(&state);
     assert(state.wheel_valid_mask==15 && !state.estimate_valid);
     assert(state.exit_reason==MC_EXIT_POSE && state.observation_mask==0);
-    Near(6000*MC_MPS_PER_DPS,0.41887902f,1e-7f); // 152 mm wheel, 19:1 rotor feedback.
+    Near(6000*g_chassis_config.mps_per_motor_dps,0.41887902f,1e-7f); // 152 mm wheel, 19:1 rotor feedback.
     /* 几何闭环覆盖三自由度和混合运动。 */
     for(unsigned i=0;i<100;++i)
     {
@@ -207,24 +207,24 @@ int main(void)
     in.time_us=UINT32_MAX-20000u;
     for(unsigned i=0;i<300;++i) { Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); }
     Near(state.hat_g[0],.15f,1e-5f); Near(state.hat_g[1],-.04f,1e-5f);
-    assert(state.estimate_valid==(MC_IMU_ACCEL_VALIDATED?1:0));
+    assert(state.estimate_valid==(g_chassis_motion_config.accel_enabled?1:0));
     float baseline[4]; memcpy(baseline,refs,sizeof(refs));
     ChassisMotionSetMode(MC_SHADOW);
     for(unsigned i=0;i<100;++i) { Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); }
     for(unsigned i=0;i<4;++i) Near(refs[i],baseline[i],1e-3f);
-#if MC_IMU_ACCEL_VALIDATED
-    Near(state.dv_raw_g[0],.005f,2e-6f); Near(state.dv_raw_g[1],.004f,2e-6f);
-    ChassisMotionSetMode(MC_ACTIVE_FIXED);
-    for(unsigned i=0;i<400;++i) { Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); }
-    Near(state.cmd_g[0],.205f,2e-6f); Near(state.cmd_g[1],.004f,2e-6f);
-    ChassisMotionSetMode(MC_ACTIVE_SCHEDULED);
-    Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); Near(state.kp,0,1e-8f);
-    Frame(.15f,.04f,2,0,0,.005f); Control(.2f,0,2); Near(state.kp,.1f,1e-6f);
-    in.current_request[0]=MC_CURRENT_LIMIT_RAW;
-    Frame(.15f,.04f,2,0,0,.005f); Control(.2f,0,2);
-    assert(state.current_saturated_mask==1); Near(state.kp,0,0);
-    in.current_request[0]=0;
-#endif
+    if (g_chassis_motion_config.accel_enabled) {
+        Near(state.dv_raw_g[0],.005f,2e-6f); Near(state.dv_raw_g[1],.004f,2e-6f);
+        ChassisMotionSetMode(MC_ACTIVE_FIXED);
+        for(unsigned i=0;i<400;++i) { Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); }
+        Near(state.cmd_g[0],.205f,2e-6f); Near(state.cmd_g[1],.004f,2e-6f);
+        ChassisMotionSetMode(MC_ACTIVE_SCHEDULED);
+        Frame(.15f,.04f,0,0,0,.005f); Control(.2f,0,0); Near(state.kp,0,1e-8f);
+        Frame(.15f,.04f,2,0,0,.005f); Control(.2f,0,2); Near(state.kp,.1f,1e-6f);
+        in.current_request[0]=g_chassis_motion_config.current_limit;
+        Frame(.15f,.04f,2,0,0,.005f); Control(.2f,0,2);
+        assert(state.current_saturated_mask==1); Near(state.kp,0,0);
+        in.current_request[0]=0;
+    }
     /* G/B 转动时，固定 N 系速度不应该跟随坐标旋转产生假加速度。 */
     ChassisMotionSetMode(MC_ESTIMATE_ONLY);
     for(unsigned i=0;i<1000;++i)
@@ -246,7 +246,7 @@ int main(void)
     assert(!state.estimate_valid && state.exit_reason==MC_EXIT_DT);
     for(unsigned i=0;i<100;++i) { Frame(0,0,0,0,0,.005f); Control(100,100,100); }
     assert(state.limit_flags&MC_LIMIT_REF);
-    for(unsigned i=0;i<4;++i) assert(fabsf(refs[i])<=MC_WHEEL_MAX_DPS+.01f);
+    for(unsigned i=0;i<4;++i) assert(fabsf(refs[i])<=g_chassis_motion_config.wheels.max_motor_dps[0]+.01f);
     const float zero[2]={0}; ChassisMotionControl(zero,0,0,0,refs);
     for(unsigned i=0;i<4;++i) Near(refs[i],0,0);
     /* 实车只动 yaw 的三组观测（原 offset 和 IMU 航向，rad）。
@@ -254,23 +254,24 @@ int main(void)
     const float yaw_samples[3][2]={{-.004f,.107f},{-1.575f,1.715f},{.641f,-.523f}};
     for(unsigned i=0;i<3;++i)
     {
-        Frame(0,0,0,yaw_samples[i][1],MC_YAW_ENCODER_SIGN*yaw_samples[i][0],.005f);
+        Frame(0,0,0,yaw_samples[i][1],g_chassis_imu_config.yaw_encoder_sign*yaw_samples[i][0],.005f);
         ChassisMotionGetState(&state);
         Near(state.psi_bn,.11f,.075f);
     }
     /* 按实际日志抽取频率生成足够样本，保证队列溢出检查不依赖 10/50 Hz 配置。 */
-    for(unsigned i=0;i<(MC_LOG_DEPTH+2u)*MC_LOG_DECIMATION;++i)
+    enum { expected_log_depth = 8u };
+    for(unsigned i=0;i<(expected_log_depth+2u)*g_chassis_motion_config.log_decimation;++i)
     { Frame(0,0,0,0,0,.005f); ChassisMotionRecord(); }
     ChassisMotionGetState(&state); assert(state.log_drop>0);
     unsigned count=0; while(ChassisMotionPopLog(&state,NULL)) count++;
-    assert(count==MC_LOG_DEPTH);
+    assert(count==expected_log_depth);
     /* 生成真实 C 结构体帧，供 Python 解码器检查字段布局和流重同步。 */
     ChassisMotionLogFrame packet={MC_LOG_MAGIC,sizeof(state),7,state};
-    packet.state.version=MC_CONFIG_VERSION; packet.state.seq=123456u;
+    packet.state.version=g_chassis_motion_config.version; packet.state.seq=123456u;
     packet.state.imu_q[2]=0.125f; packet.state.kp=0.0625f; packet.state.current_saturated_mask=9u;
-    FILE *file=fopen(MC_IMU_ACCEL_VALIDATED?"build/host_motion/sample_1.bin":"build/host_motion/sample_0.bin","wb");
+    FILE *file=fopen(g_chassis_motion_config.accel_enabled?"build/host_motion/sample_1.bin":"build/host_motion/sample_0.bin","wb");
     assert(file); assert(fwrite(&packet,1,sizeof(packet),file)==sizeof(packet)); fclose(file);
-    printf("PASS: golden KF, 5000 Joseph reference steps, zero/missing observations, first matrix error, kinematics, frames, wrap, compensation, timeouts, limits, log overflow (IMU=%d)\n",MC_IMU_ACCEL_VALIDATED);
+    printf("PASS: golden KF, 5000 Joseph reference steps, zero/missing observations, first matrix error, kinematics, frames, wrap, compensation, timeouts, limits, log overflow (IMU=%d)\n",g_chassis_motion_config.accel_enabled);
     printf("Motion state bytes: %u; log frame bytes: %u\n",(unsigned)sizeof(state),(unsigned)sizeof(ChassisMotionLogFrame));
     return 0;
 }

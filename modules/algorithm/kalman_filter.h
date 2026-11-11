@@ -84,6 +84,7 @@ typedef struct kf_t
     mat S, temp_matrix, temp_matrix1, temp_vector, temp_vector1;
 
     int8_t MatStatus;
+    int8_t FirstMatError; // 每次 Update 清零，保留首个非成功矩阵状态。
 
     // 用户定义函数,可以替换或扩展基准KF的功能
     void (*User_Func0_f)(struct kf_t *kf);

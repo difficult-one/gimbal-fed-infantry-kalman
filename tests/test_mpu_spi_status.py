@@ -12,8 +12,8 @@ class MpuSpiStatusTest(unittest.TestCase):
             exe = Path(tmp) / "mpu_spi_status.exe"
             subprocess.run([
                 "gcc", "-std=c11", "-Wall", "-Wextra", "-Werror", "-O2",
-                "-Itests/host/mpu_spi", "-Itests/host/dwt", "-Ibsp/dwt", "-Imodules/mpu6500",
-                "tests/mpu_spi_status_test.c", "modules/mpu6500/mpu6500driver.c",
+                "-Itests/host/mpu_spi", "-Itests/host/dwt", "-Ibsp/dwt", "-Imodules/imu",
+                "tests/mpu_spi_status_test.c", "modules/imu/mpu6500_spi.c",
                 "-o", str(exe),
             ], cwd=root, check=True)
             subprocess.run([str(exe)], cwd=tmp, check=True)

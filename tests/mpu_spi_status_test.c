@@ -1,4 +1,4 @@
-#include "mpu6500driver.h"
+#include "mpu6500_spi.h"
 
 #include <assert.h>
 #include <stdio.h>

@@ -4,6 +4,9 @@
 #include "crc8.h"
 #include "bsp_dwt.h"
 #include "bsp_log.h"
+#ifndef MC_HOST_TEST
+#include "cmsis_compiler.h"
+#endif
 
 /**
  * @brief 重置CAN comm的接收状态和buffer
@@ -26,9 +29,10 @@ static void CANCommResetRx(CANCommInstance *ins)
 static void CANCommRxCallback(CANInstance *_instance)
 {
     CANCommInstance *comm = (CANCommInstance *)_instance->id; // 注意写法,将can instance的id强制转换为CANCommInstance*类型
+    if (_instance->rx_len == 0 || _instance->rx_len > 8) return;
 
     /* 当前接收状态判断 */
-    if (_instance->rx_buff[0] == CAN_COMM_HEADER && comm->recv_state == 0) // 之前尚未开始接收且此次包里第一个位置是帧头
+    if (_instance->rx_len >= 2 && _instance->rx_buff[0] == CAN_COMM_HEADER && comm->recv_state == 0) // 之前尚未开始接收且此次包里第一个位置是帧头
     {
         if (_instance->rx_buff[1] == comm->recv_data_len) // 如果这一包里的datalen也等于我们设定接收长度(这是因为暂时不支持动态包长)
         {
@@ -60,6 +64,9 @@ static void CANCommRxCallback(CANInstance *_instance)
                 if (comm->raw_recvbuf[comm->recv_buf_len - 2] == crc_8(comm->raw_recvbuf + 2, comm->recv_data_len))
                 { // 数据量大的话考虑使用DMA
                     memcpy(comm->unpacked_recv_data, comm->raw_recvbuf + 2, comm->recv_data_len);
+                    comm->recv_time_us = (uint32_t)DWT_GetTimeline_us();
+                    comm->recv_seq++;
+                    comm->received_once = 1u;
                     comm->update_flag = 1;           // 数据更新flag置为1
                     DaemonReload(comm->comm_daemon); // 重载daemon,避免数据更新后一直不被读取而导致数据更新不及时
                 }
@@ -79,7 +86,10 @@ static void CANCommLostCallback(void *cancomm)
 
 CANCommInstance *CANCommInit(CANComm_Init_Config_s *comm_config)
 {
+    if (!comm_config || comm_config->send_data_len > CAN_COMM_MAX_BUFFSIZE ||
+        comm_config->recv_data_len > CAN_COMM_MAX_BUFFSIZE) return NULL;
     CANCommInstance *ins = (CANCommInstance *)malloc(sizeof(CANCommInstance));
+    if (!ins) return NULL;
     memset(ins, 0, sizeof(CANCommInstance));
 
     ins->recv_data_len = comm_config->recv_data_len;
@@ -126,6 +136,27 @@ void *CANCommGet(CANCommInstance *instance)
 {
     instance->update_flag = 0; // 读取后将更新flag置为0
     return instance->unpacked_recv_data;
+}
+
+uint8_t CANCommGetSnapshot(CANCommInstance *instance, void *data, uint32_t capacity,
+                           uint32_t *seq, uint32_t *time_us)
+{
+    if (!instance || !data || !seq || !time_us || capacity < instance->recv_data_len) return 0;
+#ifndef MC_HOST_TEST
+    uint32_t key = __get_PRIMASK();
+    __disable_irq();
+#endif
+    uint8_t fresh = instance->received_once && instance->recv_seq != *seq;
+    if (fresh) {
+        memcpy(data, instance->unpacked_recv_data, instance->recv_data_len);
+        *seq = instance->recv_seq;
+        *time_us = instance->recv_time_us;
+        instance->update_flag = 0;
+    }
+#ifndef MC_HOST_TEST
+    __set_PRIMASK(key);
+#endif
+    return fresh;
 }
 
 uint8_t CANCommIsOnline(CANCommInstance *instance)

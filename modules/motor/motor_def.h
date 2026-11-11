@@ -12,7 +12,7 @@
 #ifndef MOTOR_DEF_H
 #define MOTOR_DEF_H
 
-#include "controller.h"
+#include "pid.h"
 #include "stdint.h"
 
 #define LIMIT_MIN_MAX(x, min, max) (x) = (((x) <= (min)) ? (min) : (((x) >= (max)) ? (max) : (x)))
@@ -106,6 +106,8 @@ typedef enum
     M2006,
     LK9025,
     HT04,
+    DM4310,
+    DM8009p,
 } Motor_Type_e;
 
 /**

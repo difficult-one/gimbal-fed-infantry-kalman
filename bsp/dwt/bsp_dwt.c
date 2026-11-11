@@ -1,135 +1,101 @@
-/**
- ******************************************************************************
- * @file	bsp_dwt.c
- * @author  Wang Hongxi
- * @author modified by Neo with annotation
- * @version V1.1.0
- * @date    2022/3/8
- * @brief
- */
-
 #include "bsp_dwt.h"
+#include <string.h>
 
-static DWT_Time_t SysTime;
 static uint32_t CPU_FREQ_Hz, CPU_FREQ_Hz_ms, CPU_FREQ_Hz_us;
-static uint32_t CYCCNT_RountCount;
-static uint32_t CYCCNT_LAST;
-static uint64_t CYCCNT64;
-//原神启动！！！
-/**
- * @brief 私有函数,用于检查DWT CYCCNT寄存器是否溢出,并更新CYCCNT_RountCount
- * @attention 此函数假设两次调用之间的时间间隔不超过一次溢出
- * 
- */
-static void DWT_CNT_Update(void)
+static uint32_t last_raw, reference_tick;
+static uint64_t cycles, reference_cycles;
+static DWT_ClockDebug clock_debug;
+
+/* All readers (ISR and tasks) share one accumulated cycle timeline. TIM14 is
+ * checked every >=5 ms, with 2 ms allowance for tick quantization/ISR latency.
+ * Repairs do not reset CYCCNT, rewind time or hide the discontinuity. */
+static uint64_t ReadCycles(void)
 {
-    volatile uint32_t cnt_now = DWT->CYCCNT;
-
-    if (cnt_now < CYCCNT_LAST)
-        CYCCNT_RountCount++;
-
-    CYCCNT_LAST = cnt_now;
-}
-
-void DWT_Init(uint32_t CPU_Freq_mHz)
-{
-    /* 使能DWT外设 */
-    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
-
-    /* DWT CYCCNT寄存器计数清0 */
-    DWT->CYCCNT = (uint32_t)0u;
-
-    /* 使能Cortex-M DWT CYCCNT寄存器 */
-    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
-
-    CPU_FREQ_Hz = CPU_Freq_mHz * 1000000;
-    CPU_FREQ_Hz_ms = CPU_FREQ_Hz / 1000;
-    CPU_FREQ_Hz_us = CPU_FREQ_Hz / 1000000;
-    CYCCNT_RountCount = 0;
-}
-
-float DWT_GetDeltaT(uint32_t *cnt_last)
-{
-    volatile uint32_t cnt_now = DWT->CYCCNT;
-    float dt = ((uint32_t)(cnt_now - *cnt_last)) / ((float)(CPU_FREQ_Hz));
-    *cnt_last = cnt_now;
-
-    DWT_CNT_Update();
-
-    return dt;
-}
-
-double DWT_GetDeltaT64(uint32_t *cnt_last)
-{
-    volatile uint32_t cnt_now = DWT->CYCCNT;
-    double dt = ((uint32_t)(cnt_now - *cnt_last)) / ((double)(CPU_FREQ_Hz));
-    *cnt_last = cnt_now;
-
-    DWT_CNT_Update();
-
-    return dt;
-}
-
-void DWT_SysTimeUpdate(void)
-{
-    volatile uint32_t cnt_now = DWT->CYCCNT;
-    static uint64_t CNT_TEMP1, CNT_TEMP2, CNT_TEMP3;
-
-    DWT_CNT_Update();
-
-    CYCCNT64 = (uint64_t)CYCCNT_RountCount * (uint64_t)UINT32_MAX + (uint64_t)cnt_now;
-    CNT_TEMP1 = CYCCNT64 / CPU_FREQ_Hz;
-    CNT_TEMP2 = CYCCNT64 - CNT_TEMP1 * CPU_FREQ_Hz;
-    SysTime.s = CNT_TEMP1;
-    SysTime.ms = CNT_TEMP2 / CPU_FREQ_Hz_ms;
-    CNT_TEMP3 = CNT_TEMP2 - SysTime.ms * CPU_FREQ_Hz_ms;
-    SysTime.us = CNT_TEMP3 / CPU_FREQ_Hz_us;
-}
-
-float DWT_GetTimeline_s(void)
-{
-    DWT_SysTimeUpdate();
-
-    float DWT_Timelinef32 = SysTime.s + SysTime.ms * 0.001f + SysTime.us * 0.000001f;
-
-    return DWT_Timelinef32;
-}
-
-float DWT_GetTimeline_ms(void)
-{
-    DWT_SysTimeUpdate();
-
-    float DWT_Timelinef32 = SysTime.s * 1000 + SysTime.ms + SysTime.us * 0.001f;
-
-    return DWT_Timelinef32;
-}
-
-uint64_t DWT_GetTimeline_us(void)
-{
-    DWT_SysTimeUpdate();
-
-    uint64_t DWT_Timelinef32 = SysTime.s * 1000000 + SysTime.ms * 1000 + SysTime.us;
-
-    return DWT_Timelinef32;
-}
-
-
-void DWT_Delay(float Delay)
-{
-    uint32_t tickstart = DWT->CYCCNT;
-    float wait = Delay;
-
-    while ((DWT->CYCCNT - tickstart) < wait * (float)CPU_FREQ_Hz)
-    {
+    uint32_t key=__get_PRIMASK();
+    __disable_irq();
+    uint32_t raw=DWT->CYCCNT, tick=HAL_GetTick(), flags=0;
+    uint32_t demcr=CoreDebug->DEMCR, ctrl=DWT->CTRL;
+    if (!CPU_FREQ_Hz) { __set_PRIMASK(key); return 0; }
+    if (!(demcr & CoreDebug_DEMCR_TRCENA_Msk)) flags|=DWT_CLOCK_TRACE_OFF;
+    if (!(ctrl & DWT_CTRL_CYCCNTENA_Msk)) flags|=DWT_CLOCK_COUNTER_OFF;
+    uint32_t elapsed_tick=(uint32_t)(tick-reference_tick);
+    uint64_t next=cycles+(uint32_t)(raw-last_raw);
+    uint64_t coarse=reference_cycles+(uint64_t)elapsed_tick*CPU_FREQ_Hz_ms;
+    uint64_t tolerance=(uint64_t)CPU_FREQ_Hz_ms*2u;
+    if ((elapsed_tick>=5u || (uint32_t)(raw-last_raw)>CPU_FREQ_Hz/10u) &&
+        (next>coarse+tolerance || coarse>next+tolerance))
+        flags|=DWT_CLOCK_TICK_MISMATCH;
+    if (flags) {
+        /* If HAL tick lagged too, preserve monotonicity without inventing time. */
+        next=coarse>cycles ? coarse : cycles;
+        CoreDebug->DEMCR|=CoreDebug_DEMCR_TRCENA_Msk;
+        DWT->CTRL|=DWT_CTRL_CYCCNTENA_Msk;
+        clock_debug.generation++;
+        clock_debug.last_flags=flags;
+        clock_debug.last_event_us=(uint32_t)(next/CPU_FREQ_Hz_us);
     }
-}
-
-void DWT_Delay_ms(float Delay)
-{
-    uint32_t tickstart = DWT->CYCCNT;
-    float wait = Delay*0.001;
-
-    while ((DWT->CYCCNT - tickstart) < wait * (float)CPU_FREQ_Hz)
-    {
+    cycles=next; last_raw=raw;
+    /* Keep a longer reference: rebasing every check would hide repeated short
+     * stalls that each fall inside the 2 ms quantization allowance. */
+    if (elapsed_tick>=1000u || flags) {
+        reference_cycles=cycles;
+        reference_tick=tick;
     }
+    /* Register values at the most recent fault are retained for diagnosis. */
+    clock_debug.tick_ms=tick; clock_debug.cyccnt=raw;
+    if (flags || !clock_debug.generation) {
+        clock_debug.demcr=demcr; clock_debug.ctrl=ctrl;
+    }
+    uint64_t result=cycles;
+    __set_PRIMASK(key);
+    return result;
 }
+
+void DWT_Init(uint32_t mhz)
+{
+    uint32_t key=__get_PRIMASK();
+    __disable_irq();
+    CoreDebug->DEMCR|=CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT=0;
+    DWT->CTRL|=DWT_CTRL_CYCCNTENA_Msk;
+    CPU_FREQ_Hz=mhz*1000000u; CPU_FREQ_Hz_ms=mhz*1000u; CPU_FREQ_Hz_us=mhz;
+    cycles=reference_cycles=0; last_raw=0; reference_tick=HAL_GetTick();
+    memset(&clock_debug,0,sizeof(clock_debug));
+    __set_PRIMASK(key);
+}
+
+void DWT_GetClockDebug(DWT_ClockDebug *out)
+{
+    uint32_t key=__get_PRIMASK();
+    __disable_irq();
+    (void)ReadCycles();
+    *out=clock_debug;
+    __set_PRIMASK(key);
+}
+
+float DWT_GetDeltaT(uint32_t *last)
+{
+    uint32_t now=(uint32_t)ReadCycles(), elapsed=(uint32_t)(now-*last);
+    *last=now;
+    return CPU_FREQ_Hz ? (float)elapsed/(float)CPU_FREQ_Hz : 0;
+}
+
+double DWT_GetDeltaT64(uint32_t *last)
+{
+    uint32_t now=(uint32_t)ReadCycles(), elapsed=(uint32_t)(now-*last);
+    *last=now;
+    return CPU_FREQ_Hz ? (double)elapsed/(double)CPU_FREQ_Hz : 0;
+}
+
+void DWT_SysTimeUpdate(void) { (void)ReadCycles(); }
+float DWT_GetTimeline_s(void) { return CPU_FREQ_Hz ? (float)((double)ReadCycles()/CPU_FREQ_Hz) : 0; }
+float DWT_GetTimeline_ms(void) { return CPU_FREQ_Hz_ms ? (float)((double)ReadCycles()/CPU_FREQ_Hz_ms) : 0; }
+uint64_t DWT_GetTimeline_us(void) { return CPU_FREQ_Hz_us ? ReadCycles()/CPU_FREQ_Hz_us : 0; }
+
+void DWT_Delay(float seconds)
+{
+    uint64_t start=ReadCycles();
+    uint64_t duration=seconds>0 ? (uint64_t)(seconds*(float)CPU_FREQ_Hz) : 0;
+    while (ReadCycles()-start<duration) { }
+}
+void DWT_Delay_ms(float ms) { DWT_Delay(ms*.001f); }

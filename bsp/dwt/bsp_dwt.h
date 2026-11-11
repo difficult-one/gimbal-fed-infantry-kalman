@@ -23,6 +23,18 @@ typedef struct
     uint16_t us;
 } DWT_Time_t;
 
+enum {
+    DWT_CLOCK_TRACE_OFF=1u, DWT_CLOCK_COUNTER_OFF=2u,
+    DWT_CLOCK_TICK_MISMATCH=4u
+};
+typedef struct {
+    uint32_t tick_ms, cyccnt, demcr, ctrl;
+    uint32_t generation, last_flags, last_event_us;
+} DWT_ClockDebug;
+/* TIM14 HAL tick is the independent coarse reference. A generation change
+ * invalidates integration across the repair; never treats lost time as 5 ms. */
+void DWT_GetClockDebug(DWT_ClockDebug *debug);
+
 
 /**
  * @brief 初始化DWT,传入参数为CPU频率,单位MHz
@@ -34,7 +46,7 @@ void DWT_Init(uint32_t CPU_Freq_mHz);
 /**
  * @brief 获取两次调用之间的时间间隔,单位为秒/s
  * 
- * @param cnt_last 上一次调用的时间戳
+ * @param cnt_last 由本接口维护的逻辑周期计数；不要用原始CYCCNT手动赋值
  * @return float 时间间隔,单位为秒/s
  */
 float DWT_GetDeltaT(uint32_t *cnt_last);

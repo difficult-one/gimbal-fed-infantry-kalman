@@ -1,0 +1,7254 @@
+{
+  "rigid": [
+    {
+      "win": 1,
+      "dver": 1,
+      "start_t_us": 4559751,
+      "end_t_us": 5560120,
+      "n": 1001,
+      "good": 1000,
+      "bad": 1,
+      "reject": 1,
+      "dt_us": [
+        591,
+        1407
+      ],
+      "ddrop": 0,
+      "alpha_rms_mradps2": [
+        1075,
+        2884,
+        697
+      ],
+      "alpha_pk_mradps2": [
+        3162,
+        10482,
+        2551
+      ],
+      "tangent_rms_mmps2": [
+        106,
+        62,
+        242
+      ],
+      "tangent_pk_mmps2": [
+        387,
+        215,
+        880
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        4,
+        0,
+        1
+      ],
+      "before_rms_mmps2": [
+        165,
+        29
+      ],
+      "after_rms_mmps2": [
+        64,
+        35
+      ],
+      "before_mean_mmps2": [
+        -6,
+        0
+      ],
+      "after_mean_mmps2": [
+        -4,
+        0
+      ],
+      "corr_rms_mmps2": [
+        178,
+        27
+      ],
+      "cross_um2ps4": [
+        27561,
+        205
+      ]
+    },
+    {
+      "win": 78,
+      "dver": 1,
+      "start_t_us": 81671821,
+      "end_t_us": 82671832,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        580,
+        1424
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        213,
+        694,
+        793
+      ],
+      "alpha_pk_mradps2": [
+        586,
+        1637,
+        2022
+      ],
+      "tangent_rms_mmps2": [
+        25,
+        62,
+        58
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        156,
+        137
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        23,
+        21
+      ],
+      "after_rms_mmps2": [
+        27,
+        32
+      ],
+      "before_mean_mmps2": [
+        20,
+        17
+      ],
+      "after_mean_mmps2": [
+        20,
+        17
+      ],
+      "corr_rms_mmps2": [
+        16,
+        28
+      ],
+      "cross_um2ps4": [
+        36,
+        121
+      ]
+    },
+    {
+      "win": 79,
+      "dver": 1,
+      "start_t_us": 82672747,
+      "end_t_us": 83672772,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        605,
+        1387
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        210,
+        496,
+        642
+      ],
+      "alpha_pk_mradps2": [
+        594,
+        1357,
+        1903
+      ],
+      "tangent_rms_mmps2": [
+        18,
+        49,
+        41
+      ],
+      "tangent_pk_mmps2": [
+        50,
+        152,
+        114
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        21,
+        22
+      ],
+      "after_rms_mmps2": [
+        23,
+        30
+      ],
+      "before_mean_mmps2": [
+        19,
+        21
+      ],
+      "after_mean_mmps2": [
+        19,
+        20
+      ],
+      "corr_rms_mmps2": [
+        11,
+        21
+      ],
+      "cross_um2ps4": [
+        9,
+        44
+      ]
+    },
+    {
+      "win": 80,
+      "dver": 1,
+      "start_t_us": 83673822,
+      "end_t_us": 84673850,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        607,
+        1398
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        181,
+        576,
+        689
+      ],
+      "alpha_pk_mradps2": [
+        541,
+        1395,
+        1800
+      ],
+      "tangent_rms_mmps2": [
+        21,
+        53,
+        48
+      ],
+      "tangent_pk_mmps2": [
+        51,
+        146,
+        117
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        22,
+        22
+      ],
+      "after_rms_mmps2": [
+        25,
+        30
+      ],
+      "before_mean_mmps2": [
+        21,
+        21
+      ],
+      "after_mean_mmps2": [
+        21,
+        20
+      ],
+      "corr_rms_mmps2": [
+        13,
+        23
+      ],
+      "cross_um2ps4": [
+        13,
+        67
+      ]
+    },
+    {
+      "win": 81,
+      "dver": 1,
+      "start_t_us": 84675018,
+      "end_t_us": 85675833,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        615,
+        1387
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        167,
+        519,
+        616
+      ],
+      "alpha_pk_mradps2": [
+        519,
+        1428,
+        1374
+      ],
+      "tangent_rms_mmps2": [
+        19,
+        49,
+        43
+      ],
+      "tangent_pk_mmps2": [
+        52,
+        108,
+        120
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        21,
+        20
+      ],
+      "after_rms_mmps2": [
+        23,
+        27
+      ],
+      "before_mean_mmps2": [
+        20,
+        19
+      ],
+      "after_mean_mmps2": [
+        20,
+        19
+      ],
+      "corr_rms_mmps2": [
+        12,
+        21
+      ],
+      "cross_um2ps4": [
+        9,
+        63
+      ]
+    },
+    {
+      "win": 82,
+      "dver": 1,
+      "start_t_us": 85676746,
+      "end_t_us": 86677837,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        598,
+        1407
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        200,
+        660,
+        800
+      ],
+      "alpha_pk_mradps2": [
+        708,
+        1662,
+        1723
+      ],
+      "tangent_rms_mmps2": [
+        24,
+        62,
+        55
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        133,
+        139
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        20,
+        23
+      ],
+      "after_rms_mmps2": [
+        25,
+        34
+      ],
+      "before_mean_mmps2": [
+        19,
+        22
+      ],
+      "after_mean_mmps2": [
+        19,
+        22
+      ],
+      "corr_rms_mmps2": [
+        15,
+        27
+      ],
+      "cross_um2ps4": [
+        9,
+        85
+      ]
+    },
+    {
+      "win": 83,
+      "dver": 1,
+      "start_t_us": 86678743,
+      "end_t_us": 87678746,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        609,
+        1391
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        176,
+        537,
+        664
+      ],
+      "alpha_pk_mradps2": [
+        581,
+        1463,
+        1593
+      ],
+      "tangent_rms_mmps2": [
+        19,
+        51,
+        45
+      ],
+      "tangent_pk_mmps2": [
+        54,
+        121,
+        122
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        17,
+        21
+      ],
+      "after_rms_mmps2": [
+        21,
+        29
+      ],
+      "before_mean_mmps2": [
+        16,
+        20
+      ],
+      "after_mean_mmps2": [
+        16,
+        20
+      ],
+      "corr_rms_mmps2": [
+        12,
+        23
+      ],
+      "cross_um2ps4": [
+        6,
+        58
+      ]
+    },
+    {
+      "win": 84,
+      "dver": 1,
+      "start_t_us": 87680091,
+      "end_t_us": 88680124,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        591,
+        1407
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        202,
+        654,
+        730
+      ],
+      "alpha_pk_mradps2": [
+        696,
+        1619,
+        1986
+      ],
+      "tangent_rms_mmps2": [
+        24,
+        56,
+        54
+      ],
+      "tangent_pk_mmps2": [
+        59,
+        150,
+        136
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        17,
+        22
+      ],
+      "after_rms_mmps2": [
+        22,
+        31
+      ],
+      "before_mean_mmps2": [
+        15,
+        20
+      ],
+      "after_mean_mmps2": [
+        15,
+        20
+      ],
+      "corr_rms_mmps2": [
+        15,
+        25
+      ],
+      "cross_um2ps4": [
+        14,
+        72
+      ]
+    },
+    {
+      "win": 85,
+      "dver": 1,
+      "start_t_us": 88680752,
+      "end_t_us": 89680752,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        608,
+        1398
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        195,
+        667,
+        769
+      ],
+      "alpha_pk_mradps2": [
+        597,
+        1509,
+        1833
+      ],
+      "tangent_rms_mmps2": [
+        24,
+        59,
+        56
+      ],
+      "tangent_pk_mmps2": [
+        55,
+        143,
+        126
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        16,
+        22
+      ],
+      "after_rms_mmps2": [
+        22,
+        31
+      ],
+      "before_mean_mmps2": [
+        15,
+        20
+      ],
+      "after_mean_mmps2": [
+        15,
+        20
+      ],
+      "corr_rms_mmps2": [
+        15,
+        26
+      ],
+      "cross_um2ps4": [
+        11,
+        99
+      ]
+    },
+    {
+      "win": 86,
+      "dver": 1,
+      "start_t_us": 89681844,
+      "end_t_us": 90681855,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        603,
+        1397
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        187,
+        634,
+        735
+      ],
+      "alpha_pk_mradps2": [
+        651,
+        1444,
+        1689
+      ],
+      "tangent_rms_mmps2": [
+        23,
+        57,
+        53
+      ],
+      "tangent_pk_mmps2": [
+        53,
+        134,
+        121
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        16,
+        22
+      ],
+      "after_rms_mmps2": [
+        21,
+        31
+      ],
+      "before_mean_mmps2": [
+        15,
+        21
+      ],
+      "after_mean_mmps2": [
+        15,
+        21
+      ],
+      "corr_rms_mmps2": [
+        14,
+        25
+      ],
+      "cross_um2ps4": [
+        22,
+        81
+      ]
+    },
+    {
+      "win": 87,
+      "dver": 1,
+      "start_t_us": 90682768,
+      "end_t_us": 91683852,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        603,
+        1403
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        206,
+        617,
+        778
+      ],
+      "alpha_pk_mradps2": [
+        615,
+        1581,
+        2572
+      ],
+      "tangent_rms_mmps2": [
+        22,
+        60,
+        51
+      ],
+      "tangent_pk_mmps2": [
+        58,
+        201,
+        132
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        19,
+        23
+      ],
+      "after_rms_mmps2": [
+        24,
+        32
+      ],
+      "before_mean_mmps2": [
+        18,
+        21
+      ],
+      "after_mean_mmps2": [
+        18,
+        21
+      ],
+      "corr_rms_mmps2": [
+        14,
+        26
+      ],
+      "cross_um2ps4": [
+        6,
+        98
+      ]
+    },
+    {
+      "win": 88,
+      "dver": 1,
+      "start_t_us": 91685037,
+      "end_t_us": 92685040,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        589,
+        1408
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        577,
+        1515,
+        828
+      ],
+      "alpha_pk_mradps2": [
+        2280,
+        5274,
+        2172
+      ],
+      "tangent_rms_mmps2": [
+        56,
+        68,
+        127
+      ],
+      "tangent_pk_mmps2": [
+        195,
+        187,
+        443
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        349,
+        110
+      ],
+      "after_rms_mmps2": [
+        329,
+        97
+      ],
+      "before_mean_mmps2": [
+        265,
+        9
+      ],
+      "after_mean_mmps2": [
+        263,
+        4
+      ],
+      "corr_rms_mmps2": [
+        60,
+        48
+      ],
+      "cross_um2ps4": [
+        8534,
+        2472
+      ]
+    },
+    {
+      "win": 89,
+      "dver": 1,
+      "start_t_us": 92685837,
+      "end_t_us": 93685844,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        606,
+        1395
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1743,
+        4055,
+        1411
+      ],
+      "alpha_pk_mradps2": [
+        5124,
+        10490,
+        4836
+      ],
+      "tangent_rms_mmps2": [
+        150,
+        135,
+        340
+      ],
+      "tangent_pk_mmps2": [
+        388,
+        443,
+        881
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        376,
+        397
+      ],
+      "after_rms_mmps2": [
+        364,
+        336
+      ],
+      "before_mean_mmps2": [
+        53,
+        0
+      ],
+      "after_mean_mmps2": [
+        57,
+        10
+      ],
+      "corr_rms_mmps2": [
+        175,
+        108
+      ],
+      "cross_um2ps4": [
+        19653,
+        28249
+      ]
+    },
+    {
+      "win": 90,
+      "dver": 1,
+      "start_t_us": 93686761,
+      "end_t_us": 94687840,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        588,
+        1416
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1182,
+        2777,
+        1194
+      ],
+      "alpha_pk_mradps2": [
+        3506,
+        8361,
+        3879
+      ],
+      "tangent_rms_mmps2": [
+        102,
+        107,
+        233
+      ],
+      "tangent_pk_mmps2": [
+        309,
+        301,
+        702
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        600,
+        273
+      ],
+      "after_rms_mmps2": [
+        593,
+        243
+      ],
+      "before_mean_mmps2": [
+        -363,
+        63
+      ],
+      "after_mean_mmps2": [
+        -367,
+        55
+      ],
+      "corr_rms_mmps2": [
+        121,
+        86
+      ],
+      "cross_um2ps4": [
+        11507,
+        11262
+      ]
+    },
+    {
+      "win": 91,
+      "dver": 1,
+      "start_t_us": 94688745,
+      "end_t_us": 95688762,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        595,
+        1400
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        906,
+        1617,
+        1198
+      ],
+      "alpha_pk_mradps2": [
+        3118,
+        5282,
+        4190
+      ],
+      "tangent_rms_mmps2": [
+        59,
+        94,
+        135
+      ],
+      "tangent_pk_mmps2": [
+        195,
+        361,
+        443
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        368,
+        173
+      ],
+      "after_rms_mmps2": [
+        357,
+        178
+      ],
+      "before_mean_mmps2": [
+        -288,
+        46
+      ],
+      "after_mean_mmps2": [
+        -286,
+        53
+      ],
+      "corr_rms_mmps2": [
+        69,
+        76
+      ],
+      "cross_um2ps4": [
+        6388,
+        2109
+      ]
+    },
+    {
+      "win": 92,
+      "dver": 1,
+      "start_t_us": 95690111,
+      "end_t_us": 96690116,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        592,
+        1418
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1685,
+        2907,
+        1325
+      ],
+      "alpha_pk_mradps2": [
+        4891,
+        7691,
+        4279
+      ],
+      "tangent_rms_mmps2": [
+        107,
+        130,
+        244
+      ],
+      "tangent_pk_mmps2": [
+        284,
+        517,
+        646
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        260,
+        428
+      ],
+      "after_rms_mmps2": [
+        296,
+        373
+      ],
+      "before_mean_mmps2": [
+        -22,
+        30
+      ],
+      "after_mean_mmps2": [
+        -24,
+        23
+      ],
+      "corr_rms_mmps2": [
+        127,
+        98
+      ],
+      "cross_um2ps4": [
+        -1884,
+        26873
+      ]
+    },
+    {
+      "win": 93,
+      "dver": 1,
+      "start_t_us": 96690761,
+      "end_t_us": 97691835,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        601,
+        1396
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1464,
+        2854,
+        1874
+      ],
+      "alpha_pk_mradps2": [
+        4893,
+        8431,
+        8961
+      ],
+      "tangent_rms_mmps2": [
+        105,
+        163,
+        239
+      ],
+      "tangent_pk_mmps2": [
+        311,
+        673,
+        708
+      ],
+      "centrip_rms_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        4,
+        1,
+        1
+      ],
+      "before_rms_mmps2": [
+        846,
+        348
+      ],
+      "after_rms_mmps2": [
+        830,
+        288
+      ],
+      "before_mean_mmps2": [
+        458,
+        19
+      ],
+      "after_mean_mmps2": [
+        457,
+        24
+      ],
+      "corr_rms_mmps2": [
+        125,
+        142
+      ],
+      "cross_um2ps4": [
+        21079,
+        29248
+      ]
+    },
+    {
+      "win": 94,
+      "dver": 1,
+      "start_t_us": 97692752,
+      "end_t_us": 98693833,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        581,
+        1419
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        947,
+        1626,
+        1156
+      ],
+      "alpha_pk_mradps2": [
+        3269,
+        7147,
+        4063
+      ],
+      "tangent_rms_mmps2": [
+        60,
+        100,
+        136
+      ],
+      "tangent_pk_mmps2": [
+        264,
+        374,
+        600
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        388,
+        208
+      ],
+      "after_rms_mmps2": [
+        382,
+        190
+      ],
+      "before_mean_mmps2": [
+        249,
+        17
+      ],
+      "after_mean_mmps2": [
+        247,
+        12
+      ],
+      "corr_rms_mmps2": [
+        66,
+        78
+      ],
+      "cross_um2ps4": [
+        4540,
+        6615
+      ]
+    },
+    {
+      "win": 95,
+      "dver": 1,
+      "start_t_us": 98695011,
+      "end_t_us": 99695033,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        592,
+        1406
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1130,
+        2031,
+        1067
+      ],
+      "alpha_pk_mradps2": [
+        2987,
+        7970,
+        3281
+      ],
+      "tangent_rms_mmps2": [
+        75,
+        113,
+        170
+      ],
+      "tangent_pk_mmps2": [
+        294,
+        310,
+        669
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        186,
+        312
+      ],
+      "after_rms_mmps2": [
+        171,
+        241
+      ],
+      "before_mean_mmps2": [
+        16,
+        7
+      ],
+      "after_mean_mmps2": [
+        20,
+        11
+      ],
+      "corr_rms_mmps2": [
+        89,
+        86
+      ],
+      "cross_um2ps4": [
+        6811,
+        23281
+      ]
+    },
+    {
+      "win": 96,
+      "dver": 1,
+      "start_t_us": 99695840,
+      "end_t_us": 100695851,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        583,
+        1412
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1325,
+        2528,
+        1501
+      ],
+      "alpha_pk_mradps2": [
+        3926,
+        7133,
+        3841
+      ],
+      "tangent_rms_mmps2": [
+        93,
+        127,
+        212
+      ],
+      "tangent_pk_mmps2": [
+        263,
+        415,
+        599
+      ],
+      "centrip_rms_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        3,
+        1,
+        1
+      ],
+      "before_rms_mmps2": [
+        703,
+        349
+      ],
+      "after_rms_mmps2": [
+        683,
+        305
+      ],
+      "before_mean_mmps2": [
+        -344,
+        66
+      ],
+      "after_mean_mmps2": [
+        -335,
+        67
+      ],
+      "corr_rms_mmps2": [
+        117,
+        108
+      ],
+      "cross_um2ps4": [
+        20531,
+        20581
+      ]
+    },
+    {
+      "win": 97,
+      "dver": 1,
+      "start_t_us": 100696763,
+      "end_t_us": 101697843,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        595,
+        1406
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1011,
+        1596,
+        1490
+      ],
+      "alpha_pk_mradps2": [
+        3134,
+        4395,
+        4367
+      ],
+      "tangent_rms_mmps2": [
+        59,
+        118,
+        134
+      ],
+      "tangent_pk_mmps2": [
+        162,
+        403,
+        369
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        1
+      ],
+      "before_rms_mmps2": [
+        615,
+        220
+      ],
+      "after_rms_mmps2": [
+        605,
+        208
+      ],
+      "before_mean_mmps2": [
+        -276,
+        62
+      ],
+      "after_mean_mmps2": [
+        -282,
+        53
+      ],
+      "corr_rms_mmps2": [
+        69,
+        96
+      ],
+      "cross_um2ps4": [
+        8112,
+        7189
+      ]
+    },
+    {
+      "win": 98,
+      "dver": 1,
+      "start_t_us": 101698780,
+      "end_t_us": 102700120,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        596,
+        1401
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1450,
+        2815,
+        1290
+      ],
+      "alpha_pk_mradps2": [
+        5469,
+        7848,
+        6789
+      ],
+      "tangent_rms_mmps2": [
+        104,
+        123,
+        236
+      ],
+      "tangent_pk_mmps2": [
+        290,
+        645,
+        659
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        280,
+        380
+      ],
+      "after_rms_mmps2": [
+        249,
+        322
+      ],
+      "before_mean_mmps2": [
+        96,
+        47
+      ],
+      "after_mean_mmps2": [
+        92,
+        58
+      ],
+      "corr_rms_mmps2": [
+        120,
+        104
+      ],
+      "cross_um2ps4": [
+        15446,
+        26078
+      ]
+    },
+    {
+      "win": 99,
+      "dver": 1,
+      "start_t_us": 102700769,
+      "end_t_us": 103701832,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        591,
+        1414
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1506,
+        2650,
+        1527
+      ],
+      "alpha_pk_mradps2": [
+        4487,
+        8861,
+        4461
+      ],
+      "tangent_rms_mmps2": [
+        98,
+        138,
+        222
+      ],
+      "tangent_pk_mmps2": [
+        327,
+        427,
+        744
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        1
+      ],
+      "before_rms_mmps2": [
+        1001,
+        389
+      ],
+      "after_rms_mmps2": [
+        978,
+        345
+      ],
+      "before_mean_mmps2": [
+        735,
+        15
+      ],
+      "after_mean_mmps2": [
+        730,
+        11
+      ],
+      "corr_rms_mmps2": [
+        116,
+        113
+      ],
+      "cross_um2ps4": [
+        29500,
+        22587
+      ]
+    },
+    {
+      "win": 100,
+      "dver": 1,
+      "start_t_us": 103702743,
+      "end_t_us": 104702746,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        595,
+        1409
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        3553,
+        4104,
+        1996
+      ],
+      "alpha_pk_mradps2": [
+        10485,
+        12115,
+        5247
+      ],
+      "tangent_rms_mmps2": [
+        151,
+        200,
+        344
+      ],
+      "tangent_pk_mmps2": [
+        448,
+        545,
+        1017
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        3,
+        2,
+        1
+      ],
+      "before_rms_mmps2": [
+        344,
+        829
+      ],
+      "after_rms_mmps2": [
+        418,
+        734
+      ],
+      "before_mean_mmps2": [
+        23,
+        31
+      ],
+      "after_mean_mmps2": [
+        29,
+        40
+      ],
+      "corr_rms_mmps2": [
+        181,
+        165
+      ],
+      "cross_um2ps4": [
+        -11566,
+        88379
+      ]
+    },
+    {
+      "win": 101,
+      "dver": 1,
+      "start_t_us": 104703858,
+      "end_t_us": 105705025,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        590,
+        1409
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        2023,
+        2620,
+        2155
+      ],
+      "alpha_pk_mradps2": [
+        8946,
+        10102,
+        7831
+      ],
+      "tangent_rms_mmps2": [
+        96,
+        166,
+        220
+      ],
+      "tangent_pk_mmps2": [
+        373,
+        532,
+        848
+      ],
+      "centrip_rms_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        5,
+        1,
+        1
+      ],
+      "before_rms_mmps2": [
+        968,
+        445
+      ],
+      "after_rms_mmps2": [
+        965,
+        426
+      ],
+      "before_mean_mmps2": [
+        -722,
+        85
+      ],
+      "after_mean_mmps2": [
+        -719,
+        74
+      ],
+      "corr_rms_mmps2": [
+        124,
+        145
+      ],
+      "cross_um2ps4": [
+        11124,
+        18888
+      ]
+    },
+    {
+      "win": 102,
+      "dver": 1,
+      "start_t_us": 105705840,
+      "end_t_us": 106706745,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        594,
+        1408
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1811,
+        3201,
+        1484
+      ],
+      "alpha_pk_mradps2": [
+        5223,
+        9224,
+        3785
+      ],
+      "tangent_rms_mmps2": [
+        118,
+        130,
+        268
+      ],
+      "tangent_pk_mmps2": [
+        341,
+        385,
+        774
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        1,
+        0
+      ],
+      "before_rms_mmps2": [
+        249,
+        426
+      ],
+      "after_rms_mmps2": [
+        269,
+        386
+      ],
+      "before_mean_mmps2": [
+        -30,
+        52
+      ],
+      "after_mean_mmps2": [
+        -35,
+        58
+      ],
+      "corr_rms_mmps2": [
+        134,
+        104
+      ],
+      "cross_um2ps4": [
+        3837,
+        21509
+      ]
+    },
+    {
+      "win": 103,
+      "dver": 1,
+      "start_t_us": 106707842,
+      "end_t_us": 107707844,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        589,
+        1421
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1517,
+        2756,
+        1276
+      ],
+      "alpha_pk_mradps2": [
+        4596,
+        8166,
+        4120
+      ],
+      "tangent_rms_mmps2": [
+        101,
+        119,
+        231
+      ],
+      "tangent_pk_mmps2": [
+        302,
+        401,
+        685
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        870,
+        336
+      ],
+      "after_rms_mmps2": [
+        857,
+        300
+      ],
+      "before_mean_mmps2": [
+        477,
+        51
+      ],
+      "after_mean_mmps2": [
+        478,
+        53
+      ],
+      "corr_rms_mmps2": [
+        118,
+        94
+      ],
+      "cross_um2ps4": [
+        18304,
+        15993
+      ]
+    },
+    {
+      "win": 104,
+      "dver": 1,
+      "start_t_us": 107708748,
+      "end_t_us": 108708763,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        583,
+        1419
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1166,
+        2632,
+        1297
+      ],
+      "alpha_pk_mradps2": [
+        3656,
+        7119,
+        3208
+      ],
+      "tangent_rms_mmps2": [
+        97,
+        109,
+        221
+      ],
+      "tangent_pk_mmps2": [
+        263,
+        292,
+        598
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        1,
+        0
+      ],
+      "before_rms_mmps2": [
+        589,
+        270
+      ],
+      "after_rms_mmps2": [
+        575,
+        241
+      ],
+      "before_mean_mmps2": [
+        356,
+        35
+      ],
+      "after_mean_mmps2": [
+        357,
+        33
+      ],
+      "corr_rms_mmps2": [
+        110,
+        84
+      ],
+      "cross_um2ps4": [
+        14265,
+        11220
+      ]
+    },
+    {
+      "win": 105,
+      "dver": 1,
+      "start_t_us": 108710133,
+      "end_t_us": 109710754,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        585,
+        1413
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1356,
+        4055,
+        1552
+      ],
+      "alpha_pk_mradps2": [
+        3961,
+        12861,
+        4941
+      ],
+      "tangent_rms_mmps2": [
+        150,
+        128,
+        340
+      ],
+      "tangent_pk_mmps2": [
+        475,
+        392,
+        1080
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        1,
+        0
+      ],
+      "before_rms_mmps2": [
+        714,
+        265
+      ],
+      "after_rms_mmps2": [
+        728,
+        246
+      ],
+      "before_mean_mmps2": [
+        -397,
+        51
+      ],
+      "after_mean_mmps2": [
+        -395,
+        46
+      ],
+      "corr_rms_mmps2": [
+        174,
+        98
+      ],
+      "cross_um2ps4": [
+        5116,
+        9582
+      ]
+    },
+    {
+      "win": 106,
+      "dver": 1,
+      "start_t_us": 109711849,
+      "end_t_us": 110711850,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        592,
+        1412
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1087,
+        1555,
+        1432
+      ],
+      "alpha_pk_mradps2": [
+        3525,
+        5134,
+        5218
+      ],
+      "tangent_rms_mmps2": [
+        57,
+        119,
+        130
+      ],
+      "tangent_pk_mmps2": [
+        189,
+        458,
+        431
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        622,
+        253
+      ],
+      "after_rms_mmps2": [
+        613,
+        223
+      ],
+      "before_mean_mmps2": [
+        -329,
+        54
+      ],
+      "after_mean_mmps2": [
+        -332,
+        63
+      ],
+      "corr_rms_mmps2": [
+        69,
+        97
+      ],
+      "cross_um2ps4": [
+        7506,
+        12062
+      ]
+    },
+    {
+      "win": 107,
+      "dver": 1,
+      "start_t_us": 110712753,
+      "end_t_us": 111713823,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        593,
+        1411
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1452,
+        3450,
+        1549
+      ],
+      "alpha_pk_mradps2": [
+        4317,
+        10284,
+        5985
+      ],
+      "tangent_rms_mmps2": [
+        127,
+        139,
+        289
+      ],
+      "tangent_pk_mmps2": [
+        380,
+        464,
+        863
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        924,
+        349
+      ],
+      "after_rms_mmps2": [
+        912,
+        293
+      ],
+      "before_mean_mmps2": [
+        539,
+        31
+      ],
+      "after_mean_mmps2": [
+        533,
+        22
+      ],
+      "corr_rms_mmps2": [
+        146,
+        112
+      ],
+      "cross_um2ps4": [
+        21926,
+        24424
+      ]
+    },
+    {
+      "win": 108,
+      "dver": 1,
+      "start_t_us": 111715025,
+      "end_t_us": 112715045,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        574,
+        1426
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1357,
+        2948,
+        1389
+      ],
+      "alpha_pk_mradps2": [
+        6779,
+        9452,
+        4079
+      ],
+      "tangent_rms_mmps2": [
+        109,
+        115,
+        247
+      ],
+      "tangent_pk_mmps2": [
+        349,
+        480,
+        793
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        1
+      ],
+      "before_rms_mmps2": [
+        625,
+        255
+      ],
+      "after_rms_mmps2": [
+        631,
+        231
+      ],
+      "before_mean_mmps2": [
+        358,
+        14
+      ],
+      "after_mean_mmps2": [
+        372,
+        18
+      ],
+      "corr_rms_mmps2": [
+        117,
+        82
+      ],
+      "cross_um2ps4": [
+        3491,
+        9442
+      ]
+    },
+    {
+      "win": 109,
+      "dver": 1,
+      "start_t_us": 112715849,
+      "end_t_us": 113716741,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        603,
+        1408
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1583,
+        2684,
+        1421
+      ],
+      "alpha_pk_mradps2": [
+        6262,
+        11493,
+        4610
+      ],
+      "tangent_rms_mmps2": [
+        99,
+        131,
+        225
+      ],
+      "tangent_pk_mmps2": [
+        425,
+        392,
+        965
+      ],
+      "centrip_rms_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        3,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        815,
+        389
+      ],
+      "after_rms_mmps2": [
+        808,
+        337
+      ],
+      "before_mean_mmps2": [
+        -426,
+        73
+      ],
+      "after_mean_mmps2": [
+        -434,
+        60
+      ],
+      "corr_rms_mmps2": [
+        120,
+        108
+      ],
+      "cross_um2ps4": [
+        13228,
+        24763
+      ]
+    },
+    {
+      "win": 110,
+      "dver": 1,
+      "start_t_us": 113717829,
+      "end_t_us": 114717833,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        599,
+        1427
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1512,
+        1751,
+        1204
+      ],
+      "alpha_pk_mradps2": [
+        4809,
+        6094,
+        3312
+      ],
+      "tangent_rms_mmps2": [
+        64,
+        106,
+        147
+      ],
+      "tangent_pk_mmps2": [
+        225,
+        315,
+        511
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        166,
+        481
+      ],
+      "after_rms_mmps2": [
+        183,
+        448
+      ],
+      "before_mean_mmps2": [
+        12,
+        -306
+      ],
+      "after_mean_mmps2": [
+        12,
+        -294
+      ],
+      "corr_rms_mmps2": [
+        72,
+        82
+      ],
+      "cross_um2ps4": [
+        -212,
+        19052
+      ]
+    },
+    {
+      "win": 111,
+      "dver": 1,
+      "start_t_us": 114718741,
+      "end_t_us": 115718751,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        569,
+        1415
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1436,
+        3089,
+        1440
+      ],
+      "alpha_pk_mradps2": [
+        3655,
+        7554,
+        5269
+      ],
+      "tangent_rms_mmps2": [
+        114,
+        128,
+        259
+      ],
+      "tangent_pk_mmps2": [
+        279,
+        422,
+        634
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        203,
+        407
+      ],
+      "after_rms_mmps2": [
+        197,
+        364
+      ],
+      "before_mean_mmps2": [
+        14,
+        134
+      ],
+      "after_mean_mmps2": [
+        13,
+        129
+      ],
+      "corr_rms_mmps2": [
+        128,
+        100
+      ],
+      "cross_um2ps4": [
+        9298,
+        21479
+      ]
+    },
+    {
+      "win": 112,
+      "dver": 1,
+      "start_t_us": 115720110,
+      "end_t_us": 116720124,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        590,
+        1412
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1022,
+        2622,
+        1267
+      ],
+      "alpha_pk_mradps2": [
+        3317,
+        7362,
+        3957
+      ],
+      "tangent_rms_mmps2": [
+        97,
+        115,
+        220
+      ],
+      "tangent_pk_mmps2": [
+        272,
+        326,
+        618
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        192,
+        795
+      ],
+      "after_rms_mmps2": [
+        161,
+        775
+      ],
+      "before_mean_mmps2": [
+        42,
+        381
+      ],
+      "after_mean_mmps2": [
+        42,
+        383
+      ],
+      "corr_rms_mmps2": [
+        110,
+        93
+      ],
+      "cross_um2ps4": [
+        11630,
+        20732
+      ]
+    },
+    {
+      "win": 113,
+      "dver": 1,
+      "start_t_us": 116720770,
+      "end_t_us": 117721826,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        591,
+        1400
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1120,
+        2891,
+        1252
+      ],
+      "alpha_pk_mradps2": [
+        5420,
+        7996,
+        4841
+      ],
+      "tangent_rms_mmps2": [
+        107,
+        112,
+        242
+      ],
+      "tangent_pk_mmps2": [
+        295,
+        513,
+        671
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        197,
+        618
+      ],
+      "after_rms_mmps2": [
+        221,
+        598
+      ],
+      "before_mean_mmps2": [
+        48,
+        408
+      ],
+      "after_mean_mmps2": [
+        48,
+        404
+      ],
+      "corr_rms_mmps2": [
+        116,
+        84
+      ],
+      "cross_um2ps4": [
+        1807,
+        15946
+      ]
+    },
+    {
+      "win": 114,
+      "dver": 1,
+      "start_t_us": 117722750,
+      "end_t_us": 118723823,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        590,
+        1410
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1023,
+        2210,
+        1440
+      ],
+      "alpha_pk_mradps2": [
+        3585,
+        6246,
+        5348
+      ],
+      "tangent_rms_mmps2": [
+        81,
+        129,
+        185
+      ],
+      "tangent_pk_mmps2": [
+        231,
+        445,
+        524
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        164,
+        776
+      ],
+      "after_rms_mmps2": [
+        159,
+        747
+      ],
+      "before_mean_mmps2": [
+        -14,
+        -413
+      ],
+      "after_mean_mmps2": [
+        -13,
+        -406
+      ],
+      "corr_rms_mmps2": [
+        91,
+        108
+      ],
+      "cross_um2ps4": [
+        4918,
+        28268
+      ]
+    },
+    {
+      "win": 115,
+      "dver": 1,
+      "start_t_us": 118725032,
+      "end_t_us": 119725841,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        590,
+        1410
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        853,
+        1804,
+        1234
+      ],
+      "alpha_pk_mradps2": [
+        3161,
+        5354,
+        3004
+      ],
+      "tangent_rms_mmps2": [
+        66,
+        107,
+        151
+      ],
+      "tangent_pk_mmps2": [
+        198,
+        317,
+        449
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        140,
+        558
+      ],
+      "after_rms_mmps2": [
+        141,
+        527
+      ],
+      "before_mean_mmps2": [
+        24,
+        -258
+      ],
+      "after_mean_mmps2": [
+        25,
+        -256
+      ],
+      "corr_rms_mmps2": [
+        73,
+        83
+      ],
+      "cross_um2ps4": [
+        2629,
+        20265
+      ]
+    },
+    {
+      "win": 116,
+      "dver": 1,
+      "start_t_us": 119726742,
+      "end_t_us": 120727833,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        581,
+        1425
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1297,
+        4537,
+        1805
+      ],
+      "alpha_pk_mradps2": [
+        4034,
+        12446,
+        5421
+      ],
+      "tangent_rms_mmps2": [
+        167,
+        149,
+        381
+      ],
+      "tangent_pk_mmps2": [
+        460,
+        455,
+        1045
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        379,
+        897
+      ],
+      "after_rms_mmps2": [
+        410,
+        860
+      ],
+      "before_mean_mmps2": [
+        -45,
+        367
+      ],
+      "after_mean_mmps2": [
+        -41,
+        352
+      ],
+      "corr_rms_mmps2": [
+        202,
+        113
+      ],
+      "cross_um2ps4": [
+        8203,
+        38733
+      ]
+    },
+    {
+      "win": 117,
+      "dver": 1,
+      "start_t_us": 120728742,
+      "end_t_us": 121728748,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        596,
+        1402
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1105,
+        2537,
+        1246
+      ],
+      "alpha_pk_mradps2": [
+        2775,
+        8621,
+        3825
+      ],
+      "tangent_rms_mmps2": [
+        93,
+        104,
+        213
+      ],
+      "tangent_pk_mmps2": [
+        319,
+        367,
+        724
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        351,
+        782
+      ],
+      "after_rms_mmps2": [
+        312,
+        781
+      ],
+      "before_mean_mmps2": [
+        118,
+        543
+      ],
+      "after_mean_mmps2": [
+        112,
+        560
+      ],
+      "corr_rms_mmps2": [
+        112,
+        83
+      ],
+      "cross_um2ps4": [
+        19138,
+        4173
+      ]
+    },
+    {
+      "win": 118,
+      "dver": 1,
+      "start_t_us": 121730136,
+      "end_t_us": 122730140,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        591,
+        1405
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1498,
+        4292,
+        1960
+      ],
+      "alpha_pk_mradps2": [
+        4301,
+        18309,
+        7019
+      ],
+      "tangent_rms_mmps2": [
+        158,
+        160,
+        360
+      ],
+      "tangent_pk_mmps2": [
+        677,
+        525,
+        1537
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        3,
+        1,
+        1
+      ],
+      "before_rms_mmps2": [
+        288,
+        644
+      ],
+      "after_rms_mmps2": [
+        321,
+        615
+      ],
+      "before_mean_mmps2": [
+        -16,
+        -44
+      ],
+      "after_mean_mmps2": [
+        -17,
+        -53
+      ],
+      "corr_rms_mmps2": [
+        185,
+        126
+      ],
+      "cross_um2ps4": [
+        6999,
+        26303
+      ]
+    },
+    {
+      "win": 119,
+      "dver": 1,
+      "start_t_us": 122730755,
+      "end_t_us": 123731822,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        593,
+        1410
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        881,
+        1705,
+        1325
+      ],
+      "alpha_pk_mradps2": [
+        2647,
+        6415,
+        5151
+      ],
+      "tangent_rms_mmps2": [
+        63,
+        110,
+        143
+      ],
+      "tangent_pk_mmps2": [
+        237,
+        445,
+        538
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        185,
+        916
+      ],
+      "after_rms_mmps2": [
+        150,
+        898
+      ],
+      "before_mean_mmps2": [
+        -41,
+        -622
+      ],
+      "after_mean_mmps2": [
+        -38,
+        -622
+      ],
+      "corr_rms_mmps2": [
+        72,
+        92
+      ],
+      "cross_um2ps4": [
+        8641,
+        19982
+      ]
+    },
+    {
+      "win": 120,
+      "dver": 1,
+      "start_t_us": 123732741,
+      "end_t_us": 124732741,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        600,
+        1400
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1671,
+        3117,
+        1154
+      ],
+      "alpha_pk_mradps2": [
+        4126,
+        10954,
+        3456
+      ],
+      "tangent_rms_mmps2": [
+        115,
+        104,
+        261
+      ],
+      "tangent_pk_mmps2": [
+        405,
+        273,
+        920
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        228,
+        378
+      ],
+      "after_rms_mmps2": [
+        263,
+        346
+      ],
+      "before_mean_mmps2": [
+        16,
+        16
+      ],
+      "after_mean_mmps2": [
+        8,
+        23
+      ],
+      "corr_rms_mmps2": [
+        133,
+        73
+      ],
+      "cross_um2ps4": [
+        239,
+        14377
+      ]
+    },
+    {
+      "win": 121,
+      "dver": 1,
+      "start_t_us": 124733823,
+      "end_t_us": 125733825,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        569,
+        1438
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1194,
+        2232,
+        1457
+      ],
+      "alpha_pk_mradps2": [
+        4785,
+        10640,
+        5047
+      ],
+      "tangent_rms_mmps2": [
+        82,
+        126,
+        187
+      ],
+      "tangent_pk_mmps2": [
+        393,
+        525,
+        893
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        146,
+        1066
+      ],
+      "after_rms_mmps2": [
+        149,
+        1046
+      ],
+      "before_mean_mmps2": [
+        29,
+        754
+      ],
+      "after_mean_mmps2": [
+        36,
+        749
+      ],
+      "corr_rms_mmps2": [
+        100,
+        105
+      ],
+      "cross_um2ps4": [
+        4529,
+        26708
+      ]
+    },
+    {
+      "win": 122,
+      "dver": 1,
+      "start_t_us": 125735020,
+      "end_t_us": 126735822,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        601,
+        1403
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1539,
+        3221,
+        1472
+      ],
+      "alpha_pk_mradps2": [
+        4625,
+        9893,
+        4072
+      ],
+      "tangent_rms_mmps2": [
+        119,
+        137,
+        270
+      ],
+      "tangent_pk_mmps2": [
+        366,
+        329,
+        831
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        267,
+        621
+      ],
+      "after_rms_mmps2": [
+        231,
+        587
+      ],
+      "before_mean_mmps2": [
+        -2,
+        -77
+      ],
+      "after_mean_mmps2": [
+        -1,
+        -82
+      ],
+      "corr_rms_mmps2": [
+        140,
+        113
+      ],
+      "cross_um2ps4": [
+        19014,
+        26740
+      ]
+    },
+    {
+      "win": 123,
+      "dver": 1,
+      "start_t_us": 126736741,
+      "end_t_us": 127736765,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        596,
+        1401
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1156,
+        2185,
+        1173
+      ],
+      "alpha_pk_mradps2": [
+        3230,
+        6384,
+        3761
+      ],
+      "tangent_rms_mmps2": [
+        80,
+        112,
+        183
+      ],
+      "tangent_pk_mmps2": [
+        236,
+        379,
+        536
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        164,
+        985
+      ],
+      "after_rms_mmps2": [
+        140,
+        947
+      ],
+      "before_mean_mmps2": [
+        -18,
+        -679
+      ],
+      "after_mean_mmps2": [
+        -18,
+        -671
+      ],
+      "corr_rms_mmps2": [
+        90,
+        91
+      ],
+      "cross_um2ps4": [
+        7674,
+        41014
+      ]
+    },
+    {
+      "win": 124,
+      "dver": 1,
+      "start_t_us": 127737832,
+      "end_t_us": 128737834,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        595,
+        1405
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1761,
+        2658,
+        1169
+      ],
+      "alpha_pk_mradps2": [
+        4889,
+        7261,
+        3942
+      ],
+      "tangent_rms_mmps2": [
+        98,
+        122,
+        223
+      ],
+      "tangent_pk_mmps2": [
+        268,
+        408,
+        609
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        181,
+        388
+      ],
+      "after_rms_mmps2": [
+        152,
+        354
+      ],
+      "before_mean_mmps2": [
+        -5,
+        7
+      ],
+      "after_mean_mmps2": [
+        -6,
+        9
+      ],
+      "corr_rms_mmps2": [
+        116,
+        93
+      ],
+      "cross_um2ps4": [
+        11596,
+        17135
+      ]
+    },
+    {
+      "win": 125,
+      "dver": 1,
+      "start_t_us": 128738752,
+      "end_t_us": 129738753,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        600,
+        1405
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1035,
+        2150,
+        1563
+      ],
+      "alpha_pk_mradps2": [
+        3673,
+        8896,
+        6651
+      ],
+      "tangent_rms_mmps2": [
+        79,
+        139,
+        180
+      ],
+      "tangent_pk_mmps2": [
+        329,
+        595,
+        747
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        143,
+        1061
+      ],
+      "after_rms_mmps2": [
+        169,
+        1032
+      ],
+      "before_mean_mmps2": [
+        61,
+        728
+      ],
+      "after_mean_mmps2": [
+        62,
+        724
+      ],
+      "corr_rms_mmps2": [
+        95,
+        120
+      ],
+      "cross_um2ps4": [
+        474,
+        38272
+      ]
+    },
+    {
+      "win": 126,
+      "dver": 1,
+      "start_t_us": 129740123,
+      "end_t_us": 130740749,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        596,
+        1399
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        2475,
+        3597,
+        1716
+      ],
+      "alpha_pk_mradps2": [
+        6480,
+        10132,
+        4627
+      ],
+      "tangent_rms_mmps2": [
+        133,
+        174,
+        302
+      ],
+      "tangent_pk_mmps2": [
+        374,
+        420,
+        851
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        2,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        242,
+        805
+      ],
+      "after_rms_mmps2": [
+        261,
+        742
+      ],
+      "before_mean_mmps2": [
+        0,
+        -59
+      ],
+      "after_mean_mmps2": [
+        0,
+        -64
+      ],
+      "corr_rms_mmps2": [
+        150,
+        140
+      ],
+      "cross_um2ps4": [
+        6633,
+        58725
+      ]
+    },
+    {
+      "win": 127,
+      "dver": 1,
+      "start_t_us": 130741822,
+      "end_t_us": 131741844,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        586,
+        1425
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1202,
+        2171,
+        1350
+      ],
+      "alpha_pk_mradps2": [
+        3054,
+        8391,
+        4254
+      ],
+      "tangent_rms_mmps2": [
+        80,
+        123,
+        182
+      ],
+      "tangent_pk_mmps2": [
+        310,
+        429,
+        704
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        204,
+        1010
+      ],
+      "after_rms_mmps2": [
+        171,
+        985
+      ],
+      "before_mean_mmps2": [
+        -43,
+        -735
+      ],
+      "after_mean_mmps2": [
+        -44,
+        -731
+      ],
+      "corr_rms_mmps2": [
+        92,
+        103
+      ],
+      "cross_um2ps4": [
+        10477,
+        30570
+      ]
+    },
+    {
+      "win": 128,
+      "dver": 1,
+      "start_t_us": 131742748,
+      "end_t_us": 132743822,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        610,
+        1400
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        1172,
+        4739,
+        1833
+      ],
+      "alpha_pk_mradps2": [
+        3360,
+        12115,
+        5264
+      ],
+      "tangent_rms_mmps2": [
+        175,
+        158,
+        398
+      ],
+      "tangent_pk_mmps2": [
+        448,
+        397,
+        1017
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        278,
+        388
+      ],
+      "after_rms_mmps2": [
+        355,
+        370
+      ],
+      "before_mean_mmps2": [
+        48,
+        126
+      ],
+      "after_mean_mmps2": [
+        47,
+        132
+      ],
+      "corr_rms_mmps2": [
+        200,
+        116
+      ],
+      "cross_um2ps4": [
+        -4585,
+        13522
+      ]
+    },
+    {
+      "win": 129,
+      "dver": 1,
+      "start_t_us": 132744996,
+      "end_t_us": 133745015,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        596,
+        1393
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        800,
+        1603,
+        1100
+      ],
+      "alpha_pk_mradps2": [
+        2911,
+        5764,
+        5257
+      ],
+      "tangent_rms_mmps2": [
+        59,
+        102,
+        134
+      ],
+      "tangent_pk_mmps2": [
+        213,
+        547,
+        484
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        1,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        129,
+        839
+      ],
+      "after_rms_mmps2": [
+        98,
+        802
+      ],
+      "before_mean_mmps2": [
+        32,
+        375
+      ],
+      "after_mean_mmps2": [
+        32,
+        368
+      ],
+      "corr_rms_mmps2": [
+        72,
+        85
+      ],
+      "cross_um2ps4": [
+        6220,
+        34287
+      ]
+    },
+    {
+      "win": 130,
+      "dver": 1,
+      "start_t_us": 133745822,
+      "end_t_us": 134745833,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        607,
+        1390
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        198,
+        337,
+        742
+      ],
+      "alpha_pk_mradps2": [
+        617,
+        1021,
+        1761
+      ],
+      "tangent_rms_mmps2": [
+        12,
+        57,
+        28
+      ],
+      "tangent_pk_mmps2": [
+        37,
+        140,
+        85
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        16,
+        21
+      ],
+      "after_rms_mmps2": [
+        17,
+        31
+      ],
+      "before_mean_mmps2": [
+        14,
+        18
+      ],
+      "after_mean_mmps2": [
+        14,
+        18
+      ],
+      "corr_rms_mmps2": [
+        8,
+        25
+      ],
+      "cross_um2ps4": [
+        18,
+        79
+      ]
+    },
+    {
+      "win": 131,
+      "dver": 1,
+      "start_t_us": 134746743,
+      "end_t_us": 135746763,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        589,
+        1403
+      ],
+      "ddrop": 76,
+      "alpha_rms_mradps2": [
+        165,
+        350,
+        674
+      ],
+      "alpha_pk_mradps2": [
+        454,
+        884,
+        1451
+      ],
+      "tangent_rms_mmps2": [
+        12,
+        53,
+        29
+      ],
+      "tangent_pk_mmps2": [
+        32,
+        118,
+        74
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        18,
+        21
+      ],
+      "after_rms_mmps2": [
+        20,
+        29
+      ],
+      "before_mean_mmps2": [
+        17,
+        19
+      ],
+      "after_mean_mmps2": [
+        17,
+        19
+      ],
+      "corr_rms_mmps2": [
+        8,
+        23
+      ],
+      "cross_um2ps4": [
+        8,
+        73
+      ]
+    }
+  ],
+  "aid": [
+    {
+      "win": 1,
+      "dver": 1,
+      "t_us": 5564566,
+      "now": 0,
+      "last": 1048576,
+      "last_t_us": 5524566,
+      "resets": 14,
+      "settle_ms": 34,
+      "window_ms": 0,
+      "hits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        0,
+        0,
+        0,
+        0,
+        18,
+        31,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "加速度模长偏离重力"
+      ],
+      "hits_delta": null
+    },
+    {
+      "win": 78,
+      "dver": 1,
+      "t_us": 82669583,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 82669583,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        14529,
+        0,
+        2583,
+        0,
+        0,
+        10639,
+        10683,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 14529,
+        "底盘有运动命令": 2583,
+        "车轮原始速度超限": 10636,
+        "车轮滤波速度超限": 10680,
+        "YAW输入不为零": 1615,
+        "加速度模长偏离重力": 4981,
+        "角速度超限": 9920,
+        "PITCH目标变化": 10,
+        "PITCH编码器单帧变化": 1,
+        "PITCH编码器累计变化": 4
+      }
+    },
+    {
+      "win": 79,
+      "dver": 1,
+      "t_us": 83669574,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 83669574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        14729,
+        0,
+        2583,
+        0,
+        0,
+        10645,
+        10690,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 6,
+        "车轮滤波速度超限": 7
+      }
+    },
+    {
+      "win": 80,
+      "dver": 1,
+      "t_us": 84674566,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 84674566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        14930,
+        0,
+        2583,
+        0,
+        0,
+        10652,
+        10697,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "车轮原始速度超限": 7,
+        "车轮滤波速度超限": 7
+      }
+    },
+    {
+      "win": 81,
+      "dver": 1,
+      "t_us": 85674566,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 85674566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        15130,
+        0,
+        2583,
+        0,
+        0,
+        10658,
+        10703,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 6,
+        "车轮滤波速度超限": 6
+      }
+    },
+    {
+      "win": 82,
+      "dver": 1,
+      "t_us": 86679574,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 86679574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        15331,
+        0,
+        2583,
+        0,
+        0,
+        10670,
+        10717,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "车轮原始速度超限": 12,
+        "车轮滤波速度超限": 14
+      }
+    },
+    {
+      "win": 83,
+      "dver": 1,
+      "t_us": 87679574,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 87679574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        15531,
+        0,
+        2583,
+        0,
+        0,
+        10674,
+        10723,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 4,
+        "车轮滤波速度超限": 6
+      }
+    },
+    {
+      "win": 84,
+      "dver": 1,
+      "t_us": 88679574,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 88679574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        15731,
+        0,
+        2583,
+        0,
+        0,
+        10680,
+        10730,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 6,
+        "车轮滤波速度超限": 7
+      }
+    },
+    {
+      "win": 85,
+      "dver": 1,
+      "t_us": 89684566,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 89684566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        15932,
+        0,
+        2583,
+        0,
+        0,
+        10689,
+        10741,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "车轮原始速度超限": 9,
+        "车轮滤波速度超限": 11
+      }
+    },
+    {
+      "win": 86,
+      "dver": 1,
+      "t_us": 90684566,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 90684566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        16132,
+        0,
+        2583,
+        0,
+        0,
+        10698,
+        10751,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 9,
+        "车轮滤波速度超限": 10
+      }
+    },
+    {
+      "win": 87,
+      "dver": 1,
+      "t_us": 91689574,
+      "now": 2,
+      "last": 2,
+      "last_t_us": 91689574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        16333,
+        0,
+        2583,
+        0,
+        0,
+        10707,
+        10762,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        4999,
+        9951,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许"
+      ],
+      "last_names": [
+        "底盘模式不允许"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "车轮原始速度超限": 9,
+        "车轮滤波速度超限": 11
+      }
+    },
+    {
+      "win": 88,
+      "dver": 1,
+      "t_us": 92689574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 92689574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        16533,
+        0,
+        2772,
+        0,
+        0,
+        10893,
+        10948,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5000,
+        10063,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 189,
+        "车轮原始速度超限": 186,
+        "车轮滤波速度超限": 186,
+        "加速度模长偏离重力": 1,
+        "角速度超限": 112
+      }
+    },
+    {
+      "win": 89,
+      "dver": 1,
+      "t_us": 93689574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 93689574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        16733,
+        0,
+        2972,
+        0,
+        0,
+        11093,
+        11148,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5092,
+        10223,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 200,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 92,
+        "角速度超限": 160
+      }
+    },
+    {
+      "win": 90,
+      "dver": 1,
+      "t_us": 94694566,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 94694566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        16934,
+        0,
+        3079,
+        0,
+        0,
+        11294,
+        11349,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5109,
+        10398,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 107,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 17,
+        "角速度超限": 175
+      }
+    },
+    {
+      "win": 91,
+      "dver": 1,
+      "t_us": 95694577,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 95694577,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        17134,
+        0,
+        3264,
+        0,
+        0,
+        11494,
+        11549,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5109,
+        10527,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 185,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "角速度超限": 129
+      }
+    },
+    {
+      "win": 92,
+      "dver": 1,
+      "t_us": 96689574,
+      "now": 3145930,
+      "last": 3145930,
+      "last_t_us": 96689574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        17333,
+        0,
+        3463,
+        0,
+        0,
+        11693,
+        11748,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5197,
+        10685,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 199,
+        "底盘有运动命令": 199,
+        "车轮原始速度超限": 199,
+        "车轮滤波速度超限": 199,
+        "加速度模长偏离重力": 88,
+        "角速度超限": 158
+      }
+    },
+    {
+      "win": 93,
+      "dver": 1,
+      "t_us": 97689574,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 97689574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        17533,
+        0,
+        3521,
+        0,
+        0,
+        11893,
+        11948,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5262,
+        10841,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 58,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 65,
+        "角速度超限": 156
+      }
+    },
+    {
+      "win": 94,
+      "dver": 1,
+      "t_us": 98689585,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 98689585,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        17733,
+        0,
+        3700,
+        0,
+        0,
+        12083,
+        12139,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5288,
+        10957,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 179,
+        "车轮原始速度超限": 190,
+        "车轮滤波速度超限": 191,
+        "加速度模长偏离重力": 26,
+        "角速度超限": 116
+      }
+    },
+    {
+      "win": 95,
+      "dver": 1,
+      "t_us": 99694566,
+      "now": 1048778,
+      "last": 1048778,
+      "last_t_us": 99694566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        17934,
+        0,
+        3901,
+        0,
+        0,
+        12284,
+        12340,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5307,
+        10986,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 19,
+        "角速度超限": 29
+      }
+    },
+    {
+      "win": 96,
+      "dver": 1,
+      "t_us": 100694577,
+      "now": 2097346,
+      "last": 2097346,
+      "last_t_us": 100694577,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        18134,
+        0,
+        4053,
+        0,
+        0,
+        12484,
+        12540,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5330,
+        11079,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 152,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 23,
+        "角速度超限": 93
+      }
+    },
+    {
+      "win": 97,
+      "dver": 1,
+      "t_us": 101694566,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 101694566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        18334,
+        0,
+        4192,
+        0,
+        0,
+        12678,
+        12734,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5331,
+        11216,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 139,
+        "车轮原始速度超限": 194,
+        "车轮滤波速度超限": 194,
+        "加速度模长偏离重力": 1,
+        "角速度超限": 137
+      }
+    },
+    {
+      "win": 98,
+      "dver": 1,
+      "t_us": 102699574,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 102699574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        18535,
+        0,
+        4393,
+        0,
+        0,
+        12879,
+        12935,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5394,
+        11377,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 63,
+        "角速度超限": 161
+      }
+    },
+    {
+      "win": 99,
+      "dver": 1,
+      "t_us": 103699574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 103699574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        18735,
+        0,
+        4526,
+        0,
+        0,
+        13079,
+        13135,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5420,
+        11509,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 133,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 26,
+        "角速度超限": 132
+      }
+    },
+    {
+      "win": 100,
+      "dver": 1,
+      "t_us": 104704581,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 104704581,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        18936,
+        0,
+        4727,
+        0,
+        0,
+        13280,
+        13336,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5458,
+        11643,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 38,
+        "角速度超限": 134
+      }
+    },
+    {
+      "win": 101,
+      "dver": 1,
+      "t_us": 105704574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 105704574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        19136,
+        0,
+        4843,
+        0,
+        0,
+        13480,
+        13536,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5486,
+        11831,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 116,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 28,
+        "角速度超限": 188
+      }
+    },
+    {
+      "win": 102,
+      "dver": 1,
+      "t_us": 106704566,
+      "now": 1048778,
+      "last": 1048778,
+      "last_t_us": 106704566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        19336,
+        0,
+        5043,
+        0,
+        0,
+        13680,
+        13736,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5555,
+        12020,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 200,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 69,
+        "角速度超限": 189
+      }
+    },
+    {
+      "win": 103,
+      "dver": 1,
+      "t_us": 107709585,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 107709585,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        19537,
+        0,
+        5157,
+        0,
+        0,
+        13881,
+        13937,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5647,
+        12175,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 114,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 92,
+        "角速度超限": 155
+      }
+    },
+    {
+      "win": 104,
+      "dver": 1,
+      "t_us": 108709574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 108709574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        19737,
+        0,
+        5357,
+        0,
+        0,
+        14081,
+        14137,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5663,
+        12307,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 200,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 16,
+        "角速度超限": 132
+      }
+    },
+    {
+      "win": 105,
+      "dver": 1,
+      "t_us": 109709574,
+      "now": 2097346,
+      "last": 2097346,
+      "last_t_us": 109709574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        19937,
+        0,
+        5526,
+        0,
+        0,
+        14281,
+        14337,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5761,
+        12436,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 169,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 98,
+        "角速度超限": 129
+      }
+    },
+    {
+      "win": 106,
+      "dver": 1,
+      "t_us": 110714566,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 110714566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        20138,
+        0,
+        5672,
+        0,
+        0,
+        14480,
+        14536,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5774,
+        12525,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 146,
+        "车轮原始速度超限": 199,
+        "车轮滤波速度超限": 199,
+        "加速度模长偏离重力": 13,
+        "角速度超限": 89
+      }
+    },
+    {
+      "win": 107,
+      "dver": 1,
+      "t_us": 111714566,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 111714566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        20338,
+        0,
+        5808,
+        0,
+        0,
+        14680,
+        14736,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5875,
+        12658,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 136,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 101,
+        "角速度超限": 133
+      }
+    },
+    {
+      "win": 108,
+      "dver": 1,
+      "t_us": 112719574,
+      "now": 3145930,
+      "last": 3145930,
+      "last_t_us": 112719574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        20539,
+        0,
+        6009,
+        0,
+        0,
+        14881,
+        14937,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5944,
+        12808,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 69,
+        "角速度超限": 150
+      }
+    },
+    {
+      "win": 109,
+      "dver": 1,
+      "t_us": 113719574,
+      "now": 2097346,
+      "last": 2097346,
+      "last_t_us": 113719574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        20739,
+        0,
+        6073,
+        0,
+        0,
+        15081,
+        15137,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5972,
+        12965,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 64,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 28,
+        "角速度超限": 157
+      }
+    },
+    {
+      "win": 110,
+      "dver": 1,
+      "t_us": 114719574,
+      "now": 1048778,
+      "last": 1048778,
+      "last_t_us": 114719574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        20939,
+        0,
+        6266,
+        0,
+        0,
+        15281,
+        15337,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        5984,
+        13143,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 193,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 12,
+        "角速度超限": 178
+      }
+    },
+    {
+      "win": 111,
+      "dver": 1,
+      "t_us": 115724566,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 115724566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        21140,
+        0,
+        6467,
+        0,
+        0,
+        15482,
+        15538,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6051,
+        13287,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 67,
+        "角速度超限": 144
+      }
+    },
+    {
+      "win": 112,
+      "dver": 1,
+      "t_us": 116724566,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 116724566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        21340,
+        0,
+        6530,
+        0,
+        0,
+        15665,
+        15723,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6055,
+        13350,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 63,
+        "车轮原始速度超限": 183,
+        "车轮滤波速度超限": 185,
+        "加速度模长偏离重力": 4,
+        "角速度超限": 63
+      }
+    },
+    {
+      "win": 113,
+      "dver": 1,
+      "t_us": 117729574,
+      "now": 3145930,
+      "last": 3145930,
+      "last_t_us": 117729574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        21541,
+        0,
+        6731,
+        0,
+        0,
+        15866,
+        15924,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6087,
+        13461,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 201,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 32,
+        "角速度超限": 111
+      }
+    },
+    {
+      "win": 114,
+      "dver": 1,
+      "t_us": 118729574,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 118729574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        21741,
+        0,
+        6865,
+        0,
+        0,
+        16066,
+        16124,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6172,
+        13499,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 134,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 85,
+        "角速度超限": 38
+      }
+    },
+    {
+      "win": 115,
+      "dver": 1,
+      "t_us": 119729574,
+      "now": 3145930,
+      "last": 3145930,
+      "last_t_us": 119729574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        21941,
+        0,
+        7030,
+        0,
+        0,
+        16266,
+        16324,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6184,
+        13615,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 165,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 12,
+        "角速度超限": 116
+      }
+    },
+    {
+      "win": 116,
+      "dver": 1,
+      "t_us": 120729574,
+      "now": 2097346,
+      "last": 2097346,
+      "last_t_us": 120729574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        22141,
+        0,
+        7198,
+        0,
+        0,
+        16466,
+        16524,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6270,
+        13791,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 168,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 86,
+        "角速度超限": 176
+      }
+    },
+    {
+      "win": 117,
+      "dver": 1,
+      "t_us": 121729574,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 121729574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        22341,
+        0,
+        7312,
+        0,
+        0,
+        16666,
+        16724,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6270,
+        13882,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 114,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "角速度超限": 91
+      }
+    },
+    {
+      "win": 118,
+      "dver": 1,
+      "t_us": 122734566,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 122734566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        22542,
+        0,
+        7503,
+        0,
+        0,
+        16867,
+        16925,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6316,
+        14037,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 191,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 46,
+        "角速度超限": 155
+      }
+    },
+    {
+      "win": 119,
+      "dver": 1,
+      "t_us": 123734566,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 123734566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        22742,
+        0,
+        7618,
+        0,
+        0,
+        17067,
+        17125,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6317,
+        14064,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 115,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 1,
+        "角速度超限": 27
+      }
+    },
+    {
+      "win": 120,
+      "dver": 1,
+      "t_us": 124734566,
+      "now": 3145930,
+      "last": 3145930,
+      "last_t_us": 124734566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        22942,
+        0,
+        7818,
+        0,
+        0,
+        17267,
+        17325,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6364,
+        14188,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 200,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 47,
+        "角速度超限": 124
+      }
+    },
+    {
+      "win": 121,
+      "dver": 1,
+      "t_us": 125734566,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 125734566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        23142,
+        0,
+        7898,
+        0,
+        0,
+        17462,
+        17520,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6369,
+        14266,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 80,
+        "车轮原始速度超限": 195,
+        "车轮滤波速度超限": 195,
+        "加速度模长偏离重力": 5,
+        "角速度超限": 78
+      }
+    },
+    {
+      "win": 122,
+      "dver": 1,
+      "t_us": 126739574,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 126739574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        23343,
+        0,
+        8089,
+        0,
+        0,
+        17663,
+        17721,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6454,
+        14347,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 191,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 85,
+        "角速度超限": 81
+      }
+    },
+    {
+      "win": 123,
+      "dver": 1,
+      "t_us": 127739598,
+      "now": 2097354,
+      "last": 2097354,
+      "last_t_us": 127739598,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        23543,
+        0,
+        8207,
+        0,
+        0,
+        17863,
+        17921,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6462,
+        14447,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 118,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 8,
+        "角速度超限": 100
+      }
+    },
+    {
+      "win": 124,
+      "dver": 1,
+      "t_us": 128739574,
+      "now": 3145922,
+      "last": 3145922,
+      "last_t_us": 128739574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        23743,
+        0,
+        8400,
+        0,
+        0,
+        18063,
+        18121,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6584,
+        14587,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 193,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 122,
+        "角速度超限": 140
+      }
+    },
+    {
+      "win": 125,
+      "dver": 1,
+      "t_us": 129744566,
+      "now": 1048778,
+      "last": 1048778,
+      "last_t_us": 129744566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        23944,
+        0,
+        8485,
+        0,
+        0,
+        18264,
+        18322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6591,
+        14640,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "加速度模长偏离重力"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 85,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 7,
+        "角速度超限": 53
+      }
+    },
+    {
+      "win": 126,
+      "dver": 1,
+      "t_us": 130744566,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 130744566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        24144,
+        0,
+        8672,
+        0,
+        0,
+        18464,
+        18522,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6641,
+        14799,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 187,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 50,
+        "角速度超限": 159
+      }
+    },
+    {
+      "win": 127,
+      "dver": 1,
+      "t_us": 131744566,
+      "now": 202,
+      "last": 202,
+      "last_t_us": 131744566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        24344,
+        0,
+        8790,
+        0,
+        0,
+        18664,
+        18722,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6650,
+        14846,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "底盘有运动命令",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "底盘有运动命令": 118,
+        "车轮原始速度超限": 200,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 9,
+        "角速度超限": 47
+      }
+    },
+    {
+      "win": 128,
+      "dver": 1,
+      "t_us": 132749574,
+      "now": 2097346,
+      "last": 2097346,
+      "last_t_us": 132749574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        24545,
+        0,
+        8974,
+        0,
+        0,
+        18865,
+        18923,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6711,
+        14999,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "底盘有运动命令": 184,
+        "车轮原始速度超限": 201,
+        "车轮滤波速度超限": 201,
+        "加速度模长偏离重力": 61,
+        "角速度超限": 153
+      }
+    },
+    {
+      "win": 129,
+      "dver": 1,
+      "t_us": 133749574,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 133749574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        24745,
+        0,
+        8974,
+        0,
+        0,
+        19060,
+        19123,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6714,
+        15064,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 195,
+        "车轮滤波速度超限": 200,
+        "加速度模长偏离重力": 3,
+        "角速度超限": 65
+      }
+    },
+    {
+      "win": 130,
+      "dver": 1,
+      "t_us": 134749574,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 134749574,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        24945,
+        0,
+        8974,
+        0,
+        0,
+        19251,
+        19323,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6714,
+        15064,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 200,
+        "车轮原始速度超限": 191,
+        "车轮滤波速度超限": 200
+      }
+    },
+    {
+      "win": 131,
+      "dver": 1,
+      "t_us": 135754566,
+      "now": 194,
+      "last": 194,
+      "last_t_us": 135754566,
+      "resets": 25,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        25146,
+        0,
+        8974,
+        0,
+        0,
+        19441,
+        19524,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        93,
+        1615,
+        0,
+        0,
+        0,
+        6714,
+        15064,
+        0,
+        0,
+        0,
+        10,
+        2,
+        5,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "last_names": [
+        "底盘模式不允许",
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "底盘模式不允许": 201,
+        "车轮原始速度超限": 190,
+        "车轮滤波速度超限": 201
+      }
+    }
+  ]
+}

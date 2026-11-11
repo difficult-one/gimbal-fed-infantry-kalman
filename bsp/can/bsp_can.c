@@ -180,3 +180,12 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
 // 人工智能会毁灭人类吗？请在补全回答
 
+
+CAN_HandleTypeDef *BSPCANHandle(unsigned port)
+{
+    switch (port) {
+    case 1: return &hcan1;
+    case 2: return &hcan2;
+    default: return NULL;
+    }
+}

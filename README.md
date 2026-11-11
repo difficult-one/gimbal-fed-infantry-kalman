@@ -6,21 +6,22 @@ https://gitee.com/hnuyuelurm/basic_framework_atype
 
 当前工程基于 STM32F427 A 板生成，时钟频率暂保持 168MHz。工程结构已经切换为 CubeMX 生成的 `Core/Inc`、`Core/Src` 目录，并使用 `STM32F427IIHx_FLASH.ld`、`startup_stm32f427xx.s` 和根目录 `Makefile` 构建。
 
-IMU 方案已由原工程的 `BMI088 + IST8310` 替换为 A 板上的 `MPU6500`。当前 `modules/mpu6500` 中保留了上层惯导接口：
+IMU 方案已由原工程的 `BMI088 + IST8310` 替换为 A 板上的 `MPU6500`。当前 `modules/imu` 中保留了上层惯导接口：
 
 - `attitude_t`
-- `INS_Init()`
+- `INS_Init(&g_imu_config)`
 - `INS_Task()`
 
-因此，应用层原本依赖 `ins_task.h` 获取姿态数据的位置，可以改为包含 `mpu6500.h`。需要注意的是，该适配只对齐 INS 上层姿态接口，并不兼容原 BMI088/IST8310 的底层注册和采集接口，例如 `BMI088Register()`、`BMI088Acquire()`、`IST8310Init()` 等不能直接沿用。
+因此，应用层原本依赖 `ins_task.h` 获取姿态数据的位置，可以改为包含 `ins.h`。需要注意的是，该适配只对齐 INS 上层姿态接口，并不兼容原 BMI088/IST8310 的底层注册和采集接口，例如 `BMI088Register()`、`BMI088Acquire()`、`IST8310Init()` 等不能直接沿用。
 
 MPU6500 上电后需要预热，当前工程中保留约 15 秒预热流程。调试姿态数据时，应等待预热结束后再观察 `Pitch`、`Roll`、`Yaw` 等输出。
 
 当前关键外设映射：
 
-- DR16/DBUS：A 板 DBUS 口，对应 `USART1_RX/PB7`，代码中使用 `RemoteControlInit(&huart1)`。
-- 视觉通信：当前使用 `VisionInit(&huart8)`，对应 `UART8 PE1/PE0`，需确认视觉端波特率为 115200。
-- 裁判系统：当前使用 `UITaskInit(&huart6, &ui_data)`，对应 `USART6 PG14/PG9`。
+- DR16/DBUS：A 板 DBUS 口，对应 `USART1_RX/PB7`，在 `config/config.c` 选择逻辑串口 1。
+- 视觉通信：当前使用 `USART3 PD9/PD8`，波特率 9600。
+- VT02 图传键鼠：`UART8 PE1/PE0`。
+- 裁判系统：当前使用 `USART6 PG14/PG9`。
 - CAN1：`PD0/PD1`。
 - CAN2：`PB12/PB13`。
 - MPU6500：`SPI5 PF7/PF8/PF9`，片选 `PF6`。
@@ -34,7 +35,7 @@ MPU6500 上电后需要预热，当前工程中保留约 15 秒预热流程。�
 - `bsp/pwm` 在当前工程中的语义是 `period` 单位 ms、`dutyratio` 范围 0~100；原工程为 `period` 单位 s、`dutyratio` 范围 0~1。
 - 原工程中的 `bsp/flash`、`bsp/usb`、`bsp_tools` 当前未移植到 A 板工程。
 
-本次已清理若干移植残留 warning，包括 `power_control.c`、`mpu6500.c`、`mpu6500driver.c`、`buzzer.c` 中的未使用变量，以及 `buzzer.c` 中未覆盖的 `OCTAVE_8` 分支。当前仍可能看到 `_write/_read/_lseek/_close is not implemented` 和 `LOAD segment with RWX permissions` 这类链接器提示，它们不是源码 warning，固件仍可正常生成。
+本次已清理若干移植残留 warning，包括 `power_control.c`、`ins.c`、`mpu6500_spi.c`、`buzzer.c` 中的未使用变量，以及 `buzzer.c` 中未覆盖的 `OCTAVE_8` 分支。当前仍可能看到 `_write/_read/_lseek/_close is not implemented` 和 `LOAD segment with RWX permissions` 这类链接器提示，它们不是源码 warning，固件仍可正常生成。
 
 部分外设和模块仍保留原 C 板工程痕迹，尚未全部完成 A 板实物验证。移植或调车时，建议优先检查 CubeMX 引脚、串口/DMA 配置和 Makefile 收录路径是否与实际硬件一致。
 
@@ -200,9 +201,9 @@ MPU6500 上电后需要预热，当前工程中保留约 15 秒预热流程。�
 
    - **app**是框架层级中最高的部分。目前的框架设计里，会有多个app任务运行在freertos中，当然你也可以根据需要启动一些事件驱动的任务，所有的任务安排都放在`app/robot_task`中。当前的app层仅是一个机器人开发的示例，有了封装程度极高的module，你可以在app完成任何事情。
 
-     目前的app设计里，可以兼容多块开发板的情况，通过**条件编译**切换开发板的位置。如步兵机器人可以将主控MCU放在云台上，而超级电容控制板同时作为底盘板。使用CAN/SPI/UART将两者连接，便可以通过**`app/robot_def.h`**中的宏完成设置。可以根据需要，设置更多的开发板（双云台哨兵、工程机器人）。
+     目前的app设计里，可以兼容多块开发板的情况，通过**条件编译**切换开发板的位置。如步兵机器人可以将主控MCU放在云台上，而超级电容控制板同时作为底盘板。使用CAN/SPI/UART将两者连接，便可以通过**`config/build_config.h`**中的宏完成设置。可以根据需要，设置更多的开发板（双云台哨兵、工程机器人）。
 
-     这套框架可以轻松扩展到所有机器人上，在我们的仓库中，有步兵机器人、平衡步兵机器人、哨兵机器人、英雄机器人、工程机器人以及空中机器人的代码实例，皆按照本框架中的三层结构开发。若设计了新的机器人，只需要在robot_def.h中修改传感器的位置、底盘轮距轴距、拨弹盘容量、弹舱载弹量等参数便可以**立刻实现部署**。
+     这套框架可以轻松扩展到所有机器人上，在我们的仓库中，有步兵机器人、平衡步兵机器人、哨兵机器人、英雄机器人、工程机器人以及空中机器人的代码实例，皆按照本框架中的三层结构开发。若设计了新的机器人，只需要在 `config/config.c` 中修改传感器的位置、底盘轮距轴距、拨弹盘容量、弹舱载弹量等参数便可以**立刻实现部署**。
 
 3. ***知道了每个层级的结构之后，我们再谈谈如何进行每层的开发。***
 
@@ -288,7 +289,7 @@ app、module和bsp都有相应的rtos任务。其中bsp为创建任务提供了�
 
 本项目是基于RoboMaster开发板C型的示例，MCU为STM32F407IG，使用了板载的imu bmi-088，驱动标准的步兵机器人：2自由度GM6020云台、m2006电机拨盘+2*m3508电机摩擦轮的发射机构和MG90舵机弹舱盖，以及带有超级电容控制器的4轮麦克纳姆底盘。
 
-首先在`app/robot_def.h`中根据注释修改开发板和机器人配置，再在各个app中修改初始化配置（如电机id，上位机通信波特率/使用串口或VCP，imu速率，超级电容id等）。
+通过 `EXTRA_DEFS` 选择板型和轮型（默认值和组合检查见 `config/build_config.h`），在 `config/config.c` 中调整电机 ID、逻辑串口、IMU 标定、超电 CAN 等整车参数。外设波特率和引脚由 CubeMX 工程管理。
 
 接着根据[VSCode+Ozone使用方法.md](.Doc/VSCode+Ozone使用方法.md)配置好编译下载环境之后（***再次建议使用Msys2+mingw64/ucrt64/clang64的方式配置环境！***），在VSCode中打开项目，点击上方tab页的终端（terminal）->运行构建任务（run build task)，便启动编译，若没有问题，最终会在终端中输出如下信息：
 
@@ -369,10 +370,9 @@ ST官方现在将HAL放入github维护。想要获取最新的支持，可以自
 ## 后续计划
 
 - `.Doc/TODO.md`中列举了一些可能的功能增强和优化。
-- 将所有配置移动到一处，方便修改（统一放入`app/robot_def.h`中？）
 - 为三个层级都增加入门级培训教程，可以单独运行各个模块以方便上手。
 - 优化pub-sub消息机制的性能，同时将app的任务尽可能修改为**状态机+事件驱动**的回调机制。
-- 使用Qt或命令行为机器人配置（主要是robot_def和各个任务中的module初始化配置）编写UI界面，实现无代码机器人部署。
+- 使用Qt或命令行为机器人配置（主要是整车参数与应用初始化配置）编写UI界面，实现无代码机器人部署。
 - 为框架编写ROSdriver，通过usb连接到上位机（NUC），合并视觉/算法和电控的工作流。
 
 

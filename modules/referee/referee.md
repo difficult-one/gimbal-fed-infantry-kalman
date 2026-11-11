@@ -2,7 +2,7 @@
 
 ## referee运行流程
 
-首先在chassis的初始化中调用裁判系统初始化函数，将要绘制的uidata的指针传递给接口，接口会返回裁判系统的反馈数据指针。然后，在refereeUItask里进行UI初始化，确定ui发送的目标并绘制初始化UI。完成后，uitask会以10hz的频率按顺序更新UI。
+底盘初始化时调用应用层 [UITaskInit](../../application/referee/chassis_ui.c)，传入 UI 状态并取得裁判反馈。串口收发和交互帧解析在 [referee_rx.c](referee_rx.c)，通用绘图和帧序号在 [referee_draw.c](referee_draw.c)。启用 UI 调度时先调用 `MyUIInit` 绘制初始界面，再由 `UITask` 更新动态状态。每次 `RefereeSend` 使用 DMA 发送并延时 115 个 RTOS tick。
 
 ## 如何绘制你的自定义UI？以绘制超级电容能量条为例
 
@@ -61,7 +61,7 @@ static Graph_Data_t UI_energy_line[3]; // 电容能量条
 
 ```c
 UIRectangleDraw(&UI_energy_line[0],"ss6", UI_Graph_ADD, 7, UI_Color_Green,20, 720, 220, 820, 240)
-UIRefresh(&referee_recv_info->referee_id, 1,UI_energy_line[0]);
+UIGraphRefresh(&referee_recv_info->referee_id, 1,UI_energy_line[0]);
 ```
 
 ### 绘制power的初始值
@@ -79,7 +79,7 @@ UILineDraw(&UI_Energy[2], "sd6", UI_Graph_ADD, 8, UI_Color_Pink, 30, 720, 160, 1
 将两个图形打包发送
 
 ```
-UIRefresh(&referee_recv_info->referee_id, 2, UI_Energy[1], UI_Energy[2]);
+UIGraphRefresh(&referee_recv_info->referee_id, 2, UI_Energy[1], UI_Energy[2]);
 ```
 
 ## TASK部分
@@ -160,24 +160,25 @@ if (_Interactive_data->Referee_Interactive_Flag.Power_flag == 1)
 {
  UIFloatDraw(&UI_Energy[1], "sd5", UI_Graph_Change, 8, UI_Color_Green, 18, 2, 2, 750, 230, _Interactive_data->Chassis_Power_Data.chassis_power_mx * 1000);
  UILineDraw(&UI_Energy[2], "sd6", UI_Graph_Change, 8, UI_Color_Pink, 30, 720, 160, (uint32_t)750 + _Interactive_data->Chassis_Power_Data.chassis_power_mx * 30, 160);
- UIRefresh(&referee_recv_info->referee_id, 2, UI_Energy[1], UI_Energy[2]);
+ UIGraphRefresh(&referee_recv_info->referee_id, 2, UI_Energy[1], UI_Energy[2]);
  _Interactive_data->Referee_Interactive_Flag.Power_flag = 0;
 }
 ```
 
 ---
 
-若需要进行多机交互，可增加此函数：
+多机交互的扩展示例如下。示例维护自己的发送序号，实际启用时仍使用相同的交互帧布局和 CRC。
 
 ```c
 void CommBetweenRobotSend(referee_id_t *_id, robot_interactive_data_t *_data)
 {
+ static uint8_t sequence;
  Communicate_SendData_t SendData;
  uint8_t temp_datalength = Interactive_Data_LEN_Head + Communicate_Data_LEN; // 计算交互数据长度  6+n,n为交互数据长度
 
  SendData.FrameHeader.SOF = REFEREE_SOF;
  SendData.FrameHeader.DataLength = temp_datalength;
- SendData.FrameHeader.Seq = UI_Seq;
+ SendData.FrameHeader.Seq = sequence;
  SendData.FrameHeader.CRC8 = Get_CRC8_Check_Sum((uint8_t *)&SendData, LEN_CRC8, 0xFF);
 
  SendData.CmdID = ID_student_interactive;
@@ -191,6 +192,6 @@ void CommBetweenRobotSend(referee_id_t *_id, robot_interactive_data_t *_data)
  SendData.frametail = Get_CRC16_Check_Sum((uint8_t *)&SendData, LEN_HEADER + LEN_CMDID + temp_datalength, 0xFFFF);
 
  RefereeSend((uint8_t *)&SendData, LEN_HEADER + LEN_CMDID + temp_datalength + LEN_TAIL); // 发送
- UI_Seq++;                    // 包序号+1
+ sequence++;                    // 包序号+1
 }
 ```

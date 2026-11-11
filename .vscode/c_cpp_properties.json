@@ -19,7 +19,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "arm-none-eabi-gcc",
+            "compilerPath": "D:/Compilers/arm-none-eabi/xpack-arm-none-eabi-gcc-15.2.1-1.1/bin/arm-none-eabi-gcc.exe",
             "cStandard": "c17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "gcc-arm",

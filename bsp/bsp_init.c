@@ -3,8 +3,8 @@
 #include "bsp_dwt.h"
 #include "tim.h"
 // CAN和串口会在注册实例的时候自动初始化,不注册不初始化
-void BSPInit()
+void BSPInit(unsigned motion_rtt_channel)
 {
     DWT_Init(168);
-    BSPLogInit();
+    BSPLogInit(motion_rtt_channel);
 }

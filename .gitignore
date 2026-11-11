@@ -2,3 +2,4 @@ build
 .cortex*
 /.assets/
 /.Doc/
+__pycache__/

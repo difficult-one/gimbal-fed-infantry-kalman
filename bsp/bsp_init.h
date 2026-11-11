@@ -7,7 +7,7 @@
  *        需在实时系统启动前调用,目前由RobotoInit()调用
  * 
  */
-void BSPInit();
+void BSPInit(unsigned motion_rtt_channel);
 
 #endif // !BSP_INIT_h
 

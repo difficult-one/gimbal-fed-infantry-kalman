@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include "main.h"
 
+UART_HandleTypeDef *BSPUSARTHandle(unsigned port);
+
 #define DEVICE_USART_CNT 6     // C板至多分配3个串口
 #define USART_RXBUFF_LIMIT 256 // 如果协议需要更大的buff,请修改这里
 

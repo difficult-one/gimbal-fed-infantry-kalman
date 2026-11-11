@@ -17,10 +17,10 @@ class CaptureFirmwareTest(unittest.TestCase):
             fixture = Path(tmp) / "capture.wimu"
             subprocess.run([
                 "gcc", "-std=c11", "-O2", "-Wall", "-Wextra", "-Werror",
-                "-DWHEEL_IMU_CAPTURE=1", "-include", "tests/host/platform.h",
-                "-Itests/host/dwt", "-Ibsp/dwt", "-Iapplication/chassis", "-Iapplication",
+                "-DWHEEL_IMU_CAPTURE=1",
+                "-Itests/host/dwt", "-Ibsp/dwt", "-Iconfig", "-Imodules/diagnostics", "-Imodules/chassis_motion",
                 "-IMiddlewares/Third_Party/SEGGER/RTT",
-                "tests/wheel_imu_capture_test.c", "application/chassis/wheel_imu_capture.c",
+                "tests/wheel_imu_capture_test.c", "modules/diagnostics/wheel_imu_capture.c",
                 "-lm", "-o", str(exe),
             ], cwd=ROOT, check=True)
             subprocess.run([str(exe), str(fixture)], check=True)

@@ -71,7 +71,6 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Middlewares/Third_Party/SEGGER/RTT/SEGGER_RTT_printf.c \
 Middlewares/Third_Party/SEGGER/RTT/SEGGER_RTT.c \
 bsp/dwt/bsp_dwt.c \
-bsp/adc/bsp_adc.c \
 bsp/pwm/bsp_pwm.c \
 bsp/gpio/bsp_gpio.c \
 bsp/spi/bsp_spi.c \
@@ -80,20 +79,20 @@ bsp/can/bsp_can.c \
 bsp/usart/bsp_usart.c \
 bsp/log/bsp_log.c \
 bsp/bsp_init.c \
-modules/algorithm/controller.c \
+modules/algorithm/pid.c \
 modules/algorithm/kalman_filter.c \
-modules/algorithm/QuaternionEKF.c \
-modules/algorithm/MahonyAHRS.c \
+modules/algorithm/quaternion_ekf.c \
+modules/algorithm/mahony_ahrs.c \
 modules/algorithm/crc8.c \
 modules/algorithm/crc16.c \
-modules/algorithm/user_lib.c \
-modules/master_machine/master_process.c \
-modules/master_machine/seasky_protocol.c \
-modules/motor/DJImotor/dji_motor.c \
-modules/motor/DMmotor/dmmotor.c \
-modules/motor/HTmotor/HT04.c \
-modules/motor/LKmotor/LK9025.c \
-modules/motor/step_motor/step_motor.c \
+modules/algorithm/math_utils.c \
+modules/memory/mem_alloc.c \
+modules/vision/vision_link.c \
+modules/vision/seasky_protocol.c \
+modules/motor/dji/dji_motor.c \
+modules/motor/dm/dm_motor.c \
+modules/motor/ht/ht04.c \
+modules/motor/lk/lk9025.c \
 modules/motor/servo_motor/servo_motor.c \
 modules/motor/motor_task.c \
 modules/motor/power_control.c \
@@ -102,25 +101,35 @@ modules/remote/remote_control.c \
 modules/can_comm/can_comm.c \
 modules/message_center/message_center.c \
 modules/daemon/daemon.c \
-modules/mpu6500/mpu6500.c \
-modules/mpu6500/imu_temperature.c \
+modules/diagnostics/jscope_rtt.c \
+modules/jam_detector/jam_detector.c \
+modules/vtx/vt02_control.c \
+modules/imu/ins.c \
+modules/imu/imu_compensation.c \
+modules/imu/imu_temperature.c \
 modules/alarm/buzzer.c \
-modules/bluetooth/HC05.c \
-modules/mpu6500/mpu6500driver.c \
-modules/TFminiPlus/tfminiplus.c \
-modules/referee/crc_ref.c \
-modules/referee/rm_referee.c \
-modules/referee/referee_UI.c \
-modules/referee/referee_task.c \
-modules/standard_cmd/std_cmd.c \
+modules/bluetooth/hc05.c \
+modules/imu/mpu6500_spi.c \
+modules/tfmini/tfmini_plus.c \
+modules/referee/referee_crc.c \
+modules/referee/referee_rx.c \
+modules/referee/referee_draw.c \
+application/referee/chassis_ui.c \
 modules/super_cap/super_cap.c \
-modules/unicomm/unicomm.c \
 modules/key/key.c \
 application/gimbal/gimbal.c \
 application/chassis/chassis.c \
+application/chassis/chassis_force.c \
+application/chassis/chassis_log.c \
+modules/chassis_motion/chassis_motion.c \
+modules/diagnostics/wheel_imu_capture.c \
+application/chassis/chassis_setup.c \
+modules/chassis_motion/motion_port.c \
+modules/chassis_motion/kinematics.c \
 application/shoot/shoot.c \
 application/cmd/robot_cmd.c \
 application/robot.c \
+config/config.c \
 Core/Src/main.c \
 Core/Src/gpio.c \
 Core/Src/freertos.c \
@@ -216,9 +225,10 @@ C_INCLUDES =  \
 -Iapplication/shoot \
 -Iapplication/gimbal \
 -Iapplication/cmd \
+-Iapplication/referee \
+-Iconfig \
 -Iapplication \
 -Ibsp/dwt \
--Ibsp/adc \
 -Ibsp/can \
 -Ibsp/usart \
 -Ibsp/gpio \
@@ -228,27 +238,29 @@ C_INCLUDES =  \
 -Ibsp/pwm \
 -Ibsp \
 -Imodules/algorithm \
--Imodules/master_machine \
--Imodules/motor/DJImotor \
--Imodules/motor/DMmotor \
--Imodules/motor/LKmotor \
--Imodules/motor/HTmotor \
--Imodules/motor/step_motor \
+-Imodules/memory \
+-Imodules/chassis_motion \
+-Imodules/vision \
+-Imodules/motor/dji \
+-Imodules/motor/dm \
+-Imodules/motor/lk \
+-Imodules/motor/ht \
 -Imodules/motor/servo_motor \
 -Imodules/motor \
 -Imodules/oled \
--Imodules/mpu6500 \
+-Imodules/imu \
 -Imodules/remote \
 -Imodules/can_comm \
 -Imodules/message_center \
 -Imodules/daemon \
+-Imodules/diagnostics \
 -Imodules/alarm \
+-Imodules/jam_detector \
+-Imodules/vtx \
 -Imodules/bluetooth \
--Imodules/TFminiPlus \
+-Imodules/tfmini \
 -Imodules/referee \
--Imodules/standard_cmd \
 -Imodules/super_cap \
--Imodules/unicomm \
 -Imodules/key \
 -Imodules \
 -ICore/Inc
@@ -257,7 +269,7 @@ C_INCLUDES =  \
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
-CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+CFLAGS += $(MCU) $(C_DEFS) $(EXTRA_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2

@@ -1,6 +1,6 @@
 #include "bsp_init.h"
 #include "robot.h"
-#include "robot_def.h"
+#include "config.h"
 
 #include "chassis.h"
 #include "gimbal.h"
@@ -14,20 +14,28 @@ void RobotInit()
     // 若必须,则只允许使用DWT_Delay()
     __disable_irq();
     
-    BSPInit();
+    BSPInit(g_chassis_log_config.text_rtt_channel);
    
+#ifndef CHASSIS_BOARD
     RobotCMDInit();
-    GimbalInit();
-    //ShootInit();
-    ChassisInit();
+    GimbalInit(); /* Owns this board's INS on GIMBAL_BOARD. */
+    ShootInit();
+#endif
+#ifndef GIMBAL_BOARD
+    ChassisInit(); /* Dual board: local chassis INS, no gimbal drivers. */
+#endif
 
     __enable_irq();
 }
 
 void RobotTask()
 {
+#ifndef CHASSIS_BOARD
     RobotCMDTask();
     GimbalTask();
-    //ShootTask();
+    ShootTask();
+#endif
+#ifndef GIMBAL_BOARD
     ChassisTask();
+#endif
 }

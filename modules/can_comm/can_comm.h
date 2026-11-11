@@ -41,6 +41,8 @@ typedef struct
     uint8_t update_flag;  // 数据更新标志位,当接收到新数据时,会将此标志位置1,调用CANCommGet()后会将此标志位置0
 
     DaemonInstance* comm_daemon;
+    uint32_t recv_seq, recv_time_us; /* Completed CRC-valid message, local clock. */
+    uint8_t received_once;
 } CANCommInstance;
 #pragma pack()
 
@@ -80,6 +82,12 @@ void CANCommSend(CANCommInstance *instance, uint8_t *data);
  *            强烈建议通过CANComm传输的数据使用pack(1)
  */
 void *CANCommGet(CANCommInstance *instance);
+
+/* Single-consumer consistent copy. *seq is the caller's last consumed sequence.
+ * Returns 1 only for a new complete message; repeated reads never refresh time.
+ * capacity must cover recv_data_len. time_us belongs to this MCU, not the sender. */
+uint8_t CANCommGetSnapshot(CANCommInstance *instance, void *data, uint32_t capacity,
+                           uint32_t *seq, uint32_t *time_us);
 
 /**
  * @brief 检查CANComm是否在线

@@ -92,7 +92,7 @@ Revision: $Rev: 24316 $
 #endif
 
 #ifndef   BUFFER_SIZE_UP
-  #define BUFFER_SIZE_UP                            (1024)  // Size of the buffer for terminal output of target, up to host (Default: 1k)
+  #define BUFFER_SIZE_UP                            (4096)  // 通道 0：底盘文本日志；通道 1/2 暂停输出
 #endif
 
 #ifndef   BUFFER_SIZE_DOWN

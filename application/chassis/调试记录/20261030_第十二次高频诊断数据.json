@@ -1,0 +1,6439 @@
+{
+  "rigid": [
+    {
+      "win": 16,
+      "dver": 1,
+      "start_t_us": 23438406,
+      "end_t_us": 24439733,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        614,
+        1391
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        358,
+        415,
+        645
+      ],
+      "alpha_pk_mradps2": [
+        1317,
+        1731,
+        2554
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        54,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        64,
+        206,
+        145
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        31,
+        12
+      ],
+      "after_rms_mmps2": [
+        32,
+        16
+      ],
+      "before_mean_mmps2": [
+        31,
+        -8
+      ],
+      "after_mean_mmps2": [
+        31,
+        -8
+      ],
+      "corr_rms_mmps2": [
+        4,
+        19
+      ],
+      "cross_um2ps4": [
+        -2,
+        135
+      ]
+    },
+    {
+      "win": 17,
+      "dver": 1,
+      "start_t_us": 24440378,
+      "end_t_us": 25440378,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        604,
+        1397
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        374,
+        423,
+        597
+      ],
+      "alpha_pk_mradps2": [
+        1657,
+        1668,
+        1733
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        51,
+        35
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        169,
+        140
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        29,
+        10
+      ],
+      "after_rms_mmps2": [
+        29,
+        14
+      ],
+      "before_mean_mmps2": [
+        29,
+        -5
+      ],
+      "after_mean_mmps2": [
+        29,
+        -5
+      ],
+      "corr_rms_mmps2": [
+        4,
+        17
+      ],
+      "cross_um2ps4": [
+        2,
+        113
+      ]
+    },
+    {
+      "win": 18,
+      "dver": 1,
+      "start_t_us": 25441454,
+      "end_t_us": 26441462,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        614,
+        1399
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        373,
+        394,
+        593
+      ],
+      "alpha_pk_mradps2": [
+        1337,
+        1978,
+        2198
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        50,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        73,
+        232,
+        166
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        29,
+        8
+      ],
+      "after_rms_mmps2": [
+        29,
+        13
+      ],
+      "before_mean_mmps2": [
+        28,
+        -3
+      ],
+      "after_mean_mmps2": [
+        28,
+        -3
+      ],
+      "corr_rms_mmps2": [
+        3,
+        17
+      ],
+      "cross_um2ps4": [
+        0,
+        101
+      ]
+    },
+    {
+      "win": 19,
+      "dver": 1,
+      "start_t_us": 26442402,
+      "end_t_us": 27443453,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        612,
+        1400
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        372,
+        405,
+        570
+      ],
+      "alpha_pk_mradps2": [
+        1619,
+        1478,
+        1763
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        49,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        54,
+        174,
+        124
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        28,
+        9
+      ],
+      "after_rms_mmps2": [
+        29,
+        12
+      ],
+      "before_mean_mmps2": [
+        28,
+        -2
+      ],
+      "after_mean_mmps2": [
+        28,
+        -2
+      ],
+      "corr_rms_mmps2": [
+        3,
+        16
+      ],
+      "cross_um2ps4": [
+        0,
+        99
+      ]
+    },
+    {
+      "win": 20,
+      "dver": 1,
+      "start_t_us": 27444676,
+      "end_t_us": 28445443,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        610,
+        1397
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        380,
+        411,
+        600
+      ],
+      "alpha_pk_mradps2": [
+        1733,
+        1657,
+        2356
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        51,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        197,
+        139
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        25,
+        8
+      ],
+      "after_rms_mmps2": [
+        25,
+        12
+      ],
+      "before_mean_mmps2": [
+        25,
+        0
+      ],
+      "after_mean_mmps2": [
+        25,
+        0
+      ],
+      "corr_rms_mmps2": [
+        3,
+        18
+      ],
+      "cross_um2ps4": [
+        0,
+        118
+      ]
+    },
+    {
+      "win": 21,
+      "dver": 1,
+      "start_t_us": 28446377,
+      "end_t_us": 29446380,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        602,
+        1399
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        379,
+        412,
+        672
+      ],
+      "alpha_pk_mradps2": [
+        1662,
+        1622,
+        2494
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        57,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        209,
+        136
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        21,
+        9
+      ],
+      "after_rms_mmps2": [
+        21,
+        14
+      ],
+      "before_mean_mmps2": [
+        20,
+        1
+      ],
+      "after_mean_mmps2": [
+        20,
+        1
+      ],
+      "corr_rms_mmps2": [
+        3,
+        20
+      ],
+      "cross_um2ps4": [
+        -1,
+        152
+      ]
+    },
+    {
+      "win": 22,
+      "dver": 1,
+      "start_t_us": 29447453,
+      "end_t_us": 30448374,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        598,
+        1398
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        387,
+        409,
+        640
+      ],
+      "alpha_pk_mradps2": [
+        1700,
+        1617,
+        2525
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        54,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        59,
+        212,
+        135
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        23,
+        9
+      ],
+      "after_rms_mmps2": [
+        23,
+        13
+      ],
+      "before_mean_mmps2": [
+        22,
+        1
+      ],
+      "after_mean_mmps2": [
+        22,
+        0
+      ],
+      "corr_rms_mmps2": [
+        3,
+        18
+      ],
+      "cross_um2ps4": [
+        -2,
+        132
+      ]
+    },
+    {
+      "win": 23,
+      "dver": 1,
+      "start_t_us": 30449721,
+      "end_t_us": 31449752,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        591,
+        1407
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        385,
+        413,
+        656
+      ],
+      "alpha_pk_mradps2": [
+        1382,
+        1694,
+        2545
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        56,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        62,
+        242,
+        142
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        19,
+        9
+      ],
+      "after_rms_mmps2": [
+        20,
+        14
+      ],
+      "before_mean_mmps2": [
+        19,
+        1
+      ],
+      "after_mean_mmps2": [
+        19,
+        1
+      ],
+      "corr_rms_mmps2": [
+        3,
+        19
+      ],
+      "cross_um2ps4": [
+        -1,
+        139
+      ]
+    },
+    {
+      "win": 24,
+      "dver": 1,
+      "start_t_us": 31450379,
+      "end_t_us": 32450380,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        615,
+        1388
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        633,
+        530,
+        803
+      ],
+      "alpha_pk_mradps2": [
+        7641,
+        3481,
+        5777
+      ],
+      "tangent_rms_mmps2": [
+        19,
+        68,
+        44
+      ],
+      "tangent_pk_mmps2": [
+        128,
+        485,
+        292
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        20,
+        11
+      ],
+      "after_rms_mmps2": [
+        21,
+        16
+      ],
+      "before_mean_mmps2": [
+        19,
+        0
+      ],
+      "after_mean_mmps2": [
+        19,
+        0
+      ],
+      "corr_rms_mmps2": [
+        5,
+        24
+      ],
+      "cross_um2ps4": [
+        5,
+        224
+      ]
+    },
+    {
+      "win": 25,
+      "dver": 1,
+      "start_t_us": 32451442,
+      "end_t_us": 33451443,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        603,
+        1396
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        372,
+        418,
+        621
+      ],
+      "alpha_pk_mradps2": [
+        1675,
+        1686,
+        2541
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        53,
+        35
+      ],
+      "tangent_pk_mmps2": [
+        62,
+        187,
+        141
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        19,
+        9
+      ],
+      "after_rms_mmps2": [
+        20,
+        13
+      ],
+      "before_mean_mmps2": [
+        18,
+        1
+      ],
+      "after_mean_mmps2": [
+        18,
+        0
+      ],
+      "corr_rms_mmps2": [
+        4,
+        19
+      ],
+      "cross_um2ps4": [
+        -2,
+        127
+      ]
+    },
+    {
+      "win": 26,
+      "dver": 1,
+      "start_t_us": 33452380,
+      "end_t_us": 34453448,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        599,
+        1399
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        367,
+        434,
+        606
+      ],
+      "alpha_pk_mradps2": [
+        1743,
+        1730,
+        2554
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        52,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        64,
+        214,
+        145
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        19,
+        9
+      ],
+      "after_rms_mmps2": [
+        20,
+        13
+      ],
+      "before_mean_mmps2": [
+        18,
+        3
+      ],
+      "after_mean_mmps2": [
+        18,
+        2
+      ],
+      "corr_rms_mmps2": [
+        4,
+        18
+      ],
+      "cross_um2ps4": [
+        -2,
+        128
+      ]
+    },
+    {
+      "win": 27,
+      "dver": 1,
+      "start_t_us": 34454653,
+      "end_t_us": 35454667,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        606,
+        1390
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        598,
+        572,
+        657
+      ],
+      "alpha_pk_mradps2": [
+        7952,
+        5424,
+        4183
+      ],
+      "tangent_rms_mmps2": [
+        21,
+        57,
+        48
+      ],
+      "tangent_pk_mmps2": [
+        200,
+        394,
+        455
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        20,
+        9
+      ],
+      "after_rms_mmps2": [
+        21,
+        13
+      ],
+      "before_mean_mmps2": [
+        19,
+        3
+      ],
+      "after_mean_mmps2": [
+        19,
+        4
+      ],
+      "corr_rms_mmps2": [
+        4,
+        18
+      ],
+      "cross_um2ps4": [
+        -1,
+        118
+      ]
+    },
+    {
+      "win": 28,
+      "dver": 1,
+      "start_t_us": 35455459,
+      "end_t_us": 36456377,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        602,
+        1401
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        361,
+        413,
+        642
+      ],
+      "alpha_pk_mradps2": [
+        1692,
+        1744,
+        2587
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        54,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        64,
+        217,
+        146
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        15,
+        10
+      ],
+      "after_rms_mmps2": [
+        15,
+        14
+      ],
+      "before_mean_mmps2": [
+        13,
+        4
+      ],
+      "after_mean_mmps2": [
+        13,
+        4
+      ],
+      "corr_rms_mmps2": [
+        3,
+        19
+      ],
+      "cross_um2ps4": [
+        -3,
+        133
+      ]
+    },
+    {
+      "win": 29,
+      "dver": 1,
+      "start_t_us": 36457445,
+      "end_t_us": 37458372,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        614,
+        1393
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        383,
+        427,
+        634
+      ],
+      "alpha_pk_mradps2": [
+        1686,
+        2006,
+        2479
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        54,
+        35
+      ],
+      "tangent_pk_mmps2": [
+        74,
+        226,
+        168
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        12,
+        10
+      ],
+      "after_rms_mmps2": [
+        13,
+        14
+      ],
+      "before_mean_mmps2": [
+        11,
+        5
+      ],
+      "after_mean_mmps2": [
+        11,
+        5
+      ],
+      "corr_rms_mmps2": [
+        4,
+        18
+      ],
+      "cross_um2ps4": [
+        -3,
+        120
+      ]
+    },
+    {
+      "win": 30,
+      "dver": 1,
+      "start_t_us": 37459720,
+      "end_t_us": 38459753,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        611,
+        1390
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        366,
+        393,
+        618
+      ],
+      "alpha_pk_mradps2": [
+        1665,
+        1686,
+        1992
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        52,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        62,
+        199,
+        141
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        13,
+        10
+      ],
+      "after_rms_mmps2": [
+        13,
+        14
+      ],
+      "before_mean_mmps2": [
+        11,
+        5
+      ],
+      "after_mean_mmps2": [
+        11,
+        5
+      ],
+      "corr_rms_mmps2": [
+        3,
+        18
+      ],
+      "cross_um2ps4": [
+        0,
+        116
+      ]
+    },
+    {
+      "win": 31,
+      "dver": 1,
+      "start_t_us": 38460396,
+      "end_t_us": 39461462,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        609,
+        1396
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        393,
+        455,
+        633
+      ],
+      "alpha_pk_mradps2": [
+        1644,
+        1713,
+        2498
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        54,
+        38
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        228,
+        143
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        13,
+        11
+      ],
+      "after_rms_mmps2": [
+        14,
+        15
+      ],
+      "before_mean_mmps2": [
+        12,
+        6
+      ],
+      "after_mean_mmps2": [
+        12,
+        6
+      ],
+      "corr_rms_mmps2": [
+        3,
+        19
+      ],
+      "cross_um2ps4": [
+        -1,
+        133
+      ]
+    },
+    {
+      "win": 32,
+      "dver": 1,
+      "start_t_us": 39462382,
+      "end_t_us": 40463450,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        601,
+        1387
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        365,
+        431,
+        607
+      ],
+      "alpha_pk_mradps2": [
+        1727,
+        1959,
+        2513
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        51,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        72,
+        185,
+        164
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        15,
+        12
+      ],
+      "after_rms_mmps2": [
+        16,
+        15
+      ],
+      "before_mean_mmps2": [
+        14,
+        8
+      ],
+      "after_mean_mmps2": [
+        14,
+        8
+      ],
+      "corr_rms_mmps2": [
+        3,
+        17
+      ],
+      "cross_um2ps4": [
+        -2,
+        115
+      ]
+    },
+    {
+      "win": 33,
+      "dver": 1,
+      "start_t_us": 40464659,
+      "end_t_us": 41465452,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        613,
+        1391
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        402,
+        444,
+        1497
+      ],
+      "alpha_pk_mradps2": [
+        1622,
+        2046,
+        5370
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        122,
+        37
+      ],
+      "tangent_pk_mmps2": [
+        75,
+        445,
+        171
+      ],
+      "centrip_rms_mmps2": [
+        15,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        36,
+        0,
+        3
+      ],
+      "before_rms_mmps2": [
+        28,
+        62
+      ],
+      "after_rms_mmps2": [
+        39,
+        52
+      ],
+      "before_mean_mmps2": [
+        4,
+        42
+      ],
+      "after_mean_mmps2": [
+        -7,
+        -7
+      ],
+      "corr_rms_mmps2": [
+        22,
+        105
+      ],
+      "cross_um2ps4": [
+        -108,
+        6111
+      ]
+    },
+    {
+      "win": 34,
+      "dver": 1,
+      "start_t_us": 41466375,
+      "end_t_us": 42466387,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        615,
+        1394
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        417,
+        414,
+        2135
+      ],
+      "alpha_pk_mradps2": [
+        1702,
+        1709,
+        6767
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        173,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        537,
+        143
+      ],
+      "centrip_rms_mmps2": [
+        11,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        38,
+        0,
+        3
+      ],
+      "before_rms_mmps2": [
+        44,
+        61
+      ],
+      "after_rms_mmps2": [
+        78,
+        108
+      ],
+      "before_mean_mmps2": [
+        34,
+        -8
+      ],
+      "after_mean_mmps2": [
+        57,
+        95
+      ],
+      "corr_rms_mmps2": [
+        36,
+        152
+      ],
+      "cross_um2ps4": [
+        -1421,
+        7540
+      ]
+    },
+    {
+      "win": 35,
+      "dver": 1,
+      "start_t_us": 42467453,
+      "end_t_us": 43467462,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        603,
+        1395
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        427,
+        432,
+        1603
+      ],
+      "alpha_pk_mradps2": [
+        1662,
+        2444,
+        6640
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        130,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        90,
+        522,
+        205
+      ],
+      "centrip_rms_mmps2": [
+        32,
+        0,
+        2
+      ],
+      "centrip_pk_mmps2": [
+        47,
+        0,
+        4
+      ],
+      "before_rms_mmps2": [
+        46,
+        32
+      ],
+      "after_rms_mmps2": [
+        22,
+        107
+      ],
+      "before_mean_mmps2": [
+        8,
+        -8
+      ],
+      "after_mean_mmps2": [
+        -2,
+        -62
+      ],
+      "corr_rms_mmps2": [
+        44,
+        114
+      ],
+      "cross_um2ps4": [
+        1829,
+        1272
+      ]
+    },
+    {
+      "win": 36,
+      "dver": 1,
+      "start_t_us": 43468380,
+      "end_t_us": 44469732,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        602,
+        1391
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        396,
+        438,
+        729
+      ],
+      "alpha_pk_mradps2": [
+        2349,
+        1649,
+        3132
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        62,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        263,
+        138
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        35,
+        49
+      ],
+      "after_rms_mmps2": [
+        36,
+        51
+      ],
+      "before_mean_mmps2": [
+        34,
+        -47
+      ],
+      "after_mean_mmps2": [
+        35,
+        -49
+      ],
+      "corr_rms_mmps2": [
+        11,
+        20
+      ],
+      "cross_um2ps4": [
+        31,
+        102
+      ]
+    },
+    {
+      "win": 37,
+      "dver": 1,
+      "start_t_us": 44470374,
+      "end_t_us": 45470392,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        614,
+        1389
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        417,
+        444,
+        2008
+      ],
+      "alpha_pk_mradps2": [
+        1652,
+        1775,
+        7420
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        163,
+        37
+      ],
+      "tangent_pk_mmps2": [
+        65,
+        623,
+        149
+      ],
+      "centrip_rms_mmps2": [
+        30,
+        0,
+        2
+      ],
+      "centrip_pk_mmps2": [
+        53,
+        0,
+        4
+      ],
+      "before_rms_mmps2": [
+        55,
+        47
+      ],
+      "after_rms_mmps2": [
+        36,
+        114
+      ],
+      "before_mean_mmps2": [
+        9,
+        21
+      ],
+      "after_mean_mmps2": [
+        3,
+        -3
+      ],
+      "corr_rms_mmps2": [
+        42,
+        143
+      ],
+      "cross_um2ps4": [
+        1781,
+        4878
+      ]
+    },
+    {
+      "win": 38,
+      "dver": 1,
+      "start_t_us": 45471472,
+      "end_t_us": 46472381,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        615,
+        1388
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        408,
+        433,
+        2019
+      ],
+      "alpha_pk_mradps2": [
+        1600,
+        1719,
+        8340
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        164,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        669,
+        144
+      ],
+      "centrip_rms_mmps2": [
+        23,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        72,
+        0,
+        6
+      ],
+      "before_rms_mmps2": [
+        46,
+        57
+      ],
+      "after_rms_mmps2": [
+        61,
+        118
+      ],
+      "before_mean_mmps2": [
+        32,
+        3
+      ],
+      "after_mean_mmps2": [
+        40,
+        106
+      ],
+      "corr_rms_mmps2": [
+        27,
+        149
+      ],
+      "cross_um2ps4": [
+        -427,
+        5813
+      ]
+    },
+    {
+      "win": 39,
+      "dver": 1,
+      "start_t_us": 46473454,
+      "end_t_us": 47473468,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        602,
+        1397
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        450,
+        435,
+        1904
+      ],
+      "alpha_pk_mradps2": [
+        1701,
+        1723,
+        8173
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        155,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        626,
+        144
+      ],
+      "centrip_rms_mmps2": [
+        53,
+        0,
+        4
+      ],
+      "centrip_pk_mmps2": [
+        74,
+        0,
+        6
+      ],
+      "before_rms_mmps2": [
+        59,
+        35
+      ],
+      "after_rms_mmps2": [
+        47,
+        138
+      ],
+      "before_mean_mmps2": [
+        14,
+        -19
+      ],
+      "after_mean_mmps2": [
+        12,
+        -95
+      ],
+      "corr_rms_mmps2": [
+        88,
+        118
+      ],
+      "cross_um2ps4": [
+        4538,
+        -1920
+      ]
+    },
+    {
+      "win": 40,
+      "dver": 1,
+      "start_t_us": 47474697,
+      "end_t_us": 48475471,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        608,
+        1390
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        415,
+        404,
+        1723
+      ],
+      "alpha_pk_mradps2": [
+        2049,
+        1740,
+        7909
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        140,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        64,
+        648,
+        146
+      ],
+      "centrip_rms_mmps2": [
+        23,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        55,
+        0,
+        4
+      ],
+      "before_rms_mmps2": [
+        62,
+        56
+      ],
+      "after_rms_mmps2": [
+        54,
+        123
+      ],
+      "before_mean_mmps2": [
+        19,
+        -45
+      ],
+      "after_mean_mmps2": [
+        48,
+        -102
+      ],
+      "corr_rms_mmps2": [
+        70,
+        106
+      ],
+      "cross_um2ps4": [
+        3006,
+        -290
+      ]
+    },
+    {
+      "win": 41,
+      "dver": 1,
+      "start_t_us": 48476391,
+      "end_t_us": 49477463,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        609,
+        1386
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        438,
+        440,
+        883
+      ],
+      "alpha_pk_mradps2": [
+        1373,
+        1683,
+        3464
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        73,
+        37
+      ],
+      "tangent_pk_mmps2": [
+        62,
+        283,
+        141
+      ],
+      "centrip_rms_mmps2": [
+        35,
+        0,
+        3
+      ],
+      "centrip_pk_mmps2": [
+        50,
+        0,
+        4
+      ],
+      "before_rms_mmps2": [
+        37,
+        53
+      ],
+      "after_rms_mmps2": [
+        24,
+        65
+      ],
+      "before_mean_mmps2": [
+        20,
+        40
+      ],
+      "after_mean_mmps2": [
+        -18,
+        49
+      ],
+      "corr_rms_mmps2": [
+        44,
+        49
+      ],
+      "cross_um2ps4": [
+        1357,
+        479
+      ]
+    },
+    {
+      "win": 42,
+      "dver": 1,
+      "start_t_us": 49478386,
+      "end_t_us": 50478390,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        613,
+        1383
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        445,
+        413,
+        2448
+      ],
+      "alpha_pk_mradps2": [
+        1691,
+        1718,
+        9117
+      ],
+      "tangent_rms_mmps2": [
+        15,
+        198,
+        34
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        765,
+        144
+      ],
+      "centrip_rms_mmps2": [
+        20,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        61,
+        0,
+        5
+      ],
+      "before_rms_mmps2": [
+        28,
+        86
+      ],
+      "after_rms_mmps2": [
+        83,
+        163
+      ],
+      "before_mean_mmps2": [
+        13,
+        40
+      ],
+      "after_mean_mmps2": [
+        45,
+        153
+      ],
+      "corr_rms_mmps2": [
+        59,
+        172
+      ],
+      "cross_um2ps4": [
+        -1291,
+        5255
+      ]
+    },
+    {
+      "win": 43,
+      "dver": 1,
+      "start_t_us": 50479760,
+      "end_t_us": 51480376,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        613,
+        1388
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        525,
+        460,
+        2515
+      ],
+      "alpha_pk_mradps2": [
+        1987,
+        1707,
+        8855
+      ],
+      "tangent_rms_mmps2": [
+        17,
+        204,
+        38
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        714,
+        143
+      ],
+      "centrip_rms_mmps2": [
+        84,
+        0,
+        7
+      ],
+      "centrip_pk_mmps2": [
+        107,
+        1,
+        9
+      ],
+      "before_rms_mmps2": [
+        76,
+        39
+      ],
+      "after_rms_mmps2": [
+        55,
+        168
+      ],
+      "before_mean_mmps2": [
+        -3,
+        18
+      ],
+      "after_mean_mmps2": [
+        -24,
+        -46
+      ],
+      "corr_rms_mmps2": [
+        109,
+        176
+      ],
+      "cross_um2ps4": [
+        7395,
+        2111
+      ]
+    },
+    {
+      "win": 44,
+      "dver": 1,
+      "start_t_us": 51481455,
+      "end_t_us": 52482380,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        614,
+        1385
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        453,
+        442,
+        2360
+      ],
+      "alpha_pk_mradps2": [
+        1738,
+        1740,
+        10774
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        191,
+        37
+      ],
+      "tangent_pk_mmps2": [
+        64,
+        843,
+        146
+      ],
+      "centrip_rms_mmps2": [
+        54,
+        0,
+        4
+      ],
+      "centrip_pk_mmps2": [
+        97,
+        1,
+        8
+      ],
+      "before_rms_mmps2": [
+        80,
+        53
+      ],
+      "after_rms_mmps2": [
+        43,
+        143
+      ],
+      "before_mean_mmps2": [
+        -1,
+        -5
+      ],
+      "after_mean_mmps2": [
+        9,
+        -86
+      ],
+      "corr_rms_mmps2": [
+        91,
+        157
+      ],
+      "cross_um2ps4": [
+        6510,
+        3608
+      ]
+    },
+    {
+      "win": 45,
+      "dver": 1,
+      "start_t_us": 52483453,
+      "end_t_us": 53483458,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        605,
+        1387
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        503,
+        462,
+        2870
+      ],
+      "alpha_pk_mradps2": [
+        1973,
+        2382,
+        11460
+      ],
+      "tangent_rms_mmps2": [
+        17,
+        232,
+        38
+      ],
+      "tangent_pk_mmps2": [
+        88,
+        932,
+        200
+      ],
+      "centrip_rms_mmps2": [
+        68,
+        0,
+        5
+      ],
+      "centrip_pk_mmps2": [
+        113,
+        1,
+        10
+      ],
+      "before_rms_mmps2": [
+        36,
+        123
+      ],
+      "after_rms_mmps2": [
+        136,
+        169
+      ],
+      "before_mean_mmps2": [
+        29,
+        69
+      ],
+      "after_mean_mmps2": [
+        18,
+        151
+      ],
+      "corr_rms_mmps2": [
+        130,
+        183
+      ],
+      "cross_um2ps4": [
+        -134,
+        10014
+      ]
+    },
+    {
+      "win": 46,
+      "dver": 1,
+      "start_t_us": 53484653,
+      "end_t_us": 54485467,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        621,
+        1379
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        650,
+        503,
+        4787
+      ],
+      "alpha_pk_mradps2": [
+        2549,
+        2467,
+        16656
+      ],
+      "tangent_rms_mmps2": [
+        18,
+        386,
+        42
+      ],
+      "tangent_pk_mmps2": [
+        91,
+        1365,
+        207
+      ],
+      "centrip_rms_mmps2": [
+        234,
+        2,
+        20
+      ],
+      "centrip_pk_mmps2": [
+        381,
+        4,
+        34
+      ],
+      "before_rms_mmps2": [
+        111,
+        156
+      ],
+      "after_rms_mmps2": [
+        207,
+        259
+      ],
+      "before_mean_mmps2": [
+        53,
+        41
+      ],
+      "after_mean_mmps2": [
+        -1,
+        126
+      ],
+      "corr_rms_mmps2": [
+        239,
+        352
+      ],
+      "cross_um2ps4": [
+        13347,
+        40775
+      ]
+    },
+    {
+      "win": 47,
+      "dver": 1,
+      "start_t_us": 54486388,
+      "end_t_us": 55486402,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        610,
+        1392
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        516,
+        452,
+        3833
+      ],
+      "alpha_pk_mradps2": [
+        2671,
+        1697,
+        16030
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        310,
+        38
+      ],
+      "tangent_pk_mmps2": [
+        62,
+        1247,
+        142
+      ],
+      "centrip_rms_mmps2": [
+        39,
+        0,
+        3
+      ],
+      "centrip_pk_mmps2": [
+        114,
+        1,
+        10
+      ],
+      "before_rms_mmps2": [
+        135,
+        59
+      ],
+      "after_rms_mmps2": [
+        64,
+        251
+      ],
+      "before_mean_mmps2": [
+        -36,
+        -31
+      ],
+      "after_mean_mmps2": [
+        45,
+        -187
+      ],
+      "corr_rms_mmps2": [
+        158,
+        255
+      ],
+      "cross_um2ps4": [
+        19593,
+        2822
+      ]
+    },
+    {
+      "win": 48,
+      "dver": 1,
+      "start_t_us": 55487466,
+      "end_t_us": 56488383,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        619,
+        1386
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        416,
+        434,
+        1837
+      ],
+      "alpha_pk_mradps2": [
+        1593,
+        1718,
+        7674
+      ],
+      "tangent_rms_mmps2": [
+        16,
+        149,
+        36
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        613,
+        144
+      ],
+      "centrip_rms_mmps2": [
+        40,
+        0,
+        3
+      ],
+      "centrip_pk_mmps2": [
+        67,
+        0,
+        5
+      ],
+      "before_rms_mmps2": [
+        48,
+        48
+      ],
+      "after_rms_mmps2": [
+        50,
+        105
+      ],
+      "before_mean_mmps2": [
+        29,
+        8
+      ],
+      "after_mean_mmps2": [
+        1,
+        78
+      ],
+      "corr_rms_mmps2": [
+        46,
+        133
+      ],
+      "cross_um2ps4": [
+        962,
+        4444
+      ]
+    },
+    {
+      "win": 49,
+      "dver": 1,
+      "start_t_us": 56489742,
+      "end_t_us": 57489749,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        616,
+        1389
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        354,
+        383,
+        550
+      ],
+      "alpha_pk_mradps2": [
+        1627,
+        1722,
+        2452
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        47,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        63,
+        236,
+        144
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        8,
+        44
+      ],
+      "after_rms_mmps2": [
+        9,
+        46
+      ],
+      "before_mean_mmps2": [
+        -5,
+        44
+      ],
+      "after_mean_mmps2": [
+        -5,
+        45
+      ],
+      "corr_rms_mmps2": [
+        3,
+        15
+      ],
+      "cross_um2ps4": [
+        -2,
+        38
+      ]
+    },
+    {
+      "win": 50,
+      "dver": 1,
+      "start_t_us": 57490388,
+      "end_t_us": 58491461,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        616,
+        1383
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        455,
+        1509,
+        564
+      ],
+      "alpha_pk_mradps2": [
+        1975,
+        8710,
+        2474
+      ],
+      "tangent_rms_mmps2": [
+        55,
+        49,
+        126
+      ],
+      "tangent_pk_mmps2": [
+        322,
+        236,
+        731
+      ],
+      "centrip_rms_mmps2": [
+        5,
+        0,
+        2
+      ],
+      "centrip_pk_mmps2": [
+        16,
+        0,
+        7
+      ],
+      "before_rms_mmps2": [
+        80,
+        50
+      ],
+      "after_rms_mmps2": [
+        26,
+        50
+      ],
+      "before_mean_mmps2": [
+        7,
+        41
+      ],
+      "after_mean_mmps2": [
+        -8,
+        42
+      ],
+      "corr_rms_mmps2": [
+        64,
+        19
+      ],
+      "cross_um2ps4": [
+        4958,
+        188
+      ]
+    },
+    {
+      "win": 51,
+      "dver": 1,
+      "start_t_us": 58492384,
+      "end_t_us": 59493453,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        628,
+        1377
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        461,
+        894,
+        536
+      ],
+      "alpha_pk_mradps2": [
+        2452,
+        3500,
+        2019
+      ],
+      "tangent_rms_mmps2": [
+        33,
+        44,
+        75
+      ],
+      "tangent_pk_mmps2": [
+        129,
+        222,
+        294
+      ],
+      "centrip_rms_mmps2": [
+        3,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        7,
+        0,
+        3
+      ],
+      "before_rms_mmps2": [
+        70,
+        50
+      ],
+      "after_rms_mmps2": [
+        40,
+        45
+      ],
+      "before_mean_mmps2": [
+        -56,
+        38
+      ],
+      "after_mean_mmps2": [
+        -36,
+        36
+      ],
+      "corr_rms_mmps2": [
+        43,
+        16
+      ],
+      "cross_um2ps4": [
+        2638,
+        351
+      ]
+    },
+    {
+      "win": 52,
+      "dver": 1,
+      "start_t_us": 59494645,
+      "end_t_us": 60495441,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        627,
+        1370
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        495,
+        2162,
+        575
+      ],
+      "alpha_pk_mradps2": [
+        1983,
+        8895,
+        2404
+      ],
+      "tangent_rms_mmps2": [
+        80,
+        50,
+        181
+      ],
+      "tangent_pk_mmps2": [
+        329,
+        202,
+        747
+      ],
+      "centrip_rms_mmps2": [
+        20,
+        0,
+        8
+      ],
+      "centrip_pk_mmps2": [
+        33,
+        0,
+        14
+      ],
+      "before_rms_mmps2": [
+        133,
+        37
+      ],
+      "after_rms_mmps2": [
+        50,
+        34
+      ],
+      "before_mean_mmps2": [
+        5,
+        29
+      ],
+      "after_mean_mmps2": [
+        9,
+        29
+      ],
+      "corr_rms_mmps2": [
+        95,
+        20
+      ],
+      "cross_um2ps4": [
+        12158,
+        312
+      ]
+    },
+    {
+      "win": 53,
+      "dver": 1,
+      "start_t_us": 60496373,
+      "end_t_us": 61496382,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        624,
+        1375
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        593,
+        1448,
+        601
+      ],
+      "alpha_pk_mradps2": [
+        2548,
+        4911,
+        4963
+      ],
+      "tangent_rms_mmps2": [
+        53,
+        59,
+        121
+      ],
+      "tangent_pk_mmps2": [
+        181,
+        380,
+        412
+      ],
+      "centrip_rms_mmps2": [
+        15,
+        0,
+        6
+      ],
+      "centrip_pk_mmps2": [
+        28,
+        0,
+        12
+      ],
+      "before_rms_mmps2": [
+        128,
+        23
+      ],
+      "after_rms_mmps2": [
+        112,
+        24
+      ],
+      "before_mean_mmps2": [
+        106,
+        13
+      ],
+      "after_mean_mmps2": [
+        96,
+        14
+      ],
+      "corr_rms_mmps2": [
+        23,
+        21
+      ],
+      "cross_um2ps4": [
+        2186,
+        184
+      ]
+    },
+    {
+      "win": 54,
+      "dver": 1,
+      "start_t_us": 61497451,
+      "end_t_us": 62497452,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        619,
+        1379
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        493,
+        1176,
+        503
+      ],
+      "alpha_pk_mradps2": [
+        2411,
+        4851,
+        1593
+      ],
+      "tangent_rms_mmps2": [
+        43,
+        53,
+        98
+      ],
+      "tangent_pk_mmps2": [
+        179,
+        163,
+        407
+      ],
+      "centrip_rms_mmps2": [
+        3,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        8,
+        0,
+        3
+      ],
+      "before_rms_mmps2": [
+        139,
+        16
+      ],
+      "after_rms_mmps2": [
+        143,
+        18
+      ],
+      "before_mean_mmps2": [
+        131,
+        -11
+      ],
+      "after_mean_mmps2": [
+        133,
+        -11
+      ],
+      "corr_rms_mmps2": [
+        8,
+        18
+      ],
+      "cross_um2ps4": [
+        -559,
+        141
+      ]
+    },
+    {
+      "win": 55,
+      "dver": 1,
+      "start_t_us": 62498371,
+      "end_t_us": 63498381,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        624,
+        1381
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        503,
+        929,
+        564
+      ],
+      "alpha_pk_mradps2": [
+        1744,
+        3222,
+        2400
+      ],
+      "tangent_rms_mmps2": [
+        34,
+        54,
+        78
+      ],
+      "tangent_pk_mmps2": [
+        119,
+        202,
+        270
+      ],
+      "centrip_rms_mmps2": [
+        6,
+        0,
+        3
+      ],
+      "centrip_pk_mmps2": [
+        13,
+        0,
+        6
+      ],
+      "before_rms_mmps2": [
+        69,
+        12
+      ],
+      "after_rms_mmps2": [
+        60,
+        14
+      ],
+      "before_mean_mmps2": [
+        53,
+        -3
+      ],
+      "after_mean_mmps2": [
+        46,
+        -2
+      ],
+      "corr_rms_mmps2": [
+        12,
+        19
+      ],
+      "cross_um2ps4": [
+        673,
+        152
+      ]
+    },
+    {
+      "win": 56,
+      "dver": 1,
+      "start_t_us": 63499706,
+      "end_t_us": 64499723,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        621,
+        1381
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        457,
+        1092,
+        1198
+      ],
+      "alpha_pk_mradps2": [
+        2618,
+        5842,
+        6458
+      ],
+      "tangent_rms_mmps2": [
+        40,
+        105,
+        91
+      ],
+      "tangent_pk_mmps2": [
+        216,
+        579,
+        490
+      ],
+      "centrip_rms_mmps2": [
+        5,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        12,
+        0,
+        5
+      ],
+      "before_rms_mmps2": [
+        61,
+        43
+      ],
+      "after_rms_mmps2": [
+        40,
+        44
+      ],
+      "before_mean_mmps2": [
+        -17,
+        -3
+      ],
+      "after_mean_mmps2": [
+        -9,
+        19
+      ],
+      "corr_rms_mmps2": [
+        30,
+        83
+      ],
+      "cross_um2ps4": [
+        1529,
+        3458
+      ]
+    },
+    {
+      "win": 57,
+      "dver": 1,
+      "start_t_us": 64500383,
+      "end_t_us": 65500391,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        632,
+        1382
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        412,
+        400,
+        2718
+      ],
+      "alpha_pk_mradps2": [
+        1581,
+        1649,
+        8249
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        234,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        716,
+        138
+      ],
+      "centrip_rms_mmps2": [
+        19,
+        0,
+        1
+      ],
+      "centrip_pk_mmps2": [
+        54,
+        0,
+        3
+      ],
+      "before_rms_mmps2": [
+        57,
+        107
+      ],
+      "after_rms_mmps2": [
+        81,
+        113
+      ],
+      "before_mean_mmps2": [
+        -6,
+        17
+      ],
+      "after_mean_mmps2": [
+        -2,
+        17
+      ],
+      "corr_rms_mmps2": [
+        31,
+        213
+      ],
+      "cross_um2ps4": [
+        -1164,
+        22286
+      ]
+    },
+    {
+      "win": 58,
+      "dver": 1,
+      "start_t_us": 65501468,
+      "end_t_us": 66502374,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        631,
+        1371
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        385,
+        390,
+        1381
+      ],
+      "alpha_pk_mradps2": [
+        1607,
+        1773,
+        5101
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        120,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        65,
+        457,
+        148
+      ],
+      "centrip_rms_mmps2": [
+        9,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        23,
+        0,
+        1
+      ],
+      "before_rms_mmps2": [
+        30,
+        59
+      ],
+      "after_rms_mmps2": [
+        45,
+        51
+      ],
+      "before_mean_mmps2": [
+        -10,
+        23
+      ],
+      "after_mean_mmps2": [
+        -15,
+        1
+      ],
+      "corr_rms_mmps2": [
+        16,
+        106
+      ],
+      "cross_um2ps4": [
+        -422,
+        6135
+      ]
+    },
+    {
+      "win": 59,
+      "dver": 1,
+      "start_t_us": 66503451,
+      "end_t_us": 67504648,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        612,
+        1392
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        348,
+        394,
+        562
+      ],
+      "alpha_pk_mradps2": [
+        1200,
+        1642,
+        1738
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        50,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        178,
+        137
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        5,
+        15
+      ],
+      "after_rms_mmps2": [
+        6,
+        16
+      ],
+      "before_mean_mmps2": [
+        -1,
+        11
+      ],
+      "after_mean_mmps2": [
+        -1,
+        11
+      ],
+      "corr_rms_mmps2": [
+        2,
+        17
+      ],
+      "cross_um2ps4": [
+        -1,
+        128
+      ]
+    },
+    {
+      "win": 60,
+      "dver": 1,
+      "start_t_us": 67505451,
+      "end_t_us": 68506377,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        625,
+        1388
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        375,
+        387,
+        569
+      ],
+      "alpha_pk_mradps2": [
+        1689,
+        1622,
+        3244
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        51,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        302,
+        136
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        17
+      ],
+      "after_rms_mmps2": [
+        6,
+        19
+      ],
+      "before_mean_mmps2": [
+        0,
+        15
+      ],
+      "after_mean_mmps2": [
+        0,
+        15
+      ],
+      "corr_rms_mmps2": [
+        2,
+        17
+      ],
+      "cross_um2ps4": [
+        0,
+        124
+      ]
+    },
+    {
+      "win": 61,
+      "dver": 1,
+      "start_t_us": 68507441,
+      "end_t_us": 69507453,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        629,
+        1372
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        362,
+        385,
+        596
+      ],
+      "alpha_pk_mradps2": [
+        1500,
+        1347,
+        3484
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        54,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        49,
+        292,
+        113
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        17
+      ],
+      "after_rms_mmps2": [
+        6,
+        18
+      ],
+      "before_mean_mmps2": [
+        -1,
+        13
+      ],
+      "after_mean_mmps2": [
+        -1,
+        13
+      ],
+      "corr_rms_mmps2": [
+        2,
+        18
+      ],
+      "cross_um2ps4": [
+        -1,
+        144
+      ]
+    },
+    {
+      "win": 62,
+      "dver": 1,
+      "start_t_us": 69508375,
+      "end_t_us": 70508388,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        621,
+        1376
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        381,
+        401,
+        606
+      ],
+      "alpha_pk_mradps2": [
+        1326,
+        1649,
+        2474
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        54,
+        33
+      ],
+      "tangent_pk_mmps2": [
+        61,
+        238,
+        138
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        5,
+        18
+      ],
+      "after_rms_mmps2": [
+        6,
+        20
+      ],
+      "before_mean_mmps2": [
+        0,
+        16
+      ],
+      "after_mean_mmps2": [
+        0,
+        16
+      ],
+      "corr_rms_mmps2": [
+        2,
+        18
+      ],
+      "cross_um2ps4": [
+        -1,
+        135
+      ]
+    },
+    {
+      "win": 63,
+      "dver": 1,
+      "start_t_us": 70509710,
+      "end_t_us": 71509718,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        629,
+        1378
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        356,
+        385,
+        579
+      ],
+      "alpha_pk_mradps2": [
+        1660,
+        1972,
+        1794
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        52,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        72,
+        193,
+        165
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        19
+      ],
+      "after_rms_mmps2": [
+        6,
+        21
+      ],
+      "before_mean_mmps2": [
+        1,
+        17
+      ],
+      "after_mean_mmps2": [
+        1,
+        17
+      ],
+      "corr_rms_mmps2": [
+        2,
+        17
+      ],
+      "cross_um2ps4": [
+        0,
+        126
+      ]
+    },
+    {
+      "win": 64,
+      "dver": 1,
+      "start_t_us": 71510390,
+      "end_t_us": 72510418,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        612,
+        1380
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        346,
+        379,
+        606
+      ],
+      "alpha_pk_mradps2": [
+        1678,
+        1642,
+        1985
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        54,
+        31
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        185,
+        137
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        19
+      ],
+      "after_rms_mmps2": [
+        6,
+        20
+      ],
+      "before_mean_mmps2": [
+        3,
+        16
+      ],
+      "after_mean_mmps2": [
+        2,
+        16
+      ],
+      "corr_rms_mmps2": [
+        2,
+        18
+      ],
+      "cross_um2ps4": [
+        0,
+        147
+      ]
+    },
+    {
+      "win": 65,
+      "dver": 1,
+      "start_t_us": 72511466,
+      "end_t_us": 73512382,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        627,
+        1374
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        368,
+        383,
+        566
+      ],
+      "alpha_pk_mradps2": [
+        1151,
+        1629,
+        2426
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        51,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        233,
+        136
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        21
+      ],
+      "after_rms_mmps2": [
+        7,
+        23
+      ],
+      "before_mean_mmps2": [
+        4,
+        19
+      ],
+      "after_mean_mmps2": [
+        4,
+        19
+      ],
+      "corr_rms_mmps2": [
+        2,
+        17
+      ],
+      "cross_um2ps4": [
+        -1,
+        115
+      ]
+    },
+    {
+      "win": 66,
+      "dver": 1,
+      "start_t_us": 73513443,
+      "end_t_us": 74513478,
+      "n": 1001,
+      "good": 1001,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        627,
+        1379
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        376,
+        391,
+        559
+      ],
+      "alpha_pk_mradps2": [
+        1681,
+        1565,
+        1985
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        50,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        57,
+        221,
+        131
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        21
+      ],
+      "after_rms_mmps2": [
+        7,
+        22
+      ],
+      "before_mean_mmps2": [
+        2,
+        19
+      ],
+      "after_mean_mmps2": [
+        2,
+        19
+      ],
+      "corr_rms_mmps2": [
+        2,
+        17
+      ],
+      "cross_um2ps4": [
+        -3,
+        117
+      ]
+    },
+    {
+      "win": 67,
+      "dver": 1,
+      "start_t_us": 74514675,
+      "end_t_us": 75515459,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        622,
+        1380
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        375,
+        388,
+        610
+      ],
+      "alpha_pk_mradps2": [
+        1491,
+        1642,
+        2471
+      ],
+      "tangent_rms_mmps2": [
+        14,
+        55,
+        32
+      ],
+      "tangent_pk_mmps2": [
+        60,
+        238,
+        137
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        22
+      ],
+      "after_rms_mmps2": [
+        7,
+        24
+      ],
+      "before_mean_mmps2": [
+        2,
+        20
+      ],
+      "after_mean_mmps2": [
+        2,
+        20
+      ],
+      "corr_rms_mmps2": [
+        2,
+        19
+      ],
+      "cross_um2ps4": [
+        -3,
+        150
+      ]
+    },
+    {
+      "win": 68,
+      "dver": 1,
+      "start_t_us": 75516394,
+      "end_t_us": 76517466,
+      "n": 1002,
+      "good": 1002,
+      "bad": 0,
+      "reject": 0,
+      "dt_us": [
+        625,
+        1377
+      ],
+      "ddrop": 15,
+      "alpha_rms_mradps2": [
+        348,
+        373,
+        559
+      ],
+      "alpha_pk_mradps2": [
+        1148,
+        1331,
+        2009
+      ],
+      "tangent_rms_mmps2": [
+        13,
+        49,
+        31
+      ],
+      "tangent_pk_mmps2": [
+        49,
+        187,
+        111
+      ],
+      "centrip_rms_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "centrip_pk_mmps2": [
+        0,
+        0,
+        0
+      ],
+      "before_rms_mmps2": [
+        6,
+        22
+      ],
+      "after_rms_mmps2": [
+        6,
+        24
+      ],
+      "before_mean_mmps2": [
+        2,
+        20
+      ],
+      "after_mean_mmps2": [
+        2,
+        20
+      ],
+      "corr_rms_mmps2": [
+        2,
+        16
+      ],
+      "cross_um2ps4": [
+        -1,
+        111
+      ]
+    }
+  ],
+  "aid": [
+    {
+      "win": 16,
+      "dver": 1,
+      "t_us": 24439204,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 5660,
+      "window_ms": 654,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": null
+    },
+    {
+      "win": 17,
+      "dver": 1,
+      "t_us": 25449209,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 6670,
+      "window_ms": 1665,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 18,
+      "dver": 1,
+      "t_us": 26444196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 7665,
+      "window_ms": 2659,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 19,
+      "dver": 1,
+      "t_us": 27444208,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 8665,
+      "window_ms": 655,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 20,
+      "dver": 1,
+      "t_us": 28444196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 9664,
+      "window_ms": 1654,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 21,
+      "dver": 1,
+      "t_us": 29444196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 10664,
+      "window_ms": 2654,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 22,
+      "dver": 1,
+      "t_us": 30454207,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 11674,
+      "window_ms": 660,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 23,
+      "dver": 1,
+      "t_us": 31449225,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 12669,
+      "window_ms": 1655,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 24,
+      "dver": 1,
+      "t_us": 32454196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 13674,
+      "window_ms": 2659,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 25,
+      "dver": 1,
+      "t_us": 33454196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 14674,
+      "window_ms": 654,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 26,
+      "dver": 1,
+      "t_us": 34459204,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 15679,
+      "window_ms": 1659,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 27,
+      "dver": 1,
+      "t_us": 35454196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 16674,
+      "window_ms": 2654,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 28,
+      "dver": 1,
+      "t_us": 36459204,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 17679,
+      "window_ms": 655,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 29,
+      "dver": 1,
+      "t_us": 37464196,
+      "now": 0,
+      "last": 134217728,
+      "last_t_us": 18779204,
+      "resets": 29,
+      "settle_ms": 18684,
+      "window_ms": 1659,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        232,
+        246,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器累计变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 30,
+      "dver": 1,
+      "t_us": 38459215,
+      "now": 0,
+      "last": 67108864,
+      "last_t_us": 38119204,
+      "resets": 32,
+      "settle_ms": 340,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        233,
+        247,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器单帧变化"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "PITCH编码器单帧变化": 2
+      }
+    },
+    {
+      "win": 31,
+      "dver": 1,
+      "t_us": 39464196,
+      "now": 0,
+      "last": 67108864,
+      "last_t_us": 38119204,
+      "resets": 32,
+      "settle_ms": 1344,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        233,
+        247,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器单帧变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 32,
+      "dver": 1,
+      "t_us": 40469204,
+      "now": 0,
+      "last": 67108864,
+      "last_t_us": 38119204,
+      "resets": 32,
+      "settle_ms": 2349,
+      "window_ms": 355,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        233,
+        247,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        189,
+        0,
+        0,
+        0,
+        117,
+        552,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "PITCH编码器单帧变化"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 33,
+      "dver": 1,
+      "t_us": 41469204,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 41469204,
+      "resets": 33,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        235,
+        249,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        279,
+        0,
+        0,
+        0,
+        117,
+        627,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 2,
+        "车轮滤波速度超限": 2,
+        "YAW输入不为零": 90,
+        "角速度超限": 75
+      }
+    },
+    {
+      "win": 34,
+      "dver": 1,
+      "t_us": 42469210,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 42469210,
+      "resets": 34,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        235,
+        249,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        359,
+        0,
+        0,
+        0,
+        117,
+        717,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "YAW输入不为零": 80,
+        "角速度超限": 90
+      }
+    },
+    {
+      "win": 35,
+      "dver": 1,
+      "t_us": 43469215,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 43369204,
+      "resets": 34,
+      "settle_ms": 95,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        236,
+        250,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        495,
+        0,
+        0,
+        0,
+        117,
+        897,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "YAW输入不为零": 136,
+        "角速度超限": 180
+      }
+    },
+    {
+      "win": 36,
+      "dver": 1,
+      "t_us": 44474196,
+      "now": 65536,
+      "last": 65536,
+      "last_t_us": 44474196,
+      "resets": 35,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        236,
+        250,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        530,
+        0,
+        0,
+        0,
+        117,
+        897,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零"
+      ],
+      "last_names": [
+        "YAW输入不为零"
+      ],
+      "hits_delta": {
+        "YAW输入不为零": 35
+      }
+    },
+    {
+      "win": 37,
+      "dver": 1,
+      "t_us": 45474205,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 45474205,
+      "resets": 35,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        237,
+        251,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        705,
+        0,
+        0,
+        0,
+        117,
+        1091,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "YAW输入不为零": 175,
+        "角速度超限": 194
+      }
+    },
+    {
+      "win": 38,
+      "dver": 1,
+      "t_us": 46474196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 46474196,
+      "resets": 36,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        237,
+        251,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        804,
+        0,
+        0,
+        0,
+        117,
+        1186,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "YAW输入不为零": 99,
+        "角速度超限": 95
+      }
+    },
+    {
+      "win": 39,
+      "dver": 1,
+      "t_us": 47474207,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 47379204,
+      "resets": 36,
+      "settle_ms": 90,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        238,
+        252,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        940,
+        0,
+        0,
+        0,
+        117,
+        1367,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "YAW输入不为零": 136,
+        "角速度超限": 181
+      }
+    },
+    {
+      "win": 40,
+      "dver": 1,
+      "t_us": 48474196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 48474196,
+      "resets": 37,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        239,
+        253,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1064,
+        0,
+        0,
+        0,
+        117,
+        1445,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "YAW输入不为零": 124,
+        "角速度超限": 78
+      }
+    },
+    {
+      "win": 41,
+      "dver": 1,
+      "t_us": 49484196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 49484196,
+      "resets": 37,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        239,
+        253,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1266,
+        0,
+        0,
+        0,
+        117,
+        1647,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "YAW输入不为零": 202,
+        "角速度超限": 202
+      }
+    },
+    {
+      "win": 42,
+      "dver": 1,
+      "t_us": 50484196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 50484196,
+      "resets": 38,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        239,
+        253,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1368,
+        0,
+        0,
+        0,
+        117,
+        1771,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "YAW输入不为零": 102,
+        "角速度超限": 124
+      }
+    },
+    {
+      "win": 43,
+      "dver": 1,
+      "t_us": 51484196,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 51424196,
+      "resets": 38,
+      "settle_ms": 54,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        241,
+        256,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1514,
+        0,
+        0,
+        0,
+        117,
+        1959,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 2,
+        "车轮滤波速度超限": 3,
+        "YAW输入不为零": 146,
+        "角速度超限": 188
+      }
+    },
+    {
+      "win": 44,
+      "dver": 1,
+      "t_us": 52484196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 52484196,
+      "resets": 39,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        246,
+        262,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1659,
+        0,
+        0,
+        0,
+        117,
+        2068,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 5,
+        "车轮滤波速度超限": 6,
+        "YAW输入不为零": 145,
+        "角速度超限": 109
+      }
+    },
+    {
+      "win": 45,
+      "dver": 1,
+      "t_us": 53484207,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 53449204,
+      "resets": 41,
+      "settle_ms": 30,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        260,
+        277,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1791,
+        0,
+        0,
+        0,
+        117,
+        2245,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 14,
+        "车轮滤波速度超限": 15,
+        "YAW输入不为零": 132,
+        "角速度超限": 177
+      }
+    },
+    {
+      "win": 46,
+      "dver": 1,
+      "t_us": 54494196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 54494196,
+      "resets": 43,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        274,
+        293,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1948,
+        0,
+        0,
+        0,
+        117,
+        2402,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 14,
+        "车轮滤波速度超限": 16,
+        "YAW输入不为零": 157,
+        "角速度超限": 157
+      }
+    },
+    {
+      "win": 47,
+      "dver": 1,
+      "t_us": 55489215,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 55489215,
+      "resets": 49,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        283,
+        304,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2053,
+        0,
+        0,
+        0,
+        117,
+        2512,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 9,
+        "车轮滤波速度超限": 11,
+        "YAW输入不为零": 105,
+        "角速度超限": 110
+      }
+    },
+    {
+      "win": 48,
+      "dver": 1,
+      "t_us": 56489212,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 56204196,
+      "resets": 49,
+      "settle_ms": 279,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        285,
+        306,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        2655,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 2,
+        "车轮滤波速度超限": 2,
+        "YAW输入不为零": 97,
+        "角速度超限": 143
+      }
+    },
+    {
+      "win": 49,
+      "dver": 1,
+      "t_us": 57489204,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 56204196,
+      "resets": 49,
+      "settle_ms": 1279,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        285,
+        306,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        2655,
+        0,
+        0,
+        0,
+        1,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 50,
+      "dver": 1,
+      "t_us": 58494196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 58494196,
+      "resets": 51,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        286,
+        307,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        2730,
+        0,
+        0,
+        0,
+        69,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "角速度超限": 75,
+        "PITCH目标变化": 68
+      }
+    },
+    {
+      "win": 51,
+      "dver": 1,
+      "t_us": 59494196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 59494196,
+      "resets": 51,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        286,
+        307,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        2870,
+        0,
+        0,
+        0,
+        128,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "角速度超限": 140,
+        "PITCH目标变化": 59
+      }
+    },
+    {
+      "win": 52,
+      "dver": 1,
+      "t_us": 60494196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 60494196,
+      "resets": 51,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        287,
+        308,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        3070,
+        0,
+        0,
+        0,
+        128,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "角速度超限": 200
+      }
+    },
+    {
+      "win": 53,
+      "dver": 1,
+      "t_us": 61494207,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 61494207,
+      "resets": 51,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        287,
+        308,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        3270,
+        0,
+        0,
+        0,
+        128,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "角速度超限": 200
+      }
+    },
+    {
+      "win": 54,
+      "dver": 1,
+      "t_us": 62504196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 62504196,
+      "resets": 52,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        287,
+        308,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        3409,
+        0,
+        0,
+        0,
+        167,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "角速度超限": 139,
+        "PITCH目标变化": 39
+      }
+    },
+    {
+      "win": 55,
+      "dver": 1,
+      "t_us": 63504196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 63504196,
+      "resets": 52,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        287,
+        308,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2150,
+        0,
+        0,
+        0,
+        117,
+        3609,
+        0,
+        0,
+        0,
+        167,
+        2,
+        7,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "角速度超限": 200
+      }
+    },
+    {
+      "win": 56,
+      "dver": 1,
+      "t_us": 64504196,
+      "now": 2097152,
+      "last": 2097152,
+      "last_t_us": 64504196,
+      "resets": 56,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        288,
+        309,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2195,
+        0,
+        0,
+        0,
+        117,
+        3733,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "角速度超限"
+      ],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1,
+        "YAW输入不为零": 45,
+        "角速度超限": 124,
+        "PITCH编码器累计变化": 3
+      }
+    },
+    {
+      "win": 57,
+      "dver": 1,
+      "t_us": 65504196,
+      "now": 2162688,
+      "last": 2162688,
+      "last_t_us": 65504196,
+      "resets": 56,
+      "settle_ms": 0,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        294,
+        317,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2310,
+        0,
+        0,
+        0,
+        117,
+        3889,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "last_names": [
+        "YAW输入不为零",
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 6,
+        "车轮滤波速度超限": 8,
+        "YAW输入不为零": 115,
+        "角速度超限": 156
+      }
+    },
+    {
+      "win": 58,
+      "dver": 1,
+      "t_us": 66504196,
+      "now": 0,
+      "last": 2097152,
+      "last_t_us": 65894207,
+      "resets": 56,
+      "settle_ms": 604,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        297,
+        320,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "角速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 3,
+        "车轮滤波速度超限": 3,
+        "YAW输入不为零": 23,
+        "角速度超限": 78
+      }
+    },
+    {
+      "win": 59,
+      "dver": 1,
+      "t_us": 67509204,
+      "now": 0,
+      "last": 128,
+      "last_t_us": 67449204,
+      "resets": 57,
+      "settle_ms": 54,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        297,
+        321,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "车轮滤波速度超限": 1
+      }
+    },
+    {
+      "win": 60,
+      "dver": 1,
+      "t_us": 68509204,
+      "now": 0,
+      "last": 128,
+      "last_t_us": 67449204,
+      "resets": 57,
+      "settle_ms": 1054,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        297,
+        321,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 61,
+      "dver": 1,
+      "t_us": 69509215,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 515,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 1,
+        "车轮滤波速度超限": 1
+      }
+    },
+    {
+      "win": 62,
+      "dver": 1,
+      "t_us": 70509204,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 1515,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 63,
+      "dver": 1,
+      "t_us": 71509211,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 2515,
+      "window_ms": 515,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 64,
+      "dver": 1,
+      "t_us": 72509204,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 3515,
+      "window_ms": 1515,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 65,
+      "dver": 1,
+      "t_us": 73519204,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 4525,
+      "window_ms": 2525,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 66,
+      "dver": 1,
+      "t_us": 74519204,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 5525,
+      "window_ms": 520,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 67,
+      "dver": 1,
+      "t_us": 75519204,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 68989207,
+      "resets": 58,
+      "settle_ms": 6525,
+      "window_ms": 1520,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        298,
+        322,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {}
+    },
+    {
+      "win": 68,
+      "dver": 1,
+      "t_us": 76519215,
+      "now": 0,
+      "last": 192,
+      "last_t_us": 76189215,
+      "resets": 59,
+      "settle_ms": 325,
+      "window_ms": 0,
+      "hits": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        304,
+        328,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2333,
+        0,
+        0,
+        0,
+        117,
+        3967,
+        0,
+        0,
+        0,
+        167,
+        2,
+        10,
+        0,
+        0,
+        0
+      ],
+      "now_names": [],
+      "last_names": [
+        "车轮原始速度超限",
+        "车轮滤波速度超限"
+      ],
+      "hits_delta": {
+        "车轮原始速度超限": 6,
+        "车轮滤波速度超限": 6
+      }
+    }
+  ]
+}

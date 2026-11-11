@@ -28,7 +28,9 @@
 #include "motor_task.h"
 #include "daemon.h"
 #include "robot.h"
-#include "mpu6500.h"
+#include "ins.h"
+#include "chassis_log.h"
+#include "config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -66,6 +68,7 @@ void StartDAEMONTASK(void const *argument);
 void StartROBOTTASK(void const *argument);
 
 void StartINSTASK(void const * argument);
+static void StartMotionLogTask(void const *argument);
 
 /* USER CODE END FunctionPrototypes */
 
@@ -123,17 +126,20 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  osThreadDef(motortask, StartMOTORTASK, osPriorityNormal, 0, 256);
+  osThreadDef(motortask, StartMOTORTASK, (osPriority)g_task_config.motor.priority, 0, g_task_config.motor.stack_words);
   motorTaskHandle = osThreadCreate(osThread(motortask), NULL);
 
-  osThreadDef(daemontask, StartDAEMONTASK, osPriorityNormal, 0, 128);
+  osThreadDef(daemontask, StartDAEMONTASK, (osPriority)g_task_config.daemon.priority, 0, g_task_config.daemon.stack_words);
   daemonTaskHandle = osThreadCreate(osThread(daemontask), NULL);
 
-  osThreadDef(robottask, StartROBOTTASK, osPriorityNormal, 0, 1024);
+  osThreadDef(robottask, StartROBOTTASK, (osPriority)g_task_config.robot.priority, 0, g_task_config.robot.stack_words);
   defaultTaskHandle = osThreadCreate(osThread(robottask), NULL);
 
-  osThreadDef(instask, StartINSTASK, osPriorityNormal, 0, 1024);
+  osThreadDef(instask, StartINSTASK, (osPriority)g_task_config.ins.priority, 0, g_task_config.ins.stack_words);
   insTaskHandle = osThreadCreate(osThread(instask), NULL);
+  /* 文本格式化含整数 snprintf 调用链，日志栈扩至 512 words（2 KiB）。 */
+  osThreadDef(motionlog, StartMotionLogTask, (osPriority)g_task_config.motion_log.priority, 0, g_task_config.motion_log.stack_words);
+  osThreadCreate(osThread(motionlog), NULL);
   /* USER CODE END RTOS_THREADS */
 
 }
@@ -162,7 +168,7 @@ void StartMOTORTASK(void const *argument)
   {
     // 500Hz
     MotorControlTask();
-    osDelay(2);
+    osDelay(g_task_config.motor.period_ticks);
   }
 }
 
@@ -172,7 +178,7 @@ void StartDAEMONTASK(void const *argument)
   {
     // 100Hz
     DaemonTask();
-    osDelay(10);
+    osDelay(g_task_config.daemon.period_ticks);
   }
 }
 
@@ -182,7 +188,7 @@ void StartROBOTTASK(void const *argument)
   {
     // 200Hz
     RobotTask();
-    osDelay(5);
+    osDelay(g_task_config.robot.period_ticks);
   }
 }
 
@@ -192,7 +198,17 @@ void StartINSTASK(void const * argument)
   {
     // 200Hz
     INS_Task();
-    osDelay(1);
+    osDelay(g_task_config.ins.period_ticks);
+  }
+}
+
+static void StartMotionLogTask(void const *argument)
+{
+  (void)argument;
+  for (;;)
+  {
+    ChassisMotionLogTask();
+    osDelay(g_task_config.motion_log.period_ticks);
   }
 }
 /* USER CODE END Application */
